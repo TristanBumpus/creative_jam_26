@@ -15,6 +15,7 @@ var can_dodge = false
 @export var attack_speed = .7
 var projectile = "res://entities/projectiles/basic_projectile.tscn"
 #var projectile = "res://entities/projectiles/toxic_projectile.tscn"
+@export var projectiles_acquired = []
 
 
 #Engine functions

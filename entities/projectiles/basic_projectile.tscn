@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhr066rjldtad"]
 
-[ext_resource type="Script" uid="uid://c2ic2y3mu5m6h" path="res://entities/projectiles/projectile.gd" id="1_ydmud"]
+[ext_resource type="Script" uid="uid://cfihsp1m6c05s" path="res://entities/projectiles/projectile.gd" id="1_ydmud"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tnd2v"]
 radius = 8.0

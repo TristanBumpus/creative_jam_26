@@ -1,11 +1,25 @@
 [gd_scene format=3 uid="uid://ce22ymbp0d50c"]
 
-[ext_resource type="PackedScene" uid="uid://sqyixl2a1lgo" path="res://entities/enemies/enemy_1.tscn" id="1_1aovp"]
+[ext_resource type="PackedScene" uid="uid://le07axm6hc7r" path="res://entities/enemies/enemy_charger.tscn" id="1_1aovp"]
+[ext_resource type="PackedScene" uid="uid://dlkoexsjo7ysv" path="res://entities/player.tscn" id="2_ve8qb"]
+[ext_resource type="Script" uid="uid://dn88syjqcbyq" path="res://scripts/level_manager.gd" id="3_hwdco"]
+[ext_resource type="PackedScene" uid="uid://1xe88khkry3g" path="res://levels/level_1.tscn" id="5_n5hkc"]
+[ext_resource type="PackedScene" uid="uid://brtbhxkth7ytb" path="res://ui/upgrade.tscn" id="5_ucn5r"]
 
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
 
-[node name="enemy_1" parent="." unique_id=1506096292 instance=ExtResource("1_1aovp")]
-position = Vector2(209, 110)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=64985147]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=326575768 groups=["player"]]
-position = Vector2(467, 128)
+[node name="player" parent="." unique_id=523884040 instance=ExtResource("2_ve8qb")]
+position = Vector2(38, 31)
+player_speed = 100.0
+
+[node name="level_manager" type="Node2D" parent="." unique_id=355476099]
+script = ExtResource("3_hwdco")
+
+[node name="enemy_charger" parent="." unique_id=1506096292 instance=ExtResource("1_1aovp")]
+position = Vector2(272, 75)
+
+[node name="upgrade" parent="." unique_id=1679262284 instance=ExtResource("5_ucn5r")]
+
+[node name="level_1" parent="." unique_id=1279288876 instance=ExtResource("5_n5hkc")]

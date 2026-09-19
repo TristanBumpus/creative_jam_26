@@ -3,12 +3,39 @@
 [ext_resource type="Script" uid="uid://dvaa3bwldc8sl" path="res://scripts/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://cs7nwficx37d5" path="res://icon.svg" id="2_b0kkn"]
 
-[node name="player" type="Node2D" unique_id=1690750444 groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4p34"]
+size = Vector2(32, 32)
+
+[node name="player" type="CharacterBody2D" unique_id=523884040 groups=["player"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_merdl")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2115208257]
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=6536281]
-position = Vector2(64, 64)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_b0kkn")
-offset = Vector2(-64, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=397226286]
+shape = SubResource("RectangleShape2D_b0kkn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1083899735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1915945701]
+shape = SubResource("RectangleShape2D_e4p34")
+
+[node name="dodge_time" type="Timer" parent="." unique_id=1407947126]
+wait_time = 0.1
+one_shot = true
+
+[node name="dodge_cooldown" type="Timer" parent="." unique_id=211655969]
+one_shot = true
+
+[node name="attack_timer" type="Timer" parent="." unique_id=588512022]
+one_shot = true
+
+[connection signal="timeout" from="dodge_time" to="." method="_on_dodge_time_timeout"]
+[connection signal="timeout" from="dodge_cooldown" to="." method="_on_dodge_cooldown_timeout"]
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

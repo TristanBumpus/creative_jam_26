@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dd8uf4wfsl7tv"]
+
+[ext_resource type="Script" uid="uid://cq724e4npwa8e" path="res://scripts/door.gd" id="1_120vl"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
+size = Vector2(32, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u8ib"]
+size = Vector2(32, 128)
+
+[node name="door" type="StaticBody2D" unique_id=554456326]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_120vl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1284546383]
+mesh = SubResource("QuadMesh_7u8ib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=659793717]
+shape = SubResource("RectangleShape2D_7u8ib")

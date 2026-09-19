@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://big3l6xf364gv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8wq4x"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8wq4x"]
+
+[node name="clock_test" type="Node2D" unique_id=2006716203]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=738730887]
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(4.5045357, 4.504536)
+mesh = SubResource("SphereMesh_8wq4x")
+
+[node name="anchor" type="Node2D" parent="." unique_id=43108268]
+
+[node name="Node2D" type="Node2D" parent="anchor" unique_id=337575268]
+rotation = -1.5707964
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="anchor/Node2D" unique_id=1960923421]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1, 0)
+scale = Vector2(2.5, 0.5)
+mesh = SubResource("QuadMesh_8wq4x")

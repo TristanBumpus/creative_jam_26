@@ -45,7 +45,7 @@ func generate_wave():
 			var enemy = load(global.enemies_to_spawn.pop_front()).instantiate()
 			get_tree().current_scene.add_child(enemy)
 			var random_angle: float = randf_range(0.0, TAU)
-			enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 500
+			enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 7500
 
 
 # Called when the node enters the scene tree for the first time.

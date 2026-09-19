@@ -8,7 +8,7 @@ var mouse_position: Vector2
 @export var current_hp: float = 100
 @export var damage: float = 10
 @export var speed: float = 10
-@export var dodge_speed = 5
+@export var dodge_speed = 10
 var dodge_time = .1
 @export var speed_mod = 1
 var can_dodge = false

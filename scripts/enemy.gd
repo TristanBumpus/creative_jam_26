@@ -8,7 +8,7 @@ class_name enemies
 var current_hp = 1
 @export var speed = 1
 @export var damage = 1
-@export var level = 1
+@export var level = 0
 @export var attack_range = 128
 @export var dash_speed = 5
 var speed_mod = 1
@@ -32,11 +32,11 @@ func charge_attach():
 
 
 func _ready() -> void:
-	level = global.wave
-	max_hp = randi_range(1 * level, 8 * level)
-	current_hp =  max_hp
-	damage = randi_range(1 * level, 2 * level)
-	speed = randi_range(5 * level, 10 * level) + 50
+	if level == 0:
+		level = global.wave
+	max_hp = randi_range(1 * level, max_hp * level)
+	damage = randi_range(1 * level, damage * level)
+	speed = randi_range(5 * level, speed * level) + 500
 
 func _process(delta: float) -> void:
 	if current_hp <= 0:

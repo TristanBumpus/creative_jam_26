@@ -5,6 +5,7 @@
 
 [node name="player" type="Node2D" unique_id=1690750444 groups=["player"]]
 script = ExtResource("1_merdl")
+player_speed = 10.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2115208257]
 

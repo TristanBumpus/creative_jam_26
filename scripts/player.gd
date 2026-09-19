@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_movement = Input.get_vector("a", "d", "s", "w")
 	player_movement.y *= -1
 	$".".translate(player_movement * player_speed)

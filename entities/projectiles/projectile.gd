@@ -6,15 +6,14 @@ class_name projectiles
 
 enum effects {
 	burn,
-	cold,
+	freeze,
 	slow
 }
 
-var speed = 300
-var damage = 1
+@export var speed = 300
+@export var damage = 1
 var direction = Vector2.ZERO
-var effects_collection: Array[effects] = []
-#@export var projectiles_list: Array[projectiles] = []
+@export var effects_collection: Array[effects] = []
 
 
 
@@ -29,6 +28,15 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("enemy"):
 		area.get_parent().current_hp -= damage
+		
+#		add target to proper debuff group if projectile inflicts an effect
+		if effects_collection.has(effects.burn):
+			area.get_parent().add_to_group("is_burned")
+		if effects_collection.has(effects.freeze):
+			area.get_parent().add_to_group("is_frozen")
+		if effects_collection.has(effects.slow):
+			area.get_parent().add_to_group("is_slowed")
+			
 		queue_free()
 
 

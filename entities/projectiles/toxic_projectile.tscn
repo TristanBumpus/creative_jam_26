@@ -5,7 +5,7 @@
 [node name="toxic_projectile" unique_id=1302566286 instance=ExtResource("1_l0keh")]
 scale = Vector2(1, 1)
 speed = 250
-effects_collection = [2]
+effects_collection = Array[int]([2])
 
 [node name="MeshInstance2D" parent="." index="0" unique_id=737897609]
 modulate = Color(0.22352941, 0.72156864, 0.22352941, 1)

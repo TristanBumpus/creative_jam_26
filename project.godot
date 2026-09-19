@@ -26,7 +26,7 @@ global="*uid://buygushwr0b0w"
 
 window/size/viewport_width=11520
 window/size/viewport_height=6480
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [global_group]
 

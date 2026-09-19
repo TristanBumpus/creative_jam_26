@@ -8,3 +8,14 @@ script = ExtResource("1_2sl5b")
 [node name="fire_duration" type="Timer" parent="." unique_id=230484741]
 wait_time = 0.5
 one_shot = true
+
+[node name="freeze_duration" type="Timer" parent="." unique_id=779067095]
+one_shot = true
+
+[node name="slow_duration" type="Timer" parent="." unique_id=1720304392]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="fire_duration" to="." method="_on_fire_duration_timeout"]
+[connection signal="timeout" from="freeze_duration" to="." method="_on_freeze_duration_timeout"]
+[connection signal="timeout" from="slow_duration" to="." method="_on_slow_duration_timeout"]

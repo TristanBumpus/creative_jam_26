@@ -6,7 +6,7 @@
 scale = Vector2(1, 1)
 speed = 200
 damage = 2
-effects_collection = [0]
+effects_collection = Array[int]([1])
 
 [node name="MeshInstance2D" parent="." index="0" unique_id=737897609]
 modulate = Color(0, 1, 1, 1)

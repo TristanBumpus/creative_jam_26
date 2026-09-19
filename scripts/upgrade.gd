@@ -33,7 +33,7 @@ func upgrade_do_shit(p_or_f : int):
 	if id == 6:
 		player.projectiles_acquired.append(preload("res://entities/projectiles/ice_projectile.tscn"))
 	if id == 7:
-		player.projectiles_acquired.append(preload("res://entities/projectiles/toxic_projectile.tscn"))
+		player.projectiles_acquired.append(preload("res://entities/projectiles/poison_projectile.tscn"))
 
 
 

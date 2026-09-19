@@ -19,7 +19,7 @@ enum effects {
 	slow,
 }
 
-var loot_table = {"commun" : [0,1,2,4], "rare" : [3, 5], "epic" : [4]}
+var loot_table = {"commun" : [0,1,2,4], "rare" : [3, 5, 6], "epic" : [4, 6, 7]}
 
 var loot_pool = []
 var enemy_table = ["res://entities/enemies/enemy_charger.tscn","res://entities/enemies/enemy_chaser.tscn"]

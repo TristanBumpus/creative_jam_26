@@ -5,7 +5,13 @@
 [node name="fire_projectile" unique_id=1302566286 instance=ExtResource("1_n3v4m")]
 speed = 1500
 damage = 3
-effects_collection = Array[int]([0])
+can_explode = true
 
 [node name="MeshInstance2D" parent="." index="0" unique_id=737897609]
 modulate = Color(1, 0, 0, 1)
+
+[node name="aoe_duration" type="Timer" parent="." index="2" unique_id=620179370]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="aoe_duration" to="." method="_on_aoe_duration_timeout"]

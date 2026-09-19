@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 	player_movement = Vector2(Input.get_action_raw_strength("d") - Input.get_action_raw_strength("a"),Input.get_action_raw_strength("s") - Input.get_action_raw_strength("w")).normalized()
 	
 #	get player direction through mouse position
-	mouse_position = get_viewport().get_mouse_position()
+	mouse_position = get_global_mouse_position()
 	#print(mouse_position)
 	
 #	apply movement to player

@@ -1,15 +1,24 @@
 extends Node2D
 
-## Variables
+"""
+Variables
+"""
 var player_movement: Vector2
 var mouse_position: Vector2
 
-@export var player_speed: float = 1
+@export var health: float = 100
+@export var base_attack: float = 10
+@export var player_speed: float = 10
 
 
-## Engine functions
+"""
+Engine functions
+"""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("test exponential growth")
+	for i in range(10):
+		print(1.5 ** (1 + i))
 	pass # Replace with function body.
 
 

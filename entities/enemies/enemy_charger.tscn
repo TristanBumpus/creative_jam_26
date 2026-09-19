@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://le07axm6hc7r"]
+
+[ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_i3l3x"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u8ib"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn83b"]
+size = Vector2(32, 32)
+
+[node name="enemy_charger" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
+script = ExtResource("1_i3l3x")
+type = "charger"
+speed = 80
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1343537944]
+mesh = SubResource("QuadMesh_7u8ib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139975863]
+shape = SubResource("RectangleShape2D_7u8ib")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=232678710]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=171021175]
+shape = SubResource("RectangleShape2D_vn83b")
+
+[node name="knock_back" type="Timer" parent="." unique_id=1130283404]
+wait_time = 0.2
+one_shot = true
+
+[node name="charge" type="Timer" parent="." unique_id=260330827]
+one_shot = true
+
+[node name="charger" type="Timer" parent="." unique_id=73461005]
+wait_time = 0.3
+one_shot = true
+
+[node name="cooldown" type="Timer" parent="." unique_id=1174932396]
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]
+[connection signal="timeout" from="charge" to="." method="_on_charge_timeout"]
+[connection signal="timeout" from="charger" to="." method="_on_charger_timeout"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

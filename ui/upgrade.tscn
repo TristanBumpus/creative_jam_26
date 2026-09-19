@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://brtbhxkth7ytb"]
+
+[ext_resource type="Script" uid="uid://cmvda08nlfu8n" path="res://scripts/upgrade.gd" id="1_141gf"]
+
+[sub_resource type="Theme" id="Theme_7u8ib"]
+
+[node name="upgrade" type="CanvasLayer" unique_id=1679262284]
+script = ExtResource("1_141gf")
+
+[node name="upgrade" type="Control" parent="." unique_id=2065623402]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="past" type="Control" parent="upgrade" unique_id=1457679746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -354.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="upgrade/past" unique_id=988949663]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="option_1" type="Button" parent="upgrade/past" unique_id=564281646]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -86.0
+offset_right = 220.0
+offset_bottom = -26.0
+grow_vertical = 2
+theme = SubResource("Theme_7u8ib")
+
+[node name="option_2" type="Button" parent="upgrade/past" unique_id=330759540]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 26.0
+offset_right = 220.0
+offset_bottom = 86.0
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="upgrade/past" unique_id=903164018]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 5.0
+value = 3.0
+
+[node name="future" type="Control" parent="upgrade" unique_id=2107010165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 354.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="upgrade/future" unique_id=1566430966]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="option_1" type="Button" parent="upgrade/future" unique_id=1968680410]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -86.0
+offset_bottom = -26.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="option_2" type="Button" parent="upgrade/future" unique_id=1983761563]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = 26.0
+offset_bottom = 86.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="upgrade/future" unique_id=818916393]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 5.0
+value = 3.0
+
+[connection signal="pressed" from="upgrade/past/option_1" to="." method="_on_p_option_1_pressed"]
+[connection signal="pressed" from="upgrade/past/option_2" to="." method="_on_p_option_2_pressed"]
+[connection signal="pressed" from="upgrade/future/option_1" to="." method="_on_f_option_1_pressed"]
+[connection signal="pressed" from="upgrade/future/option_2" to="." method="_on_f_option_2_pressed"]

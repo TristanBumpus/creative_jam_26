@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://ce22ymbp0d50c"]
 
+[ext_resource type="PackedScene" uid="uid://sqyixl2a1lgo" path="res://entities/enemies/enemy_1.tscn" id="1_1aovp"]
+
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
+
+[node name="enemy_1" parent="." unique_id=1506096292 instance=ExtResource("1_1aovp")]
+position = Vector2(209, 110)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=326575768 groups=["player"]]
+position = Vector2(467, 128)

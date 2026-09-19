@@ -21,7 +21,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -354.0
+offset_right = -6999.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -32,17 +32,19 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 160
 
 [node name="option_1" type="Button" parent="upgrade/past" unique_id=564281646]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -86.0
-offset_right = 220.0
-offset_bottom = -26.0
+offset_top = -300.0
+offset_right = 2200.0
+offset_bottom = 300.0
 grow_vertical = 2
 theme = SubResource("Theme_7u8ib")
+theme_override_font_sizes/font_size = 160
 
 [node name="option_2" type="Button" parent="upgrade/past" unique_id=330759540]
 visible = false
@@ -74,7 +76,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 354.0
+offset_left = 6980.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -85,6 +87,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 160
 
 [node name="option_1" type="Button" parent="upgrade/future" unique_id=1968680410]
 layout_mode = 1
@@ -93,11 +96,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -220.0
-offset_top = -86.0
-offset_bottom = -26.0
+offset_left = -2200.0
+offset_top = -300.0
+offset_bottom = 300.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 160
+text = "w"
 
 [node name="option_2" type="Button" parent="upgrade/future" unique_id=1983761563]
 visible = false

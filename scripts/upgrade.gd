@@ -23,7 +23,7 @@ func upgrade_do_shit(p_or_f : int):
 	if id == 1:
 		player.attack_speed -= (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave)/10
 	if id == 2:
-		player.player_speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
+		player.speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
 	if id == 3:
 		player.dodge_speed += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave)/10
 

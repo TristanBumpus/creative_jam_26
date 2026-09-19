@@ -37,7 +37,7 @@ func _ready() -> void:
 		level = global.wave
 	max_hp = randi_range(1 * level, max_hp * level)
 	damage = randi_range(1 * level, damage * level)
-	speed = randi_range(5 * level, speed * level) + 500
+	speed = randi_range(5 * level, speed * level) + 1500
 	
 	current_hp = max_hp
 
@@ -80,7 +80,7 @@ func _on_knock_back_timeout() -> void:
 		else:
 			speed_mod = 0
 	else:
-		speed_mod = 0
+		speed_mod = 1
 
 
 func _on_charger_timeout() -> void:

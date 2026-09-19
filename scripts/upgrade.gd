@@ -23,7 +23,7 @@ func upgrade_do_shit(p_or_f : int):
 	if id == 1:
 		player.attack_speed -= (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling)/10
 	if id == 2:
-		player.speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+		player.speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling * 100
 	if id == 3:
 		player.dodge_speed += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling)/10
 	if id == 4:
@@ -50,10 +50,24 @@ func _ready() -> void:
 	f_items = global.grab_loot(futur_by + global.wave)
 	
 	#Past item ui set up
-	$upgrade/past/option_1.text = global.all_upgrades[p_items[1]]["name"] + "\n" + global.all_upgrades[p_items[1]]["desc"] + str(global.all_upgrades[p_items[1]]["effect"] + global.all_upgrades[p_items[1]]["lvl mult"] * p_items[0])
+	if global.all_upgrades[p_items[1]]["effect"] != 0:
+		#$upgrade/past/option_1.text = global.all_upgrades[p_items[1]]["name"] + "\n" + global.all_upgrades[p_items[1]]["desc"] + str(global.all_upgrades[p_items[1]]["effect"] + global.all_upgrades[p_items[1]]["lvl mult"] * p_items[0])
+		$upgrade/past/title.text = global.all_upgrades[p_items[1]]["name"]
+		$upgrade/past/desc.text = global.all_upgrades[p_items[1]]["desc"] + str(global.all_upgrades[p_items[1]]["effect"] + global.all_upgrades[p_items[1]]["lvl mult"] * p_items[0])
+	else:
+		$upgrade/past/title.text = global.all_upgrades[p_items[1]]["name"]
+		$upgrade/past/desc.text = global.all_upgrades[p_items[1]]["desc"]
+	
+	
 	#$upgrade/past/option_2.text = global.all_upgrades[p_items[2]]["name"] + "\n" + global.all_upgrades[p_items[2]]["desc"] + str(global.all_upgrades[p_items[2]]["effect"])
 	#Furute items ui set up
-	$upgrade/future/option_1.text = global.all_upgrades[f_items[1]]["name"] + "\n" + global.all_upgrades[f_items[1]]["desc"] + str(global.all_upgrades[f_items[1]]["effect"] + global.all_upgrades[f_items[1]]["lvl mult"] * f_items[0])
+	if global.all_upgrades[f_items[1]]["effect"] != 0:
+		$upgrade/future/title.text = global.all_upgrades[f_items[1]]["name"]
+		$upgrade/future/desc.text = global.all_upgrades[f_items[1]]["desc"] + str(global.all_upgrades[f_items[1]]["effect"] + global.all_upgrades[f_items[1]]["lvl mult"] * f_items[0])
+	else:
+		$upgrade/future/title.text = global.all_upgrades[f_items[1]]["name"]
+		$upgrade/future/desc.text = global.all_upgrades[f_items[1]]["desc"]
+	
 	#$upgrade/future/option_2.text = global.all_upgrades[f_items[2]]["name"] + "\n" + global.all_upgrades[f_items[2]]["desc"] + str(global.all_upgrades[f_items[2]]["effect"])
 
 

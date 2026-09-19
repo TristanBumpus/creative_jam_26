@@ -26,6 +26,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
+	if current_hp <= 0:
+		get_tree().change_scene_to_file("res://ui/game_over.tscn")
+	
 	if Input.is_action_just_pressed("shift") and speed_mod == 1 and can_dodge:
 		speed_mod = dodge_speed
 		can_dodge = false
@@ -35,7 +38,7 @@ func _process(_delta: float) -> void:
 	#get input for movement
 	player_movement = Vector2(Input.get_action_raw_strength("d") - Input.get_action_raw_strength("a"),Input.get_action_raw_strength("s") - Input.get_action_raw_strength("w")).normalized()
 	
-#	get player direction through mouse position
+	#get player direction through mouse position
 	mouse_position = get_global_mouse_position()
 	#print(mouse_position)
 	

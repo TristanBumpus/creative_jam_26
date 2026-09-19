@@ -12,9 +12,8 @@ var all_upgrades = [
 	]
 
 enum effects {
-	burn,
-	freeze,
-	slow
+	poison,
+	slow,
 }
 
 var loot_table = {"commun" : [0,1,2], "rare" : [3, 5], "epic" : [4]}

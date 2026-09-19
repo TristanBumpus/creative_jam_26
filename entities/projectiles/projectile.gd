@@ -9,13 +9,26 @@ var direction = Vector2.ZERO
 var pierce_count := 0
 @export var bounce_limit := 0
 var bounce_count := 0
+@export var can_explode := false
+
 @export var effects_collection: Array[global.effects] = []
+
+
+func explode_projectile():
+	can_explode = false
+	speed = 0
+	$".".scale *= 5
+	#$".".scale = Vector2(2, 2)
+	$MeshInstance2D.modulate = Color(1, 0, 0, .5)
+	$aoe_duration.start()
+	pass
 
 
 
 func _ready() -> void:
 	#print(effects_collection)
 	#print(damage)
+	#print(name)
 	pass
 
 
@@ -38,7 +51,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			if !effect_manager.active_effects.has(effect):
 				effect_manager.add_effect(effect)
 		
-		if pierce_count < pierce_limit:
+		if can_explode:
+			explode_projectile()
+		elif pierce_count < pierce_limit:
 			pierce_count += 1
 		else:
 			queue_free()
@@ -47,9 +62,15 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("player") and !body.is_in_group("enemy"):
 		
-		#queue_free()
-		if bounce_count < bounce_limit:
+		if can_explode:
+			explode_projectile()
+		elif bounce_count < bounce_limit:
 			direction *= -1
 			bounce_count += 1
 		else:
 			queue_free()
+
+
+func _on_aoe_duration_timeout() -> void:
+	queue_free()
+	pass # Replace with function body.

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dfwpt74phbj88" path="res://entities/projectiles/fire_projectile.tscn" id="3_qsoyl"]
 [ext_resource type="PackedScene" uid="uid://bk35ocxg7064c" path="res://entities/projectiles/ice_projectile.tscn" id="4_i623q"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="4_rfe5m"]
-[ext_resource type="PackedScene" uid="uid://civbq2d2av2og" path="res://entities/projectiles/toxic_projectile.tscn" id="5_ef06p"]
+[ext_resource type="PackedScene" uid="uid://civbq2d2av2og" path="res://entities/projectiles/poison_projectile.tscn" id="5_ef06p"]
 [ext_resource type="PackedScene" uid="uid://yjm2biowiwy4" path="res://entities/projectiles/piercing_projectile.tscn" id="6_ef06p"]
 [ext_resource type="PackedScene" uid="uid://pfmnjy4sabe8" path="res://entities/projectiles/bouncing_projectile.tscn" id="7_tjdhl"]
 

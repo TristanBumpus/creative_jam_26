@@ -15,7 +15,7 @@ size = Vector2(32, 32)
 [node name="enemy_charger" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
 scale = Vector2(10, 10)
 script = ExtResource("1_i3l3x")
-max_hp = 12
+max_hp = 20
 type = "charger"
 speed = 50
 damage = 8

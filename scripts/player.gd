@@ -14,7 +14,8 @@ var dodge_time = .1
 var can_dodge = true
 @export var attack_speed = .7
 var projectile = "res://entities/projectils/basic_projectile.tscn"
-
+@export var projectiles_acquired: Array[Resource] = [preload("res://entities/projectiles/basic_projectile.tscn")]
+var current_projectile = 0
 
 #Engine functions
 # Called when the node enters the scene tree for the first time.
@@ -38,14 +39,15 @@ func _process(_delta: float) -> void:
 	mouse_position = get_global_mouse_position()
 	#print(mouse_position)
 	
-#	apply movement to player
+	#apply movement to player
 	velocity = player_movement * speed * speed_mod
 	#print(player_movement)
 	
-#	apply direction to player
+	#apply direction to player
 	#look_at(mouse_position)
 	
 	move_and_slide()
+
 
 
 func _on_dodge_time_timeout() -> void:
@@ -59,7 +61,13 @@ func _on_dodge_cooldown_timeout() -> void:
 
 
 func _on_attack_timer_timeout() -> void:
-	var p = load(projectile).instantiate()
+	#var p = load(projectile).instantiate()
+	var p = projectiles_acquired[current_projectile].instantiate()
+	
+	current_projectile += 1
+	
+	if current_projectile >= projectiles_acquired.size():
+		current_projectile = 0
 	
 	get_tree().current_scene.add_child(p)
 	p.global_position = global_position

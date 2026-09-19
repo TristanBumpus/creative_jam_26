@@ -9,8 +9,8 @@ var current_hp = 1
 @export var speed = 1
 @export var damage = 1
 @export var level = 0
-@export var attack_range = 128
-@export var dash_speed = 5
+@export var attack_range = 258
+@export var dash_speed = 8
 var speed_mod: float = 1
 var direction = Vector2.ZERO
 
@@ -74,8 +74,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_knock_back_timeout() -> void:
-	if $cooldown != null and $cooldown.is_stopped():
-		speed_mod = 1
+	if has_node("cooldown"): 
+		if $cooldown.is_stopped():
+			speed_mod = 1
+		else:
+			speed_mod = 0
 	else:
 		speed_mod = 0
 

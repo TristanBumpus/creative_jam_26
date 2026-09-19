@@ -8,7 +8,10 @@ var all_upgrades = [
 	{"name": "Speed up", "desc": "Increases speed by ", "effect": 2, "lvl mult": 2 },
 	{"name": "Dodge time", "desc": "Increases Dodge Time by ", "effect": .2, "lvl mult": .1 },
 	{"name": "Fire Ball", "desc": "Cast explosive Fire Balls ", "effect": 1, "lvl mult": .1 },
-	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5}
+	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5},
+	{"name": "Ice Ball", "desc": "Cast a ball of Ice ", "effect": 1, "lvl mult": .1 },
+	{"name": "Toxic Ball", "desc": "Cast a Toxic glob ", "effect": 1, "lvl mult": .1 }
+	
 	]
 
 enum effects {
@@ -17,11 +20,11 @@ enum effects {
 	slow
 }
 
-var loot_table = {"commun" : [0,1,2], "rare" : [3, 5], "epic" : [4]}
+var loot_table = {"commun" : [0,1,2,4], "rare" : [3, 5], "epic" : [4]}
 
 var loot_pool = []
 var enemy_table = ["res://entities/enemies/enemy_charger.tscn","res://entities/enemies/enemy_chaser.tscn"]
-var wave = 0
+var wave = 1
 var enemies_to_spawn = []
 @onready var player := get_tree().get_first_node_in_group("player")
 
@@ -36,7 +39,7 @@ func select_loot(level: int, index : int):
 
 func generate_wave(dif):
 	wave += 1
-	var num_enemies = (2*wave**3)/4 + 2
+	var num_enemies = (2*wave**2)/4 + 2
 	print(dif)
 	for i in num_enemies:
 		enemies_to_spawn += [enemy_table.pick_random()]
@@ -45,6 +48,7 @@ func generate_wave(dif):
 	var enmies_to_change = int(num_enemies / random)
 	
 	for child in global.enemies_to_spawn:
+		await get_tree().process_frame
 		var enemy = load(global.enemies_to_spawn.pop_front()).instantiate()
 		get_tree().current_scene.add_child(enemy)
 		if enmies_to_change > 0:

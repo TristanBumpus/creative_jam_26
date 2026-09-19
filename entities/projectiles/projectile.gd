@@ -11,6 +11,7 @@ var direction = Vector2.ZERO
 
 func _ready() -> void:
 	#print(effects_collection)
+	#print(damage)
 	pass
 
 
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("enemy"):
+		#print(area.get_parent().current_hp)
 		area.get_parent().current_hp -= damage
 		
 		#		add target to proper debuff group if projectile inflicts an effect

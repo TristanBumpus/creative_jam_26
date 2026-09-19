@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhr066rjldtad" path="res://entities/projectiles/basic_projectile.tscn" id="1_n3v4m"]
 
 [node name="fire_projectile" unique_id=1302566286 instance=ExtResource("1_n3v4m")]
-speed = 150
+speed = 1500
 damage = 3
 effects_collection = Array[int]([0])
 

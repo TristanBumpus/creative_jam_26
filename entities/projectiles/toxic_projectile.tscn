@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dhr066rjldtad" path="res://entities/projectiles/basic_projectile.tscn" id="1_l0keh"]
 
 [node name="toxic_projectile" unique_id=1302566286 instance=ExtResource("1_l0keh")]
-scale = Vector2(1, 1)
 speed = 250
 effects_collection = Array[int]([2])
 

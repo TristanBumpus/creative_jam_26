@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cw7lhik6cmmvl"]
+
+[ext_resource type="Script" uid="uid://cskurvq7pdwfm" path="res://scripts/pedestal.gd" id="1_2adot"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7u8ib"]
+radius = 8.0
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7u8ib"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2adot"]
+radius = 24.0
+
+[node name="pedestal" type="StaticBody2D" unique_id=1168299728]
+script = ExtResource("1_2adot")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1624217872]
+mesh = SubResource("SphereMesh_7u8ib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1995057825]
+shape = SubResource("CircleShape2D_7u8ib")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=495467423]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=522416282]
+shape = SubResource("CircleShape2D_2adot")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

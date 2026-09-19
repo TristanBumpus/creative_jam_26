@@ -7,7 +7,7 @@ var direction = Vector2.ZERO
 
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 
 	# Handle jump.
 	velocity = speed * direction

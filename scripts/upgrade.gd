@@ -10,17 +10,20 @@ var p_items
 
 func upgrade_do_shit(p_or_f : int):
 	var id
+	var scaling
 	if p_or_f == 1:
-		id = p_items[0]
+		id = p_items[1]
+		scaling = p_items[0]
 	else:
-		id = f_items[0]
+		id = f_items[1]
+		scaling = f_items[0]
 	
 	if id == 0:
 		player.damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
 	if id == 1:
 		player.attack_speed -= (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave)/10
 	if id == 2:
-		player.speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
+		player.player_speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
 	if id == 3:
 		player.dodge_speed += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave)/10
 
@@ -29,17 +32,20 @@ func upgrade_do_shit(p_or_f : int):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if global.wave != 1:
-		past_by = randi_range(1, global.wave)
-		futur_by = randi_range(1, 49 - global.wave)
+		past_by = randi_range(0, global.wave - 1)
+		futur_by = randi_range(global.wave + 1, 49)
 	
-	p_items = global.grab_loot(past_by - global.wave)
+	$upgrade/past/Label.text = "Wave " + str(global.wave - past_by)
+	p_items = global.grab_loot(global.wave - past_by)
+	
+	$upgrade/future/Label.text = "Wave " + str(futur_by + global.wave)
 	f_items = global.grab_loot(futur_by + global.wave)
 	
 	#Past item ui set up
-	$upgrade/past/option_1.text = global.all_upgrades[p_items[1]]["name"] + "\n" + global.all_upgrades[p_items[1]]["desc"] + str(global.all_upgrades[p_items[1]]["effect"] + global.all_upgrades[p_items[1]]["lvl mult"] * global.wave)
+	$upgrade/past/option_1.text = global.all_upgrades[p_items[1]]["name"] + "\n" + global.all_upgrades[p_items[1]]["desc"] + str(global.all_upgrades[p_items[1]]["effect"] + global.all_upgrades[p_items[1]]["lvl mult"] * p_items[0])
 	#$upgrade/past/option_2.text = global.all_upgrades[p_items[2]]["name"] + "\n" + global.all_upgrades[p_items[2]]["desc"] + str(global.all_upgrades[p_items[2]]["effect"])
 	#Furute items ui set up
-	$upgrade/future/option_1.text = global.all_upgrades[f_items[1]]["name"] + "\n" + global.all_upgrades[f_items[1]]["desc"] + str(global.all_upgrades[f_items[1]]["effect"] + global.all_upgrades[f_items[1]]["lvl mult"] * global.wave)
+	$upgrade/future/option_1.text = global.all_upgrades[f_items[1]]["name"] + "\n" + global.all_upgrades[f_items[1]]["desc"] + str(global.all_upgrades[f_items[1]]["effect"] + global.all_upgrades[f_items[1]]["lvl mult"] * f_items[0])
 	#$upgrade/future/option_2.text = global.all_upgrades[f_items[2]]["name"] + "\n" + global.all_upgrades[f_items[2]]["desc"] + str(global.all_upgrades[f_items[2]]["effect"])
 
 

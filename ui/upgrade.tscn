@@ -26,6 +26,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="Label" type="Label" parent="upgrade/past" unique_id=988949663]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
 [node name="option_1" type="Button" parent="upgrade/past" unique_id=564281646]
 layout_mode = 1
 anchors_preset = 4
@@ -71,6 +78,13 @@ offset_left = 354.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="Label" type="Label" parent="upgrade/future" unique_id=1566430966]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
 
 [node name="option_1" type="Button" parent="upgrade/future" unique_id=1968680410]
 layout_mode = 1

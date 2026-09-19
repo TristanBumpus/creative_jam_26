@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 var locked = false
+var start = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,9 +11,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !locked:
-		if get_tree().get_node_count_in_group("enemy") == 0:
+		if get_tree().get_node_count_in_group("enemy") == 0 and !start:
 			$MeshInstance2D.visible = false
 			$CollisionShape2D.disabled = true
 		else:
 			$MeshInstance2D.visible = true
 			$CollisionShape2D.disabled = false
+		
+		if get_tree().get_node_count_in_group("enemy") != 0:
+			start = false

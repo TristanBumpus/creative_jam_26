@@ -30,7 +30,7 @@ func select_loot(level: int, index : int):
 
 func generate_wave():
 	wave += 1
-	var num_enemies = (5*wave**3)/4 + 2
+	var num_enemies = (2*wave**3)/4 + 2
 	
 	for i in num_enemies:
 		enemies_to_spawn += [enemy_table.pick_random()]
@@ -38,7 +38,8 @@ func generate_wave():
 	for child in global.enemies_to_spawn:
 			var enemy = load(global.enemies_to_spawn.pop_front()).instantiate()
 			get_tree().current_scene.add_child(enemy)
-			enemy.global_position = player.global_position + Vector2(500+randi_range(1,100),200)
+			var random_angle: float = randf_range(0.0, TAU)
+			enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 500
 
 
 # Called when the node enters the scene tree for the first time.

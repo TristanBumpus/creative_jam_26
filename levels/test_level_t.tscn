@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dlkoexsjo7ysv" path="res://entities/player.tscn" id="2_ve8qb"]
 [ext_resource type="Script" uid="uid://dn88syjqcbyq" path="res://scripts/level_manager.gd" id="3_hwdco"]
 [ext_resource type="PackedScene" uid="uid://1xe88khkry3g" path="res://levels/level_1.tscn" id="5_n5hkc"]
-[ext_resource type="PackedScene" uid="uid://brtbhxkth7ytb" path="res://ui/upgrade.tscn" id="5_ucn5r"]
 
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
 
@@ -19,7 +18,5 @@ script = ExtResource("3_hwdco")
 
 [node name="enemy_charger" parent="." unique_id=1506096292 instance=ExtResource("1_1aovp")]
 position = Vector2(272, 75)
-
-[node name="upgrade" parent="." unique_id=1679262284 instance=ExtResource("5_ucn5r")]
 
 [node name="level_1" parent="." unique_id=1279288876 instance=ExtResource("5_n5hkc")]

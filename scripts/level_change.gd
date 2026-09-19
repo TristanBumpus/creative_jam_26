@@ -66,7 +66,7 @@ func _on_up_area_entered(area: Area2D) -> void:
 		
 		level.door_bottom.locked = true
 		level.global_position = global_position + Vector2(0,-height*2)
-		global.player.global_position.y = level.door_bottom.global_position.y - 100
+		global.player.global_position.y = level.door_bottom.global_position.y - 1000
 		
 		
 		
@@ -83,7 +83,7 @@ func _on_down_area_entered(area: Area2D) -> void:
 		
 		level.door_top.locked = true
 		level.global_position = global_position + Vector2(0,height*2)
-		global.player.global_position.y = level.door_top.global_position.y + 100
+		global.player.global_position.y = level.door_top.global_position.y + 1000
 		
 		
 		
@@ -100,7 +100,7 @@ func _on_left_area_entered(area: Area2D) -> void:
 		
 		level.door_right.locked = true
 		level.global_position = global_position + Vector2(-width*2,0)
-		global.player.global_position.x = level.door_right.global_position.x - 100
+		global.player.global_position.x = level.door_right.global_position.x - 1000
 		
 		
 		
@@ -117,7 +117,7 @@ func _on_right_area_entered(area: Area2D) -> void:
 		
 		level.door_left.locked = true
 		level.global_position = global_position + Vector2(width*2,0)
-		global.player.global_position.x = level.door_left.global_position.x + 100
+		global.player.global_position.x = level.door_left.global_position.x + 1000
 		
 		
 		

@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+class_name projectile
 
-var speed = 300
+var speed = 3000
 var damage = 1
 var direction = Vector2.ZERO
+
+
 
 
 

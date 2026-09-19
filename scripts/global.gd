@@ -8,7 +8,7 @@ var all_upgrades = [
 	{"name": "Speed up", "desc": "Increases speed by ", "effect": 2, "lvl mult": 2 },
 	{"name": "Dodge time", "desc": "Increases Dodge Time by ", "effect": .2, "lvl mult": .1 },
 	{"name": "Fire Ball", "desc": "Cast explosive Fire Balls ", "effect": 1, "lvl mult": 1 },
-	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": 1.1}
+	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5}
 	]
 
 var loot_table = {"commun" : [0,1,2], "rare" : [3, 5], "epic" : [4]}

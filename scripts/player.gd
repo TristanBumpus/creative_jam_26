@@ -13,7 +13,7 @@ var dodge_time = .1
 @export var speed_mod = 1
 var can_dodge = false
 @export var attack_speed = .7
-var projectile = "res://entities/projectils/basic_projectile.tscn"
+var projectile = "res://entities/projectiles/basic_projectile.tscn"
 
 
 #Engine functions

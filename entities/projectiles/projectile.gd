@@ -1,9 +1,20 @@
 extends CharacterBody2D
 
 
+class_name projectiles
+
+
+enum effects {
+	burn,
+	cold,
+	slow
+}
+
 var speed = 300
 var damage = 1
 var direction = Vector2.ZERO
+var effects_collection: Array[effects] = []
+#@export var projectiles_list: Array[projectiles] = []
 
 
 

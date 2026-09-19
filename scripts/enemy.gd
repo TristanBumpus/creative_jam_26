@@ -34,6 +34,7 @@ func charge_attach():
 func _ready() -> void:
 	level = global.wave
 	max_hp = randi_range(1 * level, 8 * level)
+	current_hp =  max_hp
 	damage = randi_range(1 * level, 2 * level)
 	speed = randi_range(5 * level, 10 * level) + 50
 

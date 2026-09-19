@@ -32,6 +32,9 @@ window/stretch/mode="canvas_items"
 
 player=""
 enemy=""
+is_burned=""
+is_frozen=""
+is_slowed=""
 
 [input]
 

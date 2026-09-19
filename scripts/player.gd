@@ -10,10 +10,12 @@ var mouse_position: Vector2
 @export var speed: float = 10
 @export var dodge_speed = 10
 var dodge_time = .1
-@export var speed_mod = 1
+@export var speed_mod: float = 1
 var can_dodge = false
 @export var attack_speed = .7
-var projectile = "res://entities/projectils/basic_projectile.tscn"
+var projectile = "res://entities/projectiles/basic_projectile.tscn"
+#var projectile = "res://entities/projectiles/toxic_projectile.tscn"
+@export var projectiles_acquired: Array[Resource] = [preload("uid://dhr066rjldtad")]
 
 
 #Engine functions
@@ -56,7 +58,9 @@ func _on_dodge_cooldown_timeout() -> void:
 
 
 func _on_attack_timer_timeout() -> void:
-	var p = load(projectile).instantiate()
+	#var p = load(projectile).instantiate()
+	var random_projectile = randi_range(0, len(projectiles_acquired) - 1)
+	var p = projectiles_acquired[random_projectile].instantiate()
 	
 	get_tree().current_scene.add_child(p)
 	p.global_position = global_position

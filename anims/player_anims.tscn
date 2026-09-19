@@ -74,6 +74,54 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hat_off/hat_mid_off/hat_tip_off:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-93, -162)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hat_off/hat_mid_off/hat_tip_off:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head_off:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, -15)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("head_off:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_cnxfa"]
 resource_name = "idle"
@@ -121,10 +169,58 @@ tracks/3/path = NodePath("hat_off/hat_mid_off:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.10000001, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, -0.13962634, 0.15358898]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hat_off/hat_mid_off/hat_tip_off:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-93, -162), Vector2(-73.46016, -165.01093), Vector2(-89.22269, -159.16129)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hat_off/hat_mid_off/hat_tip_off:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.34906584, 0.17453292]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head_off:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-14, -15), Vector2(-7, 13), Vector2(-5, -23)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("head_off:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.09599311, -0.082030475]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3kfuw"]
@@ -164,15 +260,15 @@ position = Vector2(19, -71)
 texture = ExtResource("1_81ev0")
 
 [node name="head_off" type="Node2D" parent="." unique_id=264054684]
-position = Vector2(2, -206)
+position = Vector2(-14, -15)
 
 [node name="head" type="Sprite2D" parent="head_off" unique_id=2110349722]
 z_index = -1
-position = Vector2(35, 85)
+position = Vector2(47, -112.5)
 texture = ExtResource("5_nsd8u")
 
 [node name="nose_off" type="Node2D" parent="head_off" unique_id=1978650398]
-position = Vector2(53, 72)
+position = Vector2(65, -125.5)
 
 [node name="beard_off" type="Node2D" parent="head_off/nose_off" unique_id=1295729154]
 position = Vector2(10, 83)
@@ -326,6 +422,7 @@ texture = ExtResource("1_ml41y")
 
 [node name="head_anim" type="AnimationPlayer" parent="." unique_id=1865713786]
 libraries/ = SubResource("AnimationLibrary_3kfuw")
+autoplay = &"idle"
 
 [node name="arms_anim" type="AnimationPlayer" parent="." unique_id=1753487811]
 

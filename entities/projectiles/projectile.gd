@@ -5,6 +5,10 @@ class_name projectile
 @export var speed = 3000
 @export var damage = 1
 var direction = Vector2.ZERO
+@export var pierce_limit := 0
+var pierce_count := 0
+@export var bounce_limit := 0
+var bounce_count := 0
 @export var effects_collection: Array[global.effects] = []
 
 
@@ -33,10 +37,19 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			var effect_manager = area.get_parent().find_child("effects_manager", false)
 			if !effect_manager.active_effects.has(effect):
 				effect_manager.add_effect(effect)
-			
-		queue_free()
+		
+		if pierce_count < pierce_limit:
+			pierce_count += 1
+		else:
+			queue_free()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("player") and !body.is_in_group("enemy"):
-		queue_free()
+		
+		#queue_free()
+		if bounce_count < bounce_limit:
+			direction *= -1
+			bounce_count += 1
+		else:
+			queue_free()

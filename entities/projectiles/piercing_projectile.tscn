@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://yjm2biowiwy4"]
+
+[ext_resource type="PackedScene" uid="uid://civbq2d2av2og" path="res://entities/projectiles/toxic_projectile.tscn" id="1_380m7"]
+
+[node name="piercing_projectile" unique_id=1302566286 instance=ExtResource("1_380m7")]
+speed = 2000
+pierce_limit = 3
+
+[node name="MeshInstance2D" parent="." index="0" unique_id=737897609]
+modulate = Color(1, 1, 1, 1)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(448281020) index="0" unique_id=1387678390]
+scale = Vector2(0.5, 0.5)

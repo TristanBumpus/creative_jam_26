@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bk35ocxg7064c" path="res://entities/projectiles/ice_projectile.tscn" id="4_i623q"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="4_rfe5m"]
 [ext_resource type="PackedScene" uid="uid://civbq2d2av2og" path="res://entities/projectiles/toxic_projectile.tscn" id="5_ef06p"]
+[ext_resource type="PackedScene" uid="uid://yjm2biowiwy4" path="res://entities/projectiles/piercing_projectile.tscn" id="6_ef06p"]
+[ext_resource type="PackedScene" uid="uid://pfmnjy4sabe8" path="res://entities/projectiles/bouncing_projectile.tscn" id="7_tjdhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
 size = Vector2(515, 600)
@@ -20,7 +22,7 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_merdl")
 speed = 1000.0
-projectiles_acquired = Array[Resource]([ExtResource("2_qly61"), ExtResource("3_qsoyl"), ExtResource("4_i623q"), ExtResource("5_ef06p")])
+projectiles_acquired = Array[Resource]([ExtResource("2_qly61"), ExtResource("3_qsoyl"), ExtResource("4_i623q"), ExtResource("5_ef06p"), ExtResource("6_ef06p"), ExtResource("7_tjdhl")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=6536281]
 scale = Vector2(0.25, 0.25)

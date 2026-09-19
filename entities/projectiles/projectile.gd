@@ -9,6 +9,11 @@ var direction = Vector2.ZERO
 
 
 
+func _ready() -> void:
+	#print(effects_collection)
+	#print(damage)
+	pass
+
 
 func _process(delta: float) -> void:
 
@@ -20,15 +25,14 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("enemy"):
+		#print(area.get_parent().current_hp)
 		area.get_parent().current_hp -= damage
 		
 		#		add target to proper debuff group if projectile inflicts an effect
-		if effects_collection.has(global.effects.burn):
-			area.get_parent().add_to_group("is_burned")
-		if effects_collection.has(global.effects.freeze):
-			area.get_parent().add_to_group("is_frozen")
-		if effects_collection.has(global.effects.slow):
-			area.get_parent().add_to_group("is_slowed")
+		for effect in effects_collection:
+			var effect_manager = area.get_parent().find_child("effects_manager", false)
+			if !effect_manager.active_effects.has(effect):
+				effect_manager.add_effect(effect)
 			
 		queue_free()
 

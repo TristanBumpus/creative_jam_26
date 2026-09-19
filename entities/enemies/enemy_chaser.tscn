@@ -16,7 +16,7 @@ size = Vector2(32, 32)
 scale = Vector2(10, 10)
 script = ExtResource("1_i3l3x")
 max_hp = 30
-speed = 200
+speed = 500
 damage = 6
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1343537944]

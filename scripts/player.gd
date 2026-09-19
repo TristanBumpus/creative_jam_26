@@ -1,10 +1,13 @@
 extends Node2D
 
+## Variables
 var player_movement: Vector2
-var player_direction: Vector2
 var mouse_position: Vector2
+
 @export var player_speed: float = 1
 
+
+## Engine functions
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -21,9 +24,9 @@ func _process(_delta: float) -> void:
 	#print(mouse_position)
 	
 #	apply movement to player
-	$".".translate(player_movement * player_speed)
+	translate(player_movement * player_speed)
 	#print(player_movement)
 	
 #	apply direction to player
-	$".".look_at(mouse_position)
+	look_at(mouse_position)
 	pass

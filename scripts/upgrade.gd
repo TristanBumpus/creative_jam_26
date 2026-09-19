@@ -7,13 +7,14 @@ var p_items
 @onready var player := get_tree().get_first_node_in_group("player")
 
 
-
+## gets level equivalent as id, and applies corresponding upgrade
 func upgrade_do_shit(p_or_f : int):
 	var id
 	if p_or_f == 1:
 		id = p_items[0]
 	else:
 		id = f_items[0]
+	#print(id)
 	
 	if id == 0:
 		player.damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
@@ -23,6 +24,8 @@ func upgrade_do_shit(p_or_f : int):
 		player.speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
 	if id == 3:
 		player.dodge_speed += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave)/10
+	if id == 5:
+		player.max_hp += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
 
 
 
@@ -33,7 +36,9 @@ func _ready() -> void:
 		futur_by = randi_range(1, 49 - global.wave)
 	
 	p_items = global.grab_loot(past_by - global.wave)
+	#print(p_items)
 	f_items = global.grab_loot(futur_by + global.wave)
+	#print(f_items)
 	
 	#Past item ui set up
 	$upgrade/past/option_1.text = global.all_upgrades[p_items[1]]["name"] + "\n" + global.all_upgrades[p_items[1]]["desc"] + str(global.all_upgrades[p_items[1]]["effect"] + global.all_upgrades[p_items[1]]["lvl mult"] * global.wave)

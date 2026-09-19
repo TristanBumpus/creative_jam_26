@@ -4,16 +4,11 @@ extends CharacterBody2D
 class_name projectiles
 
 
-enum effects {
-	burn,
-	freeze,
-	slow
-}
 
 @export var speed = 300
 @export var damage = 1
 var direction = Vector2.ZERO
-@export var effects_collection: Array[effects] = []
+@export var effects_collection: Array[global.effects] = []
 
 
 
@@ -30,11 +25,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		area.get_parent().current_hp -= damage
 		
 #		add target to proper debuff group if projectile inflicts an effect
-		if effects_collection.has(effects.burn):
+		if effects_collection.has(global.effects.burn):
 			area.get_parent().add_to_group("is_burned")
-		if effects_collection.has(effects.freeze):
+		if effects_collection.has(global.effects.freeze):
 			area.get_parent().add_to_group("is_frozen")
-		if effects_collection.has(effects.slow):
+		if effects_collection.has(global.effects.slow):
 			area.get_parent().add_to_group("is_slowed")
 			
 		queue_free()

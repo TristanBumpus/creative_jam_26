@@ -11,6 +11,12 @@ var all_upgrades = [
 	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5}
 	]
 
+enum effects {
+	burn,
+	freeze,
+	slow
+}
+
 var loot_table = {"commun" : [0,1,2], "rare" : [3, 5], "epic" : [4]}
 
 var loot_pool = []

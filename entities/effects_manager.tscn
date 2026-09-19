@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://xxrmm5avvavu"]
+
+[ext_resource type="Script" uid="uid://c3hmt042lwf75" path="res://scripts/effects_manager.gd" id="1_2sl5b"]
+
+[node name="effects_manager" type="Node2D" unique_id=879400051]
+script = ExtResource("1_2sl5b")
+
+[node name="fire_duration" type="Timer" parent="." unique_id=230484741]
+wait_time = 0.5
+one_shot = true

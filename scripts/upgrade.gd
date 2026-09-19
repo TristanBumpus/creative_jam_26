@@ -19,21 +19,21 @@ func upgrade_do_shit(p_or_f : int):
 		scaling = f_items[0]
 	
 	if id == 0:
-		player.damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
+		player.damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
 	if id == 1:
-		player.attack_speed -= (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave)/10
+		player.attack_speed -= (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling)/10
 	if id == 2:
-		player.speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave
+		player.speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
 	if id == 3:
-		player.dodge_speed += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * global.wave)/10
+		player.dodge_speed += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling)/10
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if global.wave != 1:
-		past_by = randi_range(0, global.wave - 1)
-		futur_by = randi_range(global.wave + 1, 49)
+		past_by = randi_range(1, 10)
+		futur_by = randi_range(1, 10)
 	
 	$upgrade/past/Label.text = "Wave " + str(global.wave - past_by)
 	p_items = global.grab_loot(global.wave - past_by)
@@ -57,20 +57,20 @@ func _process(delta: float) -> void:
 func _on_p_option_1_pressed() -> void:
 	upgrade_do_shit(1)
 	queue_free()
-	global.generate_wave()
+	global.generate_wave(-past_by)
 
 
 func _on_p_option_2_pressed() -> void:
 	queue_free()
-	global.generate_wave()
+	global.generate_wave(-past_by)
 
 
 func _on_f_option_1_pressed() -> void:
 	upgrade_do_shit(2)
 	queue_free()
-	global.generate_wave()
+	global.generate_wave(futur_by)
 
 
 func _on_f_option_2_pressed() -> void:
 	queue_free()
-	global.generate_wave()
+	global.generate_wave(futur_by)

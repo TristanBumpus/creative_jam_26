@@ -11,7 +11,7 @@ var mouse_position: Vector2
 @export var dodge_speed = 10
 var dodge_time = .1
 @export var speed_mod = 1
-var can_dodge = false
+var can_dodge = true
 @export var attack_speed = .7
 var projectile = "res://entities/projectils/basic_projectile.tscn"
 
@@ -25,8 +25,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	if Input.is_action_just_pressed("shift") and speed_mod == 1:
+	if Input.is_action_just_pressed("shift") and speed_mod == 1 and can_dodge:
 		speed_mod = dodge_speed
+		can_dodge = false
+		$Area2D/CollisionShape2D.disabled = true
 		$dodge_time.start(dodge_time)
 	
 	#get input for movement
@@ -48,6 +50,7 @@ func _process(_delta: float) -> void:
 
 func _on_dodge_time_timeout() -> void:
 	speed_mod = 1
+	$Area2D/CollisionShape2D.disabled = false
 	$dodge_cooldown.start()
 
 

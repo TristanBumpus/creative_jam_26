@@ -15,7 +15,7 @@ var loot_table = {"commun" : [0,1,2], "rare" : [3, 5], "epic" : [4]}
 
 var loot_pool = []
 var enemy_table = ["res://entities/enemies/enemy_charger.tscn","res://entities/enemies/enemy_chaser.tscn"]
-var wave = 1
+var wave = 0
 var enemies_to_spawn = []
 @onready var player := get_tree().get_first_node_in_group("player")
 
@@ -28,18 +28,24 @@ func select_loot(level: int, index : int):
 	loot_pool[level][index] *= -1
 	return loot_pool[level][index]
 
-func generate_wave():
+func generate_wave(dif):
 	wave += 1
 	var num_enemies = (2*wave**3)/4 + 2
-	
+	print(dif)
 	for i in num_enemies:
 		enemies_to_spawn += [enemy_table.pick_random()]
 	
+	var random = randf_range(2,10)
+	var enmies_to_change = int(num_enemies / random)
+	
 	for child in global.enemies_to_spawn:
-			var enemy = load(global.enemies_to_spawn.pop_front()).instantiate()
-			get_tree().current_scene.add_child(enemy)
-			var random_angle: float = randf_range(0.0, TAU)
-			enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 7500
+		var enemy = load(global.enemies_to_spawn.pop_front()).instantiate()
+		get_tree().current_scene.add_child(enemy)
+		if enmies_to_change > 0:
+			enemy.level = wave + dif
+			enmies_to_change -= 1
+		var random_angle: float = randf_range(0.0, TAU)
+		enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 3500
 
 
 # Called when the node enters the scene tree for the first time.

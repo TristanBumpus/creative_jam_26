@@ -32,18 +32,28 @@ func charge_attach():
 
 
 func _ready() -> void:
+	
 	if level == 0:
 		level = global.wave
 	max_hp = randi_range(1 * level, max_hp * level)
 	damage = randi_range(1 * level, damage * level)
 	speed = randi_range(5 * level, speed * level) + 500
+	
+	current_hp = max_hp
 
 func _process(delta: float) -> void:
 	if current_hp <= 0:
+		print("S")
 		queue_free()
 	if type == "charger":
 		
 		charge_attach()
+	
+	if level > global.wave:
+		scale = Vector2(20,20)
+		print("S")
+	if level < global.wave:
+		scale = Vector2(5,5)
 	
 	movement()
 	

@@ -2,14 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dvaa3bwldc8sl" path="res://scripts/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://cs7nwficx37d5" path="res://icon.svg" id="2_b0kkn"]
-[ext_resource type="PackedScene" uid="uid://dhr066rjldtad" path="res://entities/projectiles/basic_projectile.tscn" id="2_qly61"]
 [ext_resource type="PackedScene" uid="uid://r26ghmmhy1tk" path="res://anims/player_anims.tscn" id="3_e4p34"]
-[ext_resource type="PackedScene" uid="uid://dfwpt74phbj88" path="res://entities/projectiles/fire_projectile.tscn" id="3_qsoyl"]
-[ext_resource type="PackedScene" uid="uid://bk35ocxg7064c" path="res://entities/projectiles/ice_projectile.tscn" id="4_i623q"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="4_rfe5m"]
-[ext_resource type="PackedScene" uid="uid://civbq2d2av2og" path="res://entities/projectiles/poison_projectile.tscn" id="5_ef06p"]
-[ext_resource type="PackedScene" uid="uid://yjm2biowiwy4" path="res://entities/projectiles/piercing_projectile.tscn" id="6_ef06p"]
-[ext_resource type="PackedScene" uid="uid://pfmnjy4sabe8" path="res://entities/projectiles/bouncing_projectile.tscn" id="7_tjdhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
 size = Vector2(515, 600)
@@ -22,7 +16,6 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_merdl")
 speed = 1000.0
-projectiles_acquired = Array[Resource]([ExtResource("2_qly61"), ExtResource("3_qsoyl"), ExtResource("4_i623q"), ExtResource("5_ef06p"), ExtResource("6_ef06p"), ExtResource("7_tjdhl")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=6536281]
 scale = Vector2(0.25, 0.25)

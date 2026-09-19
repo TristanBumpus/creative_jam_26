@@ -71,6 +71,18 @@ grow_vertical = 0
 max_value = 5.0
 value = 3.0
 
+[node name="desc" type="Label" parent="upgrade/past" unique_id=69659525]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -2200.0
+offset_right = 4500.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 320
+text = "Pulls weaker enemies and upgrades from the past."
+autowrap_mode = 3
+
 [node name="future" type="Control" parent="upgrade" unique_id=2107010165]
 layout_mode = 1
 anchors_preset = 15
@@ -117,6 +129,21 @@ offset_top = 26.0
 offset_bottom = 86.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="desc" type="Label" parent="upgrade/future" unique_id=461487360]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4500.0
+offset_top = -2200.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 320
+text = "Pulls stronger enemies and upgrades from future."
+autowrap_mode = 3
 
 [node name="HSlider" type="HSlider" parent="upgrade/future" unique_id=818916393]
 visible = false

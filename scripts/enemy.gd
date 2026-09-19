@@ -9,8 +9,8 @@ var current_hp = 1
 @export var speed = 1
 @export var damage = 1
 @export var level = 0
-@export var attack_range = 128
-@export var dash_speed = 5
+@export var attack_range = 258
+@export var dash_speed = 8
 var speed_mod: float = 1
 var direction = Vector2.ZERO
 
@@ -32,18 +32,28 @@ func charge_attach():
 
 
 func _ready() -> void:
+	
 	if level == 0:
 		level = global.wave
 	max_hp = randi_range(1 * level, max_hp * level)
 	damage = randi_range(1 * level, damage * level)
 	speed = randi_range(5 * level, speed * level) + 500
+	
+	current_hp = max_hp
 
 func _process(delta: float) -> void:
 	if current_hp <= 0:
+		print("S")
 		queue_free()
 	if type == "charger":
 		
 		charge_attach()
+	
+	if level > global.wave:
+		scale = Vector2(20,20)
+		print("S")
+	if level < global.wave:
+		scale = Vector2(5,5)
 	
 	movement()
 	
@@ -64,8 +74,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_knock_back_timeout() -> void:
-	if $cooldown != null and $cooldown.is_stopped():
-		speed_mod = 1
+	if has_node("cooldown"): 
+		if $cooldown.is_stopped():
+			speed_mod = 1
+		else:
+			speed_mod = 0
 	else:
 		speed_mod = 0
 

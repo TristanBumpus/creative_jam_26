@@ -6,24 +6,24 @@
 [sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u8ib"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_f0tem"]
+radius = 7.5026655
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn83b"]
 size = Vector2(32, 32)
 
-[node name="enemy_1" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
+[node name="enemy_chaser" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
 scale = Vector2(10, 10)
 script = ExtResource("1_i3l3x")
-max_hp = 5
-speed = 500
+max_hp = 30
+speed = 200
 damage = 6
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1343537944]
 mesh = SubResource("QuadMesh_7u8ib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139975863]
-shape = SubResource("RectangleShape2D_7u8ib")
+shape = SubResource("CircleShape2D_f0tem")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=232678710]
 

@@ -7,7 +7,7 @@ var mouse_position: Vector2
 @export var max_hp: float = 100
 @export var current_hp: float = 100
 @export var damage: float = 10
-@export var player_speed: float = 10
+@export var speed: float = 10
 @export var dodge_speed = 5
 var dodge_time = .1
 @export var speed_mod = 1
@@ -25,7 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	if Input.is_action_just_pressed("shirt") and speed_mod == 1:
+	if Input.is_action_just_pressed("shift") and speed_mod == 1:
 		speed_mod = dodge_speed
 		$dodge_time.start(dodge_time)
 	
@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 	#print(mouse_position)
 	
 #	apply movement to player
-	velocity = player_movement * player_speed * speed_mod
+	velocity = player_movement * speed * speed_mod
 	#print(player_movement)
 	
 #	apply direction to player

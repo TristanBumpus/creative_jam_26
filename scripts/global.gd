@@ -24,8 +24,8 @@ func grab_loot(level : int):
 
 
 func select_loot(level: int, index : int):
-	return loot_pool[level][index]
 	loot_pool[level][index] *= -1
+	return loot_pool[level][index]
 
 func generate_wave():
 	wave += 1

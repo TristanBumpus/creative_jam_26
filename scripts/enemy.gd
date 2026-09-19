@@ -11,7 +11,7 @@ var current_hp = 1
 @export var level = 0
 @export var attack_range = 128
 @export var dash_speed = 5
-var speed_mod = 1
+var speed_mod: float = 1
 var direction = Vector2.ZERO
 
 @onready var player := get_tree().get_first_node_in_group("player")

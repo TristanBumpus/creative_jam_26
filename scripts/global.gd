@@ -7,7 +7,7 @@ var all_upgrades = [
 	{"name": "Attack Speed up", "desc": "Increases attack speed by ", "effect": 2, "lvl mult": 1.5 },
 	{"name": "Speed up", "desc": "Increases speed by ", "effect": 2, "lvl mult": 2 },
 	{"name": "Dodge time", "desc": "Increases Dodge Time by ", "effect": .2, "lvl mult": .1 },
-	{"name": "Fire Ball", "desc": "Cast explosive Fire Balls ", "effect": 1, "lvl mult": 1 },
+	{"name": "Fire Ball", "desc": "Cast explosive Fire Balls ", "effect": 1, "lvl mult": .1 },
 	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5}
 	]
 

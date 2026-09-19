@@ -3,14 +3,15 @@ extends Node
 var seed = RandomNumberGenerator.new()
 
 var all_upgrades = [
-	{"name" : "Damage up", "desc":"Increases Damage by ", "effect": 2, "lvl mult" : 2 },
-	{"name" : "Attack Speed up", "desc":"Increases attack speed by ", "effect": 2, "lvl mult" : 1.5 },
-	{"name" : "Speed up", "desc":"Increases speed by ", "effect": 2, "lvl mult" : 2 },
-	{"name" : "Dodge time", "desc":"Increases Dodge Time by ", "effect": .2, "lvl mult" : .1 },
-	{"name" : "Fire Ball", "desc":"Cast explosive Fire Balls ", "effect": 1, "lvl mult" : 1 },
+	{"name": "Damage up", "desc": "Increases Damage by ", "effect": 2, "lvl mult": 2 },
+	{"name": "Attack Speed up", "desc": "Increases attack speed by ", "effect": 2, "lvl mult": 1.5 },
+	{"name": "Speed up", "desc": "Increases speed by ", "effect": 2, "lvl mult": 2 },
+	{"name": "Dodge time", "desc": "Increases Dodge Time by ", "effect": .2, "lvl mult": .1 },
+	{"name": "Fire Ball", "desc": "Cast explosive Fire Balls ", "effect": 1, "lvl mult": 1 },
+	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": 1.1}
 	]
 
-var loot_table = {"commun" : [0,1,2], "rare" : [3], "epic" : [4]}
+var loot_table = {"commun" : [0,1,2], "rare" : [3, 5], "epic" : [4]}
 
 var loot_pool = []
 var enemy_table = ["res://entities/enemies/enemy_charger.tscn","res://entities/enemies/enemy_chaser.tscn"]
@@ -24,8 +25,8 @@ func grab_loot(level : int):
 
 
 func select_loot(level: int, index : int):
-	return loot_pool[level][index]
 	loot_pool[level][index] *= -1
+	return loot_pool[level][index]
 
 func generate_wave():
 	wave += 1
@@ -61,6 +62,7 @@ func _ready() -> void:
 			#else:
 				#items = []
 		
+		# [level (wave) equivalent, corresponding upgrade (item)]
 		loot_pool += [[i] + items]
 	print(loot_pool)
 

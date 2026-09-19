@@ -13,7 +13,9 @@ config_version=5
 config/name="creative_jam_26"
 run/main_scene="uid://ce22ymbp0d50c"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://cpnkam72k54sq"
+config/icon="uid://cpnkam72k54sq"
 
 [autoload]
 

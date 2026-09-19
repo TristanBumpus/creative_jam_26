@@ -5,7 +5,7 @@ class_name enemies
 
 @export var max_hp = 1
 @export_enum("chaser","charger") var type = "chaser"
-var current_hp = 10
+var current_hp = 1
 @export var speed = 1
 @export var damage = 1
 @export var level = 0

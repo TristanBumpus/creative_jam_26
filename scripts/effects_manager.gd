@@ -26,9 +26,9 @@ func apply_effect(effect: global.effects):
 		global.effects.burn:
 			#print("burn")
 			target.add_to_group("is_burned")
-			print("target hp before fire tick: ", target.current_hp)
+			#print("target hp before fire tick: ", target.current_hp)
 			target.current_hp -= fire_damage
-			print("target hp after fire tick: ", target.current_hp)
+			#print("target hp after fire tick: ", target.current_hp)
 			$fire_duration.start()
 		global.effects.freeze:
 			#print("freeze")

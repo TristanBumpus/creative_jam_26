@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bgwaj2s8ekm4m"]
+
+[node name="laser_impact" type="Node2D" unique_id=2051596197]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=653860427]
+gravity = Vector2(0, 0)

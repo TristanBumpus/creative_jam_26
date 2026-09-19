@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://7cckmump88is"]
+
+[sub_resource type="Curve" id="Curve_5urd5"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_oye72"]
+_data = [Vector2(0.031914897, 0.5393259), 6.571786, 2.957303, 0, 0, Vector2(0.9042554, 0.57303375), -1.1221907, -1.1221907, 0, 0, Vector2(1, 0.022471905), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_mjf7f"]
+offsets = PackedFloat32Array(0.49382716, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="blood_impact" type="Node2D" unique_id=1381393536]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=111069926]
+emitting = false
+amount = 32
+lifetime = 0.35000000000000003
+one_shot = true
+explosiveness = 0.5
+direction = Vector2(10, 0)
+spread = 75.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+damping_max = 10.0
+damping_curve = SubResource("Curve_5urd5")
+scale_amount_curve = SubResource("Curve_oye72")
+color_ramp = SubResource("Gradient_mjf7f")

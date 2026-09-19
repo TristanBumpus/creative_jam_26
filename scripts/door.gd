@@ -1,8 +1,6 @@
 extends StaticBody2D
 
 var locked = false
-var width = 512
-var height = 352
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

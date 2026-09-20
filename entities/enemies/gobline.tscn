@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_5v2lb"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="2_7hcpa"]
 [ext_resource type="Texture2D" uid="uid://87ce5bljxsox" path="res://assets/goblin/gobSheet.png" id="3_5v2lb"]
+[ext_resource type="AudioStream" uid="uid://b070kdmxd6dk5" path="res://assets/audio/sfx/GobHurt.01.mp3" id="4_7hcpa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mrxgc"]
 radius = 193.16573
@@ -61,4 +62,8 @@ autoplay = "default"
 frame_progress = 0.6168011
 flip_h = true
 
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1015343890]
+
+[node name="audio_hurt" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=989564501]
+stream = ExtResource("4_7hcpa")
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]

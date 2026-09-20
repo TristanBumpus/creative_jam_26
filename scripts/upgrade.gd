@@ -34,6 +34,12 @@ func upgrade_do_shit(p_or_f : int):
 		player.projectiles_acquired.append(preload("res://entities/projectiles/ice_projectile.tscn"))
 	if id == 7:
 		player.projectiles_acquired.append(preload("res://entities/projectiles/poison_projectile.tscn"))
+	if id == 8:
+		player.dash_damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+	if id == 9:
+		player.bullet_pierce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+	if id == 10:
+		player.bullet_bounce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
 
 
 

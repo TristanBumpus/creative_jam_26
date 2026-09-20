@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cv50xxmpv136n"]
+
+[ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_5v2lb"]
+[ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="2_7hcpa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mrxgc"]
+radius = 175.01143
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfb6f"]
+size = Vector2(600, 354)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1jud"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="gobline" type="CharacterBody2D" unique_id=508665963]
+script = ExtResource("1_5v2lb")
+metadata/_custom_type_script = "uid://b7tw2pv5u77il"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213353201]
+position = Vector2(17, 209)
+shape = SubResource("CircleShape2D_mrxgc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2020194517]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1508816231]
+position = Vector2(51, 154)
+shape = SubResource("RectangleShape2D_xfb6f")
+
+[node name="knock_back" type="Timer" parent="." unique_id=788599495]
+wait_time = 0.2
+one_shot = true
+
+[node name="effects_manager" parent="." unique_id=879400051 instance=ExtResource("2_7hcpa")]
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1061384919]
+sprite_frames = SubResource("SpriteFrames_y1jud")
+autoplay = "default"

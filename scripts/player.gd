@@ -56,6 +56,11 @@ func _process(_delta: float) -> void:
 	#apply direction to player
 	#look_at(mouse_position)
 	
+	if velocity.x > 0:
+		$player_anims.scale.x = 1
+	if velocity.x < 0:
+		$player_anims.scale.x = -1
+	
 	move_and_slide()
 
 

@@ -49,12 +49,18 @@ func _process(delta: float) -> void:
 		charge_attach()
 	
 	if level > global.wave:
-		scale = Vector2(20,20)
-	if level < global.wave:
-		scale = Vector2(5,5)
+		scale = Vector2(1.2,1.2)
+	elif level < global.wave:
+		scale = Vector2(.8,.8)
+	else:
+		scale = Vector2(1,1)
+	
+	if velocity.x > 0:
+		$sprite.scale.x = -1
+	else:
+		$sprite.scale.x = 1
 	
 	movement()
-	
 	
 	move_and_slide()
 

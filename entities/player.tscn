@@ -13,6 +13,7 @@ size = Vector2(515, 600)
 size = Vector2(515, 600)
 
 [node name="player" type="CharacterBody2D" unique_id=523884040 groups=["player"]]
+top_level = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_merdl")
@@ -20,6 +21,7 @@ speed = 3000.0
 dodge_speed = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=6536281]
+visible = false
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_b0kkn")
 

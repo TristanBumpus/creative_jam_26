@@ -28,6 +28,11 @@ var can_move = true
 
 func change_scene():
 	global.generate_wave(0)
+	var t = create_tween()
+	print(global.wave)
+	print(((global.wave) / 12.0) * 360)
+	t.tween_property($cont/hand,"rotation_degrees",((global.wave - 1) / 12.0) * 360,1)
+	#t.tween_property($cont/hand,"rotation_degrees",90,1)
 	$cont/falling_character.visible = true
 	$cont/falling_character/AnimationPlayer.play("falling")
 	can_move = false

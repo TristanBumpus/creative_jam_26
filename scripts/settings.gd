@@ -91,7 +91,7 @@ func _on_music_pressed() -> void:
 
 func _on_sfx_pressed() -> void:
 	
-	$sfx.text = "SFX " + str()
+	$sfx.text = "SFX " + str(sfx)
 	
 	sfx += 1
 	if sfx > 10:

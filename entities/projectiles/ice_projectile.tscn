@@ -15,6 +15,7 @@ effects_collection = Array[int]([1])
 modulate = Color(0, 1, 1, 1)
 
 [node name="PointLight2D2" type="PointLight2D" parent="." index="3" unique_id=1391133153]
+visible = false
 texture = ExtResource("3_pf1k1")
 texture_scale = 5.0
 
@@ -29,10 +30,9 @@ position = Vector2(0.49999988, 5.9604645e-08)
 
 [node name="PointLight2D3" type="PointLight2D" parent="." index="7" unique_id=374359153]
 color = Color(0, 0.36078432, 1, 1)
+energy = 0.8
 texture = ExtResource("4_pf1k1")
+texture_scale = 0.3
 
 [node name="PointLight2D" parent="." index="8" unique_id=2077939542]
 visible = false
-
-[node name="audio_projectile" parent="AudioListener2D" parent_id_path=PackedInt32Array(199487171) index="0" unique_id=1438076940]
-stream = null

@@ -2067,7 +2067,7 @@ _data = {
 }
 
 [sub_resource type="Curve" id="Curve_gq60m"]
-_limits = [0.0, 1.5, 0.0, 1.0]
+_limits = [-1.0, 1.5, 0.0, 1.0]
 _data = [Vector2(0, 0.8809523), 0.0, 0.0, 0, 0, Vector2(0.20000002, 1.5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 

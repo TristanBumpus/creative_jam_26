@@ -44,6 +44,7 @@ bounce_area_x=""
 [gui]
 
 theme/custom="uid://6dhpqbaas84f"
+theme/custom_font="uid://c4dxq63keu4x8"
 
 [input]
 
@@ -101,3 +102,4 @@ esc={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

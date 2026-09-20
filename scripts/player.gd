@@ -118,30 +118,31 @@ func _on_dodge_cooldown_timeout() -> void:
 
 
 func _on_attack_timer_timeout() -> void:
-	#var p = load(projectile).instantiate()
-	var shouting_projectile := projectiles_acquired[current_projectile]
-	#print(shouting_projectile.resource_path)
-	#print(projectile_count_by_type[shouting_projectile.resource_path])
-	var angle_distance: float = 360 / projectile_count_by_type[shouting_projectile.resource_path]
-	var cumulative_angles: float = 0
-	#print(angle_distance)
-	for i in range(projectile_count_by_type[shouting_projectile.resource_path]):
-		var p: projectile = shouting_projectile.instantiate()
+	if can_move:
+		#var p = load(projectile).instantiate()
+		var shouting_projectile := projectiles_acquired[current_projectile]
+		#print(shouting_projectile.resource_path)
+		#print(projectile_count_by_type[shouting_projectile.resource_path])
+		var angle_distance: float = 360 / projectile_count_by_type[shouting_projectile.resource_path]
+		var cumulative_angles: float = 0
+		#print(angle_distance)
+		for i in range(projectile_count_by_type[shouting_projectile.resource_path]):
+			var p: projectile = shouting_projectile.instantiate()
+			
+			current_projectile += 1
+			
+			if current_projectile >= projectiles_acquired.size():
+				current_projectile = 0
+			
+			p.global_position = global_position
+			p.direction = (mouse_position - global_position).normalized()
+			p.direction = p.direction.rotated(deg_to_rad(cumulative_angles))
+			cumulative_angles += angle_distance
+			p.damage = damage
+			p.bounce_limit = bullet_bounce
+			p.pierce_limit = bullet_pierce
+			get_tree().current_scene.add_child(p)
 		
-		current_projectile += 1
-		
-		if current_projectile >= projectiles_acquired.size():
-			current_projectile = 0
-		
-		p.global_position = global_position
-		p.direction = (mouse_position - global_position).normalized()
-		p.direction = p.direction.rotated(deg_to_rad(cumulative_angles))
-		cumulative_angles += angle_distance
-		p.damage = damage
-		p.bounce_limit = bullet_bounce
-		p.pierce_limit = bullet_pierce
-		get_tree().current_scene.add_child(p)
-	
 	$attack_timer.start(attack_speed)
 
 

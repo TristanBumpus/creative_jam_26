@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://do2d3204p6q8x" path="res://assets/stuff/juicyskull1.png" id="5_v5nup"]
 [ext_resource type="Texture2D" uid="uid://c4gj4wjxat2pi" path="res://assets/stuff/juicyskull2.png" id="6_6x84l"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
+
 [sub_resource type="Theme" id="Theme_7u8ib"]
 
 [sub_resource type="Animation" id="Animation_jd3lo"]
@@ -73,11 +75,18 @@ _data = {
 [node name="upgrade" type="CanvasLayer" unique_id=1679262284]
 script = ExtResource("1_141gf")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=935522017]
+modulate = Color(0, 0, 0, 0.23529412)
+position = Vector2(6141.75, 3556.25)
+scale = Vector2(12284.5, 7113.5)
+mesh = SubResource("QuadMesh_7u8ib")
+
 [node name="choose_orbs_anim" parent="." unique_id=604326248 instance=ExtResource("2_pgj5t")]
 position = Vector2(5582, 6469)
 scale = Vector2(8, 8)
 
 [node name="upgrade" type="Control" parent="." unique_id=2065623402]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -159,9 +168,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 360.0
-offset_top = 632.0
+offset_top = 390.0
 offset_right = 360.0
-offset_bottom = 960.0
+offset_bottom = 718.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 240
 text = "Wave"
@@ -321,9 +330,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = -360.0
-offset_top = 613.0
+offset_top = 267.0
 offset_right = -360.0
-offset_bottom = 941.0
+offset_bottom = 595.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 240
 horizontal_alignment = 1

@@ -18,8 +18,8 @@ size = Vector2(515, 600)
 
 [node name="player" type="CharacterBody2D" unique_id=523884040 groups=["player"]]
 z_index = 10
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_merdl")
 speed = 3000.0
 dodge_speed = 5

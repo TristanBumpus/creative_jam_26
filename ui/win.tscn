@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bqsirnhw7xxct"]
+
+[ext_resource type="Script" uid="uid://cl3p2sbaw8b6e" path="res://scripts/main_menu.gd" id="1_xn20x"]
+[ext_resource type="AudioStream" uid="uid://csb6n0g6sc75u" path="res://music/song3-mainmenu.mp3" id="2_0mv1c"]
+[ext_resource type="Texture2D" uid="uid://8k64uxio36sa" path="res://assets/stuff/logo1.png" id="3_e1bux"]
+[ext_resource type="Texture2D" uid="uid://dxtflfe8oy4wd" path="res://assets/stuff/logo2.png" id="4_5frsq"]
+
+[node name="MainMenu" type="Control" unique_id=279280552]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xn20x")
+
+[node name="Label" type="Label" parent="." unique_id=1225029860]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -6643.0
+offset_top = 3912.0
+offset_right = 3586.0
+offset_bottom = 7319.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 800
+text = "Thanks for playing"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="start" type="Button" parent="." unique_id=1744670157]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2797.0
+offset_top = -1558.0
+offset_right = 5612.0
+offset_bottom = -175.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 640
+text = "Start"
+
+[node name="Song3Mainmenu" type="AudioStreamPlayer" parent="." unique_id=766707333]
+stream = ExtResource("2_0mv1c")
+autoplay = true
+bus = &"music"
+
+[node name="Logo1" type="Sprite2D" parent="." unique_id=1970583640]
+position = Vector2(5178, 1465)
+scale = Vector2(6.029175, 6.0291753)
+texture = ExtResource("3_e1bux")
+
+[node name="Logo2" type="Sprite2D" parent="." unique_id=923572193]
+position = Vector2(6327, 3459.0002)
+scale = Vector2(4.461249, 4.4612494)
+texture = ExtResource("4_5frsq")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]

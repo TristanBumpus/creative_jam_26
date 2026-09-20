@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bp0kevpxo5f6d" path="res://scripts/settings.gd" id="1_7kwmf"]
 [ext_resource type="Theme" uid="uid://6dhpqbaas84f" path="res://theme.tres" id="2_pcnwc"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
+size = Vector2(100000, 100000)
+
 [node name="settings" type="Control" unique_id=1236409158]
 process_mode = 3
 layout_mode = 3
@@ -12,6 +15,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7kwmf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1626772265]
+modulate = Color(0, 0, 0, 0.3647059)
+mesh = SubResource("QuadMesh_7u8ib")
 
 [node name="Label" type="Label" parent="." unique_id=477826744]
 layout_mode = 0

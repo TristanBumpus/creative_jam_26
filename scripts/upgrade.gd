@@ -73,14 +73,19 @@ func change_level():
 
 func _ready() -> void:
 	if global.wave != 1:
-		past_by = randi_range(1, global.wave - 1)
-		futur_by = randi_range(1, 5)
+		while true:
+			past_by = randi_range(1, global.wave - 1)
+			futur_by = randi_range(1, 5)
+			p_items = global.grab_loot(global.wave - past_by)
+			f_items = global.grab_loot(futur_by + global.wave)
+			if f_items[1] != p_items[1]:
+				break
+	
+	
 	
 	$upgrade/past/Label.text = "Wave " + str(global.wave - past_by)
-	p_items = global.grab_loot(global.wave - past_by)
 	
 	$upgrade/future/Label.text = "Wave " + str(futur_by + global.wave)
-	f_items = global.grab_loot(futur_by + global.wave)
 	
 	#Past item ui set up
 	if global.all_upgrades[p_items[1]]["effect"] != 0:
@@ -110,6 +115,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("click"):
+		#$choose_orbs_anim/general_anim.
+		var anim = $choose_orbs_anim/general_anim.get_animation("intro")
+		$choose_orbs_anim/general_anim.seek(anim.length, true)
+		$upgrade.visible = true
+	
+	
 	if $upgrade/option_1.is_hovered() and direction != 1:
 		direction = 1
 		$choose_orbs_anim/interact_anim.play("left")

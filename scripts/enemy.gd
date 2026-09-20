@@ -19,6 +19,7 @@ var direction = Vector2.ZERO
 
 
 func movement():
+	#test
 	if speed_mod <= 1:
 		direction = (player.global_position - global_position).normalized()
 	

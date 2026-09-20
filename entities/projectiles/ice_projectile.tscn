@@ -13,7 +13,7 @@ effects_collection = Array[int]([1])
 [node name="MeshInstance2D" parent="." index="0" unique_id=737897609]
 modulate = Color(0, 1, 1, 1)
 
-[node name="PointLight2D" type="PointLight2D" parent="." index="3" unique_id=1391133153]
+[node name="PointLight2D2" type="PointLight2D" parent="." index="3" unique_id=1391133153]
 texture = ExtResource("3_pf1k1")
 texture_scale = 5.0
 
@@ -26,6 +26,10 @@ visible = false
 [node name="ice_impact" parent="." index="6" unique_id=786867677 instance=ExtResource("2_63a3g")]
 position = Vector2(0.49999988, 5.9604645e-08)
 
-[node name="PointLight2D2" type="PointLight2D" parent="." index="7" unique_id=374359153]
+[node name="PointLight2D3" type="PointLight2D" parent="." index="7" unique_id=374359153]
 color = Color(0, 0.36078432, 1, 1)
+energy = 4.0
 texture = ExtResource("4_pf1k1")
+
+[node name="PointLight2D" parent="." index="8" unique_id=2077939542]
+visible = false

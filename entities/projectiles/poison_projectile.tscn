@@ -19,4 +19,5 @@ position = Vector2(-0.29999998, 0.100000024)
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="4" unique_id=910430248]
 color = Color(1, 0.36078432, 1, 1)
+energy = 4.0
 texture = ExtResource("3_3mux1")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhr066rjldtad" path="res://entities/projectiles/basic_projectile.tscn" id="1_n3v4m"]
 [ext_resource type="PackedScene" uid="uid://bayx1fsjfhgrc" path="res://vfx/emile/fire_impact.tscn" id="2_05e4f"]
+[ext_resource type="Texture2D" uid="uid://b456bky5ofn0r" path="res://assets/a_light/light2.png" id="3_ctcir"]
 
 [node name="fire_projectile" unique_id=1302566286 instance=ExtResource("1_n3v4m")]
 speed = 1500
@@ -20,5 +21,9 @@ visible = false
 
 [node name="fire_impact" parent="." index="4" unique_id=1267353723 instance=ExtResource("2_05e4f")]
 position = Vector2(-0.100000024, 0.19999957)
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="5" unique_id=2077939542]
+color = Color(1, 0.36078432, 0, 1)
+texture = ExtResource("3_ctcir")
 
 [connection signal="timeout" from="aoe_duration" to="." method="_on_aoe_duration_timeout"]

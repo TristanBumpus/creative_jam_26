@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://r26ghmmhy1tk" path="res://anims/player_anims.tscn" id="3_e4p34"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="4_rfe5m"]
 [ext_resource type="PackedScene" uid="uid://dtsy7xbiwcw3f" path="res://ui/ui.tscn" id="5_qly61"]
+[ext_resource type="PackedScene" uid="uid://lk8lnhi5mf4y" path="res://anims/falling_character.tscn" id="6_qsoyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
 size = Vector2(515, 126)
@@ -50,6 +51,8 @@ z_index = 10
 [node name="effects_manager" parent="." unique_id=879400051 instance=ExtResource("4_rfe5m")]
 
 [node name="cont" parent="." unique_id=52708394 instance=ExtResource("5_qly61")]
+
+[node name="falling_character" parent="cont" unique_id=137031517 instance=ExtResource("6_qsoyl")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="dodge_time" to="." method="_on_dodge_time_timeout"]

@@ -23,11 +23,21 @@ var projectile_count_by_type: Dictionary[String, int] = {
 	"res://entities/projectiles/basic_projectile.tscn": 1
 }
 
+
+func change_scene():
+	$cont/falling_character.visible = true
+	$cont/falling_character/AnimationPlayer.play("falling")
+	await $cont/falling_character/AnimationPlayer.animation_finished
+	$cont/falling_character.visible = false
+
+
+
 #Engine functions
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$attack_timer.start(attack_speed)
 	current_hp = max_hp
+	change_scene()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,6 +54,9 @@ func _process(_delta: float) -> void:
 		can_dodge = false
 		$Area2D.monitorable = true
 		$dodge_time.start(dodge_time)
+		$player_anims/dash.emitting = true
+		$player_anims/dash2.emitting = true
+		$player_anims/dash3.emitting = true
 	
 	#get input for movement
 	player_movement = Vector2(Input.get_action_raw_strength("d") - Input.get_action_raw_strength("a"),Input.get_action_raw_strength("s") - Input.get_action_raw_strength("w")).normalized()
@@ -77,6 +90,9 @@ func _process(_delta: float) -> void:
 
 func _on_dodge_time_timeout() -> void:
 	speed_mod = 1
+	$player_anims/dash.emitting = false
+	$player_anims/dash2.emitting = false
+	$player_anims/dash3.emitting = false
 	$Area2D.monitorable = true
 	$dodge_cooldown.start()
 

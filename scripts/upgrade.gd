@@ -9,6 +9,7 @@ var direction = -1
 var levels = ["res://levels/level_2.tscn","res://levels/level_3.tscn","res://levels/level_4.tscn"]
 
 
+
 func upgrade_do_shit(p_or_f : int):
 	var id
 	var scaling
@@ -55,10 +56,11 @@ func change_level():
 	global.player.global_position = level.global_position
 	
 	$"../Camera2D".global_position = level.global_position
+	
+	global.player.change_scene()
 
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if global.wave != 1:
 		past_by = randi_range(1, global.wave - 1)

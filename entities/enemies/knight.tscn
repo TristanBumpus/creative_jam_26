@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="1_3l5n7"]
 [ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_blj22"]
 [ext_resource type="Texture2D" uid="uid://bqcenqm31lj4v" path="res://assets/knight/knightSheet.png" id="2_3l5n7"]
+[ext_resource type="AudioStream" uid="uid://bhvwk17gji0q3" path="res://assets/audio/sfx/KnightCharge.01.mp3" id="4_2bsw6"]
+[ext_resource type="AudioStream" uid="uid://c8e5k6irylrms" path="res://assets/audio/sfx/KnightRun.01.mp3" id="5_8ceye"]
+[ext_resource type="AudioStream" uid="uid://beyl4yjtomh44" path="res://assets/audio/sfx/KnightHurt.01.mp3" id="6_knkv2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymnet"]
 radius = 130.24593
@@ -70,6 +73,16 @@ one_shot = true
 [node name="cooldown" type="Timer" parent="." unique_id=793465926]
 one_shot = true
 
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=177814560]
+
+[node name="audio_charge" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=874643688]
+stream = ExtResource("4_2bsw6")
+
+[node name="audio_run" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=674225390]
+stream = ExtResource("5_8ceye")
+
+[node name="audio_hurt" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1954100067]
+stream = ExtResource("6_knkv2")
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]
 [connection signal="timeout" from="charge" to="." method="_on_charge_timeout"]
 [connection signal="timeout" from="charger" to="." method="_on_charger_timeout"]

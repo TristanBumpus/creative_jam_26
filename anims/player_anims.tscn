@@ -2269,3 +2269,5 @@ autoplay = &"idle"
 [node name="feet_anim" type="AnimationPlayer" parent="." unique_id=879858662]
 libraries/ = SubResource("AnimationLibrary_ab3ds")
 autoplay = &"idle"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=337027971]

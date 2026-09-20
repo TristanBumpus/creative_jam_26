@@ -19,6 +19,7 @@ collision_mask = 2
 script = ExtResource("1_merdl")
 speed = 3000.0
 dodge_speed = 5
+projectiles_acquired = Array[Resource]([ExtResource("7_tjdhl")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=6536281]
 visible = false

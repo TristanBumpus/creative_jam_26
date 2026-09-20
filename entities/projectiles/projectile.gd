@@ -9,6 +9,7 @@ var direction = Vector2.ZERO
 var pierce_count := 0
 @export var bounce_limit := 0
 var bounce_count := 0
+var bounce_area := Vector2.ONE
 @export var can_explode := false
 
 @export var effects_collection: Array[global.effects] = []
@@ -57,6 +58,19 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			pierce_count += 1
 		else:
 			queue_free()
+	
+	if area.is_in_group("bounce_area"):
+		#print("in bounce area")
+		if area.is_in_group("bounce_area_x"):
+			#print("bounce area x")
+			bounce_area.x = -1
+		else:
+			bounce_area.x = 1
+		if area.is_in_group("bounce_area_y"):
+			#print("bounce area y")
+			bounce_area.y = -1
+		else:
+			bounce_area.y = 1
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -65,7 +79,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if can_explode:
 			explode_projectile()
 		elif bounce_count < bounce_limit:
-			direction *= -1
+			#print(bounce_area)
+			direction.x *= bounce_area.x
+			direction.y *= bounce_area.y
 			bounce_count += 1
 		else:
 			queue_free()

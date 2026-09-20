@@ -9,7 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("e"):
+	$Label.visible = player_in
+	print(player_in)
+	if Input.is_action_just_pressed("e") and player_in:
 		var level_up = load("res://ui/upgrade.tscn").instantiate()
 		get_tree().current_scene.add_child(level_up)
 		queue_free()
@@ -21,4 +23,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	player_in = false
+	if area.get_parent().is_in_group("player"):
+		player_in = false

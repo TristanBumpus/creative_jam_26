@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brtbhxkth7ytb"]
 
 [ext_resource type="Script" uid="uid://cmvda08nlfu8n" path="res://scripts/upgrade.gd" id="1_141gf"]
+[ext_resource type="PackedScene" uid="uid://dr5b125mqfs7a" path="res://ui/choose_orbs_anim.tscn" id="2_pgj5t"]
 
 [sub_resource type="Theme" id="Theme_7u8ib"]
 
@@ -256,6 +257,10 @@ grow_horizontal = 2
 grow_vertical = 0
 max_value = 5.0
 value = 3.0
+
+[node name="choose_orbs_anim" parent="." unique_id=604326248 instance=ExtResource("2_pgj5t")]
+position = Vector2(5902, 2570)
+scale = Vector2(15, 15)
 
 [connection signal="pressed" from="upgrade/past/option_1" to="." method="_on_p_option_1_pressed"]
 [connection signal="pressed" from="upgrade/past/option_2" to="." method="_on_p_option_2_pressed"]

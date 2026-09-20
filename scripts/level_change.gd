@@ -8,6 +8,8 @@ extends Node2D
 @export var door_right : StaticBody2D
 @export var door_left : StaticBody2D
 
+var levels = ["res://levels/level_2.tscn","res://levels/level_3.tscn","res://levels/level_4.tscn"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -20,7 +22,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("player"):
-		var level = load("res://levels/level_1.tscn").instantiate()
+		var level = load(levels.pick_random()).instantiate()
 		
 		
 		get_tree().current_scene.add_child(level)
@@ -55,7 +57,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_up_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("player"):
-		var level = load("res://levels/level_1.tscn").instantiate()
+		var level = load(levels.pick_random()).instantiate()
 		
 		
 		get_tree().current_scene.add_child(level)
@@ -72,7 +74,7 @@ func _on_up_area_entered(area: Area2D) -> void:
 
 func _on_down_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("player"):
-		var level = load("res://levels/level_1.tscn").instantiate()
+		var level = load(levels.pick_random()).instantiate()
 		
 		
 		get_tree().current_scene.add_child(level)
@@ -89,7 +91,7 @@ func _on_down_area_entered(area: Area2D) -> void:
 
 func _on_left_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("player"):
-		var level = load("res://levels/level_1.tscn").instantiate()
+		var level = load(levels.pick_random()).instantiate()
 		
 		
 		get_tree().current_scene.add_child(level)
@@ -106,7 +108,7 @@ func _on_left_area_entered(area: Area2D) -> void:
 
 func _on_right_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("player"):
-		var level = load("res://levels/level_1.tscn").instantiate()
+		var level = load(levels.pick_random()).instantiate()
 		
 		
 		get_tree().current_scene.add_child(level)

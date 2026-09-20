@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dlkoexsjo7ysv" path="res://entities/player.tscn" id="2_ve8qb"]
 [ext_resource type="Script" uid="uid://dn88syjqcbyq" path="res://scripts/level_manager.gd" id="3_hwdco"]
+[ext_resource type="PackedScene" uid="uid://dy1jkcurky0wp" path="res://entities/boss.tscn" id="4_6traj"]
 [ext_resource type="PackedScene" uid="uid://1xe88khkry3g" path="res://levels/level_1.tscn" id="5_n5hkc"]
 
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=64985147]
-zoom = Vector2(1.5, 1.5)
 
 [node name="player" parent="." unique_id=523884040 instance=ExtResource("2_ve8qb")]
 position = Vector2(125, 1694)
@@ -16,3 +16,5 @@ position = Vector2(125, 1694)
 script = ExtResource("3_hwdco")
 
 [node name="level_1" parent="." unique_id=1279288876 instance=ExtResource("5_n5hkc")]
+
+[node name="boss" parent="." unique_id=2133907600 instance=ExtResource("4_6traj")]

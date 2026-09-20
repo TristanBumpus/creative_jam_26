@@ -32,7 +32,7 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="enemy_1" type="CharacterBody2D" unique_id=1506096292]
+[node name="knight" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
 script = ExtResource("1_blj22")
 max_hp = 10
 type = "charger"
@@ -60,3 +60,13 @@ one_shot = true
 sprite_frames = SubResource("SpriteFrames_2bsw6")
 autoplay = "default"
 frame_progress = 0.6857093
+
+[node name="charge" type="Timer" parent="." unique_id=1673125932]
+one_shot = true
+
+[node name="charger" type="Timer" parent="." unique_id=877754205]
+wait_time = 0.3
+one_shot = true
+
+[node name="cooldown" type="Timer" parent="." unique_id=793465926]
+one_shot = true

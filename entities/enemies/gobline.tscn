@@ -32,7 +32,7 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="gobline" type="CharacterBody2D" unique_id=508665963]
+[node name="gobline" type="CharacterBody2D" unique_id=508665963 groups=["enemy"]]
 script = ExtResource("1_5v2lb")
 max_hp = 20
 speed = 2000

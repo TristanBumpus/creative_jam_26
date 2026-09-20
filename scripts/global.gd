@@ -21,7 +21,7 @@ enum effects {
 	slow,
 }
 
-var loot_table = {"commun" : [0,1,2,5,8], "rare" : [3,4,6,7,9,10]}
+var loot_table = {"commun" : [0,1,5,8], "rare" : [3,4,7,9,10]}
 
 var loot_pool = []
 var enemy_table = [

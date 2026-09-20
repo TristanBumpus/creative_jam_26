@@ -33,8 +33,19 @@ anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 240
+text = "Wave"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PAST" type="Label" parent="upgrade/past" unique_id=1969138816]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 960
+text = "Past"
+horizontal_alignment = 1
 
 [node name="option_1" type="Button" parent="upgrade/past" unique_id=564281646]
 layout_mode = 1
@@ -86,6 +97,26 @@ value = 3.0
 
 [node name="desc" type="Label" parent="upgrade/past" unique_id=318143465]
 layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2250.0
+offset_top = -2739.0
+offset_right = 2250.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 320
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="g_desc" type="Label" parent="upgrade/past" unique_id=69659525]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -97,23 +128,9 @@ offset_right = 2250.0
 offset_bottom = 1100.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 320
-text = "
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="g_desc" type="Label" parent="upgrade/past" unique_id=69659525]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -2200.0
-offset_right = 4500.0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 320
-text = "Pulls weaker enemies and upgrades from the past."
+text = "Pulls weaker enemies, upgrades and health from the past."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -137,6 +154,16 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 240
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FUTUR" type="Label" parent="upgrade/future" unique_id=1556249703]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1309.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 960
+text = "Futur"
+horizontal_alignment = 1
 
 [node name="option_1" type="Button" parent="upgrade/future" unique_id=1968680410]
 layout_mode = 1
@@ -180,6 +207,24 @@ grow_vertical = 2
 
 [node name="desc" type="Label" parent="upgrade/future" unique_id=461487360]
 layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2250.0
+offset_top = -2739.0
+offset_right = 2250.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 320
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="g_desc" type="Label" parent="upgrade/future" unique_id=1445076182]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -191,24 +236,9 @@ offset_right = 2250.0
 offset_bottom = 1100.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 320
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="g_desc" type="Label" parent="upgrade/future" unique_id=1445076182]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4500.0
-offset_top = -2200.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 320
-text = "Pulls stronger enemies and upgrades from future."
+text = "Pulls stronger enemies,  upgrades and greed from future."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

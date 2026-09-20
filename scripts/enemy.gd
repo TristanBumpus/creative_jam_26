@@ -43,7 +43,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if current_hp <= 0:
-		print("S")
 		queue_free()
 	if type == "charger":
 		
@@ -51,7 +50,6 @@ func _process(delta: float) -> void:
 	
 	if level > global.wave:
 		scale = Vector2(20,20)
-		print("S")
 	if level < global.wave:
 		scale = Vector2(5,5)
 	

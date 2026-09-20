@@ -1,3 +1,44 @@
 [gd_scene format=3 uid="uid://pv3tjniydhyr"]
 
+[ext_resource type="Texture2D" uid="uid://bxg50cyrojue7" path="res://assets/z_gui/progressbar_0005_Ellipse-2.png" id="1_e6qtq"]
+[ext_resource type="Texture2D" uid="uid://cp8n2nw1b8sd0" path="res://assets/z_gui/progressbar_0001_Rectangle-5.png" id="2_kguid"]
+[ext_resource type="Texture2D" uid="uid://tf38eupehr1n" path="res://assets/z_gui/progressbar_0002_Rectangle-5.png" id="3_6fu2k"]
+[ext_resource type="Texture2D" uid="uid://2p33lpyq2hus" path="res://assets/z_gui/progressbar_0004_Calque-3.png" id="4_vpmeq"]
+[ext_resource type="Texture2D" uid="uid://0exhpkudavew" path="res://assets/z_gui/progressbar_0000_Rectangle-6.png" id="5_kguid"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_efokr"]
+
 [node name="in_between" type="Node2D" unique_id=1352656494]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=898230262]
+z_index = 1
+position = Vector2(2940, 3080)
+scale = Vector2(2, 2)
+texture = ExtResource("1_e6qtq")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1488153648]
+modulate = Color(0.15686275, 0.15686275, 0.18431373, 1)
+position = Vector2(5779.75, 3260.2498)
+scale = Vector2(11560.5, 6521.4995)
+mesh = SubResource("QuadMesh_efokr")
+
+[node name="r" type="Sprite2D" parent="." unique_id=2131745310]
+position = Vector2(6479, 3451)
+scale = Vector2(2, 2)
+texture = ExtResource("2_kguid")
+
+[node name="l" type="Sprite2D" parent="." unique_id=215990491]
+position = Vector2(4465, 3452)
+scale = Vector2(2, 2)
+texture = ExtResource("3_6fu2k")
+
+[node name="Progressbar0004Calque3" type="Sprite2D" parent="." unique_id=530961191]
+z_index = 2
+position = Vector2(2946, 3049)
+scale = Vector2(2, 2)
+texture = ExtResource("4_vpmeq")
+
+[node name="Progressbar0000Rectangle6" type="Sprite2D" parent="." unique_id=1851735220]
+position = Vector2(5523, 3426)
+scale = Vector2(2, 2)
+texture = ExtResource("5_kguid")

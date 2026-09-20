@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bgw63eog82pvu" path="res://assets/hp_bar/hp_bar_needle.png" id="4_bo1jx"]
 [ext_resource type="Script" uid="uid://sd3cmm7wt5pp" path="res://scripts/stats.gd" id="6_obcwv"]
 [ext_resource type="PackedScene" uid="uid://cjkbhtbm1qdn5" path="res://ui/settings.tscn" id="7_bo1jx"]
+[ext_resource type="Texture2D" uid="uid://bxg50cyrojue7" path="res://assets/z_gui/progressbar_0005_Ellipse-2.png" id="8_ay4pc"]
+[ext_resource type="Texture2D" uid="uid://2p33lpyq2hus" path="res://assets/z_gui/progressbar_0004_Calque-3.png" id="9_bi8hs"]
+[ext_resource type="Texture2D" uid="uid://mbolcmg64j4n" path="res://assets/z_gui/progressbar_0003_Triangle-2.png" id="10_hrmpd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
 size = Vector2(1000, 1000)
@@ -92,3 +95,24 @@ text = "Tab"
 
 [node name="settings" parent="." unique_id=1236409158 instance=ExtResource("7_bo1jx")]
 mouse_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1355035431]
+z_index = 1
+position = Vector2(10985, 541)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ay4pc")
+
+[node name="heures" type="Sprite2D" parent="." unique_id=629744822]
+z_index = 2
+position = Vector2(10991, 510)
+scale = Vector2(2, 2)
+texture = ExtResource("9_bi8hs")
+
+[node name="hand" type="Node2D" parent="." unique_id=1910673658]
+position = Vector2(10991, 520)
+
+[node name="hand" type="Sprite2D" parent="hand" unique_id=1097665279]
+z_index = 2
+position = Vector2(-1, -125)
+scale = Vector2(2, 2)
+texture = ExtResource("10_hrmpd")

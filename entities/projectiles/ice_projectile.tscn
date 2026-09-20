@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dfwpt74phbj88" path="res://entities/projectiles/fire_projectile.tscn" id="1_e2b4q"]
 [ext_resource type="PackedScene" uid="uid://dhpsgs8t4nb6g" path="res://vfx/emile/ice_impact.tscn" id="2_63a3g"]
 [ext_resource type="Texture2D" uid="uid://c55q564hc4s00" path="res://assets/player/WizKid_0000s_0000_Orb.png" id="3_pf1k1"]
-[ext_resource type="AudioStream" uid="uid://b0rys66xsc8ow" path="res://assets/audio/sfx/sIce.02.mp3" id="4_pf1k1"]
 [ext_resource type="Texture2D" uid="uid://b456bky5ofn0r" path="res://assets/a_light/light2.png" id="4_pf1k1"]
 
 [node name="ice_projectile" unique_id=1302566286 instance=ExtResource("1_e2b4q")]
@@ -28,12 +27,12 @@ visible = false
 [node name="ice_impact" parent="." index="6" unique_id=786867677 instance=ExtResource("2_63a3g")]
 position = Vector2(0.49999988, 5.9604645e-08)
 
-[node name="audio_projectile" parent="AudioListener2D" parent_id_path=PackedInt32Array(199487171) index="0" unique_id=1438076940]
-stream = ExtResource("4_pf1k1")
 [node name="PointLight2D3" type="PointLight2D" parent="." index="7" unique_id=374359153]
 color = Color(0, 0.36078432, 1, 1)
-energy = 4.0
 texture = ExtResource("4_pf1k1")
 
 [node name="PointLight2D" parent="." index="8" unique_id=2077939542]
 visible = false
+
+[node name="audio_projectile" parent="AudioListener2D" parent_id_path=PackedInt32Array(199487171) index="0" unique_id=1438076940]
+stream = null

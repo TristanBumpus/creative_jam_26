@@ -60,3 +60,5 @@ sprite_frames = SubResource("SpriteFrames_y1jud")
 autoplay = "default"
 frame_progress = 0.6168011
 flip_h = true
+
+[connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]

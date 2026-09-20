@@ -11,6 +11,8 @@ var pierce_count := 0
 var bounce_count := 0
 var bounce_area := Vector2.ONE
 @export var can_explode := false
+var target = "enemy"
+var self_target = "player"
 
 @export var effects_collection: Array[global.effects] = []
 
@@ -42,7 +44,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().is_in_group("enemy"):
+	if area.get_parent().is_in_group(target):
 		#print(area.get_parent().current_hp)
 		area.get_parent().current_hp -= damage
 		
@@ -74,7 +76,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if !body.is_in_group("player") and !body.is_in_group("enemy"):
+	if !body.is_in_group(self_target) and !body.is_in_group(target):
 		
 		if can_explode:
 			explode_projectile()

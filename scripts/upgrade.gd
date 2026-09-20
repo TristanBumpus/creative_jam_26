@@ -12,16 +12,19 @@ var levels = ["res://levels/level_2.tscn","res://levels/level_3.tscn","res://lev
 
 func upgrade_do_shit(p_or_f : int):
 	var id
+	var boss_item
 	var scaling
 	if p_or_f == 1:
-		player.max_hp += 10
-		player.current_hp += 10
+		player.current_hp += player.max_hp /5
 		id = p_items[1]
+		boss_item = f_items[1]
 		scaling = p_items[0]
 	else:
-		player.max_hp -= 10
 		id = f_items[1]
+		boss_item = f_items[1]
 		scaling = f_items[0]
+	
+	global.boss_upgrades += [[scaling,boss_item]]
 	
 	if id == 0:
 		player.damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
@@ -45,6 +48,13 @@ func upgrade_do_shit(p_or_f : int):
 		player.bullet_pierce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
 	if id == 10:
 		player.bullet_bounce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+	
+	if id in [4, 6, 7]:
+		if player.projectiles_acquired[-1].resource_path in player.projectile_count_by_type:
+			player.projectile_count_by_type[player.projectiles_acquired[-1].resource_path] += 1
+		else:
+			player.projectile_count_by_type[player.projectiles_acquired[-1].resource_path] = 1
+	
 
 func change_level():
 	var level = load(levels.pick_random()).instantiate()

@@ -16,14 +16,44 @@ var current_projectile = 0
 var dash_damage = 0
 var bullet_bounce = 0
 var bullet_pierce = 0
-
+var phase = 1
 
 
 #Engine functions
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(global.boss_upgrades)
+	for item in global.boss_upgrades:
+		var scaling = item[0]
+		var id = item[1]
+		
+		if id == 0:
+			damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+		if id == 1:
+			attack_speed -= (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling)/10
+		if id == 2:
+			speed += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling * 100
+		if id == 3:
+			dodge_speed += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling)/10
+		if id == 4:
+			projectiles_acquired.append(preload("res://entities/projectiles/fire_projectile.tscn"))
+		if id == 5:
+			max_hp += (global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling)
+		if id == 6:
+			projectiles_acquired.append(preload("res://entities/projectiles/ice_projectile.tscn"))
+		if id == 7:
+			projectiles_acquired.append(preload("res://entities/projectiles/poison_projectile.tscn"))
+		if id == 8:
+			dash_damage += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+		if id == 9:
+			bullet_pierce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+		if id == 10:
+			bullet_bounce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+	
+	
 	$attack_timer.start(attack_speed)
 	current_hp = max_hp
+	$time_shift.start(randf_range(1,5))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,8 +81,20 @@ func _process(_delta: float) -> void:
 	
 	
 	#apply movement to player
-	velocity = -global.player.player_movement * speed * speed_mod
-	
+	if phase == 1:
+		velocity = -global.player.player_movement * speed * speed_mod
+	else:
+		velocity = speed * Vector2(randf(),randf()).normalized() * speed_mod
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
 	
 	if velocity.x > 0:
 		$evil_anims.scale.x = 1
@@ -82,6 +124,8 @@ func _on_attack_timer_timeout() -> void:
 	if current_projectile >= projectiles_acquired.size():
 		current_projectile = 0
 	
+	p.target = "player"
+	p.self_target = "enemy"
 	p.global_position = global_position
 	p.direction = ((global.player.position + global.player.player_movement * global_position.distance_to(global.player.global_position)) - global_position).normalized()
 	p.damage = damage
@@ -96,3 +140,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if !$dodge_time.is_stopped() and area.get_parent().is_in_group("enemy"):
 		if dash_damage > 0:
 			area.get_parent().current_hp -= dash_damage
+
+
+func _on_time_shift_timeout() -> void:
+	phase += 1
+	if phase > 2:
+		phase = 1
+	$time_shift.start(randf_range(1,5))

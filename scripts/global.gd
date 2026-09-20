@@ -21,6 +21,8 @@ enum effects {
 	slow,
 }
 
+var boss_upgrades = []
+
 var loot_table = {"commun" : [0,1,5,8], "rare" : [3,4,6,7,9,10]}
 #var loot_table = {"commun" : [4,6,7], "rare" : [9, 10]}
 
@@ -44,25 +46,35 @@ func select_loot(level: int, index : int):
 	loot_pool[level][index] *= -1
 	return loot_pool[level][index]
 
+
 func generate_wave(dif):
 	wave += 1
-	var num_enemies = (2*wave**2)/4 + 2
-	for i in num_enemies:
-		enemies_to_spawn += [enemy_table.pick_random()]
-	
-	var random = randf_range(2,10)
-	var enmies_to_change = int(num_enemies / random) + 1
-	
-	for child in global.enemies_to_spawn:
+	if wave != 13:
+		var num_enemies = (2*wave**2)/4 + 2
+		for i in num_enemies:
+			enemies_to_spawn += [enemy_table.pick_random()]
+		
+		var random = randf_range(2,10)
+		var enmies_to_change = int(num_enemies / random) + 1
+		
+		for child in global.enemies_to_spawn:
+			await get_tree().process_frame
+			var enemy = load("res://entities/spawner.tscn").instantiate()
+			get_tree().current_scene.add_child(enemy)
+			if enmies_to_change > 0:
+				enemy.level = wave + dif
+				enmies_to_change -= 1
+			enemy.enemy = global.enemies_to_spawn.pop_front()
+			var random_angle: float = randf_range(0.0, TAU)
+			enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 3000
+	else:
 		await get_tree().process_frame
 		var enemy = load("res://entities/spawner.tscn").instantiate()
 		get_tree().current_scene.add_child(enemy)
-		if enmies_to_change > 0:
-			enemy.level = wave + dif
-			enmies_to_change -= 1
-		enemy.enemy = global.enemies_to_spawn.pop_front()
+		enemy.scale = Vector2(2,2)
+		enemy.enemy = "res://entities/boss.tscn"
 		var random_angle: float = randf_range(0.0, TAU)
-		enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 3000
+		enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 2000
 
 
 # Called when the node enters the scene tree for the first time.

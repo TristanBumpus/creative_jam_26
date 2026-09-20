@@ -43,7 +43,15 @@ func upgrade_do_shit(p_or_f : int):
 		player.bullet_pierce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
 	if id == 10:
 		player.bullet_bounce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
-
+	
+	if id in [4, 6, 7]:
+		#print(player.projectiles_acquired[-1])
+		#print(player.projectiles_acquired[-1].resource_path)
+		if player.projectiles_acquired[-1].resource_path in player.projectile_count_by_type:
+			player.projectile_count_by_type[player.projectiles_acquired[-1].resource_path] += 1
+		else:
+			player.projectile_count_by_type[player.projectiles_acquired[-1].resource_path] = 1
+		#print(len(player.projectile_count_by_type))
 
 
 # Called when the node enters the scene tree for the first time.

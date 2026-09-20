@@ -82,7 +82,7 @@ func _on_attack_timer_timeout() -> void:
 	p.global_position = global_position
 	p.direction = (mouse_position - global_position).normalized()
 	p.damage = damage
-	#p.bounce_limit = bullet_bounce
+	p.bounce_limit = bullet_bounce
 	p.pierce_limit = bullet_pierce
 	get_tree().current_scene.add_child(p)
 	

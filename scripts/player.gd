@@ -13,7 +13,7 @@ var dodge_time = .1
 @export var speed_mod = 1
 var can_dodge = true
 @export var attack_speed = .7
-var projectile = "res://entities/projectils/basic_projectile.tscn"
+#var projectile = "res://entities/projectils/basic_projectile.tscn"
 @export var projectiles_acquired: Array[Resource] = [preload("res://entities/projectiles/basic_projectile.tscn")]
 var current_projectile = 0
 var dash_damage = 0
@@ -79,12 +79,12 @@ func _on_attack_timer_timeout() -> void:
 	if current_projectile >= projectiles_acquired.size():
 		current_projectile = 0
 	
-	get_tree().current_scene.add_child(p)
 	p.global_position = global_position
 	p.direction = (mouse_position - global_position).normalized()
 	p.damage = damage
 	p.bounce_limit = bullet_bounce
 	p.pierce_limit = bullet_pierce
+	get_tree().current_scene.add_child(p)
 	
 	$attack_timer.start(attack_speed)
 

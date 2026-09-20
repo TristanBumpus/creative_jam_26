@@ -37,6 +37,9 @@ is_burned=""
 is_frozen=""
 is_slowed=""
 is_poisoned=""
+bounce_area=""
+bounce_area_y=""
+bounce_area_x=""
 
 [input]
 

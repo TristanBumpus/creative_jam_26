@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cjkbhtbm1qdn5"]
+
+[ext_resource type="Script" uid="uid://bp0kevpxo5f6d" path="res://scripts/settings.gd" id="1_7kwmf"]
+
+[node name="settings" type="Control" unique_id=1236409158]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7kwmf")
+
+[node name="Label" type="Label" parent="." unique_id=477826744]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 640
+text = "Paused"
+
+[node name="master" type="Button" parent="." unique_id=588680832]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = -5585.0
+offset_right = 2803.0
+offset_bottom = -4704.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 640
+text = "Master"
+
+[node name="music" type="Button" parent="." unique_id=674371230]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = -4513.0
+offset_right = 2802.0
+offset_bottom = -3632.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 640
+text = "Music"
+
+[node name="sfx" type="Button" parent="." unique_id=1808290100]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = -3209.0
+offset_right = 2802.0
+offset_bottom = -2328.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 640
+text = "SFX"
+
+[node name="fullscreen" type="Button" parent="." unique_id=1151692742]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = -2137.0
+offset_right = 2802.0
+offset_bottom = -1256.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 640
+text = "FullScreen"
+
+[node name="resume" type="Button" parent="." unique_id=1243840841]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = -1053.0
+offset_right = 2803.0
+offset_bottom = -172.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 640
+text = "Resume"
+
+[connection signal="pressed" from="master" to="." method="_on_master_pressed"]
+[connection signal="pressed" from="music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="sfx" to="." method="_on_sfx_pressed"]
+[connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]

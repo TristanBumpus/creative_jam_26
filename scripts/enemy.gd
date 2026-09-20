@@ -56,9 +56,9 @@ func _process(delta: float) -> void:
 		scale = Vector2(1,1)
 	
 	if velocity.x > 0:
-		$sprite.scale.x = -1
-	else:
 		$sprite.scale.x = 1
+	else:
+		$sprite.scale.x = -1
 	
 	movement()
 	

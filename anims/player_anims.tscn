@@ -46,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://b2ljhwu50q660" path="res://assets/bandaid/player_n/WizKidColored_0000s_0009s_0000_Tail2_n.png" id="34_gq60m"]
 [ext_resource type="Texture2D" uid="uid://05crfm00ej2e" path="res://assets/bandaid/player_color/WizKidColored_0000s_0010s_0000_Tail1.png" id="34_no132"]
 [ext_resource type="Texture2D" uid="uid://doiitoa7s7m2m" path="res://assets/bandaid/player_n/WizKidColored_0000s_0010s_0000_Tail1_n.png" id="36_6t2r7"]
+[ext_resource type="Texture2D" uid="uid://cold1ynyhdp0r" path="res://vfx/player_all.png" id="47_gq60m"]
+[ext_resource type="Texture2D" uid="uid://cxaslb0b0d5gt" path="res://vfx/dash-line.png" id="48_6t2r7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ouxom"]
 diffuse_texture = ExtResource("1_ganix")
@@ -2064,6 +2066,11 @@ _data = {
 &"walk": SubResource("Animation_f5uc4")
 }
 
+[sub_resource type="Curve" id="Curve_gq60m"]
+_limits = [0.0, 1.5, 0.0, 1.0]
+_data = [Vector2(0, 0.8809523), 0.0, 0.0, 0, 0, Vector2(0.20000002, 1.5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="player_anims" type="Node2D" unique_id=638851681]
 
 [node name="hat_off" type="Node2D" parent="." unique_id=1819932042]
@@ -2270,4 +2277,22 @@ autoplay = &"idle"
 libraries/ = SubResource("AnimationLibrary_ab3ds")
 autoplay = &"idle"
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=337027971]
+[node name="dash" type="CPUParticles2D" parent="." unique_id=337027971]
+amount = 32
+texture = ExtResource("47_gq60m")
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_gq60m")
+
+[node name="dash2" type="CPUParticles2D" parent="." unique_id=620988025]
+position = Vector2(-512, 0)
+amount = 32
+texture = ExtResource("48_6t2r7")
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_gq60m")
+
+[node name="dash3" type="CPUParticles2D" parent="." unique_id=192802417]
+position = Vector2(-717, 509)
+amount = 32
+texture = ExtResource("48_6t2r7")
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_gq60m")

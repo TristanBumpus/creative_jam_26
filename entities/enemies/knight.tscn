@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cwuujko43vqij"]
+
+[ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="1_3l5n7"]
+[ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_blj22"]
+[ext_resource type="Texture2D" uid="uid://bqcenqm31lj4v" path="res://assets/knight/knightSheet.png" id="2_3l5n7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymnet"]
+radius = 130.24593
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlkf5"]
+size = Vector2(477, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blj22"]
+atlas = ExtResource("2_3l5n7")
+region = Rect2(0, 0, 1001, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymnet"]
+atlas = ExtResource("2_3l5n7")
+region = Rect2(1001, 0, 1001, 1002)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2bsw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blj22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymnet")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="enemy_1" type="CharacterBody2D" unique_id=1506096292]
+script = ExtResource("1_blj22")
+max_hp = 10
+type = "charger"
+speed = 2000
+damage = 5
+attack_range = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305372309]
+position = Vector2(-5, 164)
+shape = SubResource("CircleShape2D_ymnet")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1625686881]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1123344107]
+position = Vector2(-26.5, 165)
+shape = SubResource("RectangleShape2D_dlkf5")
+
+[node name="knock_back" type="Timer" parent="." unique_id=1861538831]
+wait_time = 0.2
+one_shot = true
+
+[node name="effects_manager" parent="." unique_id=879400051 instance=ExtResource("1_3l5n7")]
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=787084392]
+sprite_frames = SubResource("SpriteFrames_2bsw6")
+autoplay = "default"
+frame_progress = 0.6857093

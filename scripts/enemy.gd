@@ -35,9 +35,9 @@ func _ready() -> void:
 	
 	if level == 0:
 		level = global.wave
-	max_hp = randi_range(1 * level, max_hp * level)
-	damage = randi_range(1 * level, damage * level)
-	speed = randi_range(5 * level, speed * level) + 1500
+	max_hp = randi_range(1 * level, max_hp * level) + 15
+	damage = randi_range(1 * level, damage * level) + 3
+	#speed = randi_range(5 * level, speed * level) + 1500
 	
 	current_hp = max_hp
 

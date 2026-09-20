@@ -24,7 +24,12 @@ enum effects {
 var loot_table = {"commun" : [0,1,2,5,8], "rare" : [3,4,6,7,9,10]}
 
 var loot_pool = []
-var enemy_table = ["res://entities/enemies/enemy_charger.tscn","res://entities/enemies/enemy_chaser.tscn"]
+var enemy_table = [
+	"res://entities/enemies/enemy_charger.tscn",
+	"res://entities/enemies/enemy_chaser.tscn",
+	"res://entities/enemies/gobline.tscn",
+	"res://entities/enemies/knight.tscn"
+	]
 var wave = 1
 var enemies_to_spawn = []
 @onready var player := get_tree().get_first_node_in_group("player")

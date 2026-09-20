@@ -34,9 +34,9 @@ animations = [{
 
 [node name="enemy_chaser" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
 script = ExtResource("1_i3l3x")
-max_hp = 30
-speed = 500
-damage = 6
+max_hp = 20
+speed = 2000
+damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139975863]
 position = Vector2(17, 209)

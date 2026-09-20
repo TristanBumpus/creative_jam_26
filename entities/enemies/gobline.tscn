@@ -2,33 +2,51 @@
 
 [ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_5v2lb"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="2_7hcpa"]
+[ext_resource type="Texture2D" uid="uid://87ce5bljxsox" path="res://assets/goblin/gobSheet.png" id="3_5v2lb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mrxgc"]
-radius = 175.01143
+radius = 193.16573
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfb6f"]
-size = Vector2(600, 354)
+size = Vector2(477, 655)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hcpa"]
+atlas = ExtResource("3_5v2lb")
+region = Rect2(0, 0, 900, 889)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nystj"]
+atlas = ExtResource("3_5v2lb")
+region = Rect2(900, 0, 900, 889)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y1jud"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hcpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nystj")
+}],
 "loop": 1,
 "name": &"default",
-"speed": 6.0
+"speed": 7.0
 }]
 
 [node name="gobline" type="CharacterBody2D" unique_id=508665963]
 script = ExtResource("1_5v2lb")
+max_hp = 20
+speed = 2000
+damage = 4
 metadata/_custom_type_script = "uid://b7tw2pv5u77il"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213353201]
-position = Vector2(17, 209)
+position = Vector2(-56, 90)
 shape = SubResource("CircleShape2D_mrxgc")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2020194517]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1508816231]
-position = Vector2(51, 154)
+position = Vector2(-26.5, 55.5)
 shape = SubResource("RectangleShape2D_xfb6f")
 
 [node name="knock_back" type="Timer" parent="." unique_id=788599495]
@@ -40,3 +58,5 @@ one_shot = true
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1061384919]
 sprite_frames = SubResource("SpriteFrames_y1jud")
 autoplay = "default"
+frame_progress = 0.6168011
+flip_h = true

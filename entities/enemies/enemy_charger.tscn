@@ -30,10 +30,10 @@ animations = [{
 
 [node name="enemy_charger" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
 script = ExtResource("1_i3l3x")
-max_hp = 20
+max_hp = 15
 type = "charger"
-speed = 300
-damage = 8
+speed = 1800
+damage = 3
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1343537944]
 mesh = SubResource("QuadMesh_7u8ib")
@@ -67,6 +67,7 @@ one_shot = true
 sprite_frames = SubResource("SpriteFrames_6ukx5")
 autoplay = "default"
 frame_progress = 0.3638179
+flip_h = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]

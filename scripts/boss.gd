@@ -41,11 +41,11 @@ func _process(_delta: float) -> void:
 	
 	
 	if velocity != Vector2.ZERO:
-		$player_anims/feet_anim.play("walk")
-		$player_anims/head_anim.play("walk")
+		$evil_anims/feet_anim.play("walk")
+		$evil_anims/head_anim.play("walk")
 	else:
-		$player_anims/feet_anim.play("idle")
-		$player_anims/head_anim.play("idle")
+		$evil_anims/feet_anim.play("idle")
+		$evil_anims/head_anim.play("idle")
 	
 	
 	#apply movement to player
@@ -53,9 +53,9 @@ func _process(_delta: float) -> void:
 	
 	
 	if velocity.x > 0:
-		$player_anims.scale.x = 1
+		$evil_anims.scale.x = 1
 	if velocity.x < 0:
-		$player_anims.scale.x = -1
+		$evil_anims.scale.x = -1
 	
 	move_and_slide()
 

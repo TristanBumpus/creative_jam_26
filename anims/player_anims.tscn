@@ -2223,7 +2223,7 @@ texture = SubResource("CanvasTexture_ab3ds")
 
 [node name="foot_r_off" type="Node2D" parent="." unique_id=786205341]
 position = Vector2(144, 298)
-scale = Vector2(1, -1)
+scale = Vector2(-1, 1)
 
 [node name="foot_r" type="Sprite2D" parent="foot_r_off" unique_id=14189629]
 z_index = -8

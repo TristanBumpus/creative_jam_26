@@ -22,6 +22,18 @@ sources/0 = SubResource("TileSetAtlasSource_jirdo")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u8ib"]
 size = Vector2(250, 1000)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n46q3"]
+size = Vector2(11288, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kx6l7"]
+size = Vector2(11288, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btoec"]
+size = Vector2(250, 6000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwceb"]
+size = Vector2(250, 6000)
+
 [node name="level_1" type="Node2D" unique_id=1279288876 node_paths=PackedStringArray("door_top", "door_bottom", "door_right", "door_left")]
 script = ExtResource("1_jirdo")
 door_top = NodePath("door3")
@@ -77,6 +89,30 @@ rotation = 1.5794318
 [node name="Camera2D" type="Camera2D" parent="." unique_id=577347489]
 
 [node name="pedestal" parent="." unique_id=1168299728 instance=ExtResource("4_kx6l7")]
+
+[node name="bounce_area_down" type="Area2D" parent="." unique_id=1894350191 groups=["bounce_area", "bounce_area_y"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounce_area_down" unique_id=1999772857]
+position = Vector2(0, 3000)
+shape = SubResource("RectangleShape2D_n46q3")
+
+[node name="bounce_area_up" type="Area2D" parent="." unique_id=1794568266 groups=["bounce_area", "bounce_area_y"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounce_area_up" unique_id=288141668]
+position = Vector2(0, -3000)
+shape = SubResource("RectangleShape2D_kx6l7")
+
+[node name="bounce_area_right" type="Area2D" parent="." unique_id=816096999 groups=["bounce_area", "bounce_area_x"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounce_area_right" unique_id=1771263667]
+position = Vector2(5555, 0)
+shape = SubResource("RectangleShape2D_btoec")
+
+[node name="bounce_area_left" type="Area2D" parent="." unique_id=734206420 groups=["bounce_area", "bounce_area_x"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounce_area_left" unique_id=485057904]
+position = Vector2(-5555, 0)
+shape = SubResource("RectangleShape2D_gwceb")
 
 [connection signal="area_entered" from="up" to="." method="_on_up_area_entered"]
 [connection signal="area_entered" from="down" to="." method="_on_down_area_entered"]

@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_end_pressed() -> void:
 	queue_free()
+	global.player.can_move = true
 
 
 func _on_continue_pressed() -> void:

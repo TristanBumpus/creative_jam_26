@@ -43,6 +43,10 @@ func _ready() -> void:
 	current_hp = max_hp
 
 func _process(delta: float) -> void:
+	
+	if global_position.distance_to(global.player.global_position) > 20000:
+		queue_free()
+	
 	if current_hp <= 0:
 		var t = load("res://entities/enemies/death.tscn").instantiate()
 		get_tree().current_scene.add_child(t)

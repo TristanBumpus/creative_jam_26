@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl3p2sbaw8b6e" path="res://scripts/main_menu.gd" id="1_t7e0r"]
 [ext_resource type="AudioStream" uid="uid://csb6n0g6sc75u" path="res://music/song3-mainmenu.mp3" id="2_0dkrt"]
+[ext_resource type="Texture2D" uid="uid://hl5umct4igl5" path="res://assets/stuff/titlescreen.png" id="2_8uxxo"]
 [ext_resource type="Texture2D" uid="uid://8k64uxio36sa" path="res://assets/stuff/logo1.png" id="3_rmr83"]
 [ext_resource type="Texture2D" uid="uid://dxtflfe8oy4wd" path="res://assets/stuff/logo2.png" id="4_8uxxo"]
 
@@ -13,6 +14,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7e0r")
+
+[node name="Titlescreen" type="Sprite2D" parent="." unique_id=1753176932]
+position = Vector2(5841, 3264)
+scale = Vector2(6.2078705, 6.2078714)
+texture = ExtResource("2_8uxxo")
 
 [node name="Label" type="Label" parent="." unique_id=1225029860]
 visible = false
@@ -37,10 +43,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1407.0
-offset_top = -1760.0
-offset_right = 1408.0
-offset_bottom = -377.5
+offset_left = -4176.0
+offset_top = -1272.0
+offset_right = -2037.0
+offset_bottom = -260.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 640
@@ -52,13 +58,13 @@ autoplay = true
 bus = &"music"
 
 [node name="Logo1" type="Sprite2D" parent="." unique_id=1970583640]
-position = Vector2(5178, 1465)
-scale = Vector2(6.029175, 6.0291753)
+position = Vector2(2534, 1727)
+scale = Vector2(5.140783, 5.3163986)
 texture = ExtResource("3_rmr83")
 
 [node name="Logo2" type="Sprite2D" parent="." unique_id=923572193]
-position = Vector2(6327, 3459.0002)
-scale = Vector2(4.461249, 4.4612494)
+position = Vector2(2644, 4236)
+scale = Vector2(4.189553, 4.123124)
 texture = ExtResource("4_8uxxo")
 
 [connection signal="pressed" from="start" to="." method="cut_scene"]

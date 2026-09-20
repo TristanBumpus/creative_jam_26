@@ -10,6 +10,7 @@ script = ExtResource("1_3vefh")
 layer = 5
 
 [node name="RetryThingy" type="Sprite2D" parent="CanvasLayer" unique_id=652823783]
+position = Vector2(5880.6753, 3403.5)
 scale = Vector2(1.5560505, 1.5560507)
 texture = ExtResource("1_fiddj")
 region_enabled = true
@@ -19,20 +20,20 @@ region_rect = Rect2(259, 1913, 8115, 4264)
 root_node = NodePath("../..")
 
 [node name="end" type="Button" parent="CanvasLayer" unique_id=892928042]
-offset_left = 3270.0
-offset_top = 2269.0
-offset_right = 5283.0
-offset_bottom = 2889.0
+offset_left = 9150.676
+offset_top = 5672.5
+offset_right = 11163.676
+offset_bottom = 6292.5
 theme_override_font_sizes/font_size = 480
 text = "End game"
 
 [node name="continue" type="Button" parent="CanvasLayer" unique_id=52920927]
-offset_left = -5702.0
-offset_top = 2269.0
-offset_right = -3689.0
-offset_bottom = 2889.0
+offset_left = 178.6753
+offset_top = 5672.5
+offset_right = 2191.6753
+offset_bottom = 6292.5
 theme_override_font_sizes/font_size = 480
 text = "Continue"
 
-[connection signal="pressed" from="CanvasLayer/end" to="." method="_on_end_pressed"]
-[connection signal="pressed" from="CanvasLayer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/end" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/continue" to="." method="_on_end_pressed"]

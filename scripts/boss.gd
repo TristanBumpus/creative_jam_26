@@ -64,8 +64,9 @@ func _process(_delta: float) -> void:
 	
 	if current_hp <= 0:
 		queue_free()
-		var e = load("res://z_cin/cin_01.tscn").instantiate()
+		var e = load("res://z_cin/cin_01-1.tscn").instantiate()
 		get_tree().current_scene.add_child(e)
+		global.player.can_move = false
 	
 	if global.player.can_dodge and speed_mod == 1 and can_dodge:
 		speed_mod = dodge_speed

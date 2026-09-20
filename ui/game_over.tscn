@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl3p2sbaw8b6e" path="res://scripts/main_menu.gd" id="1_oo8kp"]
 [ext_resource type="AudioStream" uid="uid://bn7u3if82jyoo" path="res://music/song1-ingame-180bpm.mp3" id="2_5eixk"]
+[ext_resource type="Texture2D" uid="uid://dpxjjmofgckb" path="res://assets/stuff/GameOver.jpg" id="3_j1fe5"]
 
 [node name="GameOver" type="Control" unique_id=1028351939]
 layout_mode = 3
@@ -12,30 +13,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oo8kp")
 
-[node name="Label" type="Label" parent="." unique_id=1841616293]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 1280
-text = "Game Over"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="GameOver" type="Sprite2D" parent="." unique_id=1271019076]
+position = Vector2(5777, 3120)
+scale = Vector2(8.011, 8.011)
+texture = ExtResource("3_j1fe5")
 
 [node name="reset" type="Button" parent="." unique_id=1959735887]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2240.25
-offset_top = -807.25
-offset_right = 2240.25
-offset_bottom = 807.25
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 327.0
+offset_top = -1185.0
+offset_right = 3234.25
+offset_bottom = -326.75
+grow_vertical = 0
 theme_override_font_sizes/font_size = 640
 text = "Restart"
 

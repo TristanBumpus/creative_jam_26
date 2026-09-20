@@ -3,17 +3,17 @@ extends Node
 var seed = RandomNumberGenerator.new()
 
 var all_upgrades = [
-	{"name": "Damage up", "desc": "Increases Damage by ", "effect": 2, "lvl mult": 2 },
-	{"name": "Attack Speed up", "desc": "Increases attack speed by ", "effect": 2, "lvl mult": 1.5 },
-	{"name": "Speed up", "desc": "Increases speed by ", "effect": 2, "lvl mult": 2 },
-	{"name": "Dodge time", "desc": "Increases Dodge Time by ", "effect": .2, "lvl mult": .1 },
-	{"name": "Fire Ball", "desc": "Adds an explosive Fire Balls to your cast ", "effect": 0, "lvl mult": .1 },
-	{"name": "Max Health Up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5},
-	{"name": "Ice Ball", "desc": "Adds a ball of Ice to  your cast", "effect": 0, "lvl mult": .1 },
-	{"name": "Posion Ball", "desc": "Adds a Toxic glob to your cast ", "effect": 0, "lvl mult": .1 },
-	{"name": "Tungsten toe", "desc": "Makes dash deal more damage ", "effect": 2, "lvl mult": 2 },
-	{"name": "Piercing Shot", "desc": "Makes your spells pierce enemies ", "effect": 1, "lvl mult": 1 },
-	{"name": "Bouncy Magic", "desc": "Makes your spells bouncy ", "effect": 1, "lvl mult": 1 }
+	{"name": "Damage up", "desc": "Increases Damage by ", "effect": 2, "lvl mult": 2, "img_path": "res://assets/upgrades/damage.png" },
+	{"name": "Attack Speed up", "desc": "Increases attack speed by ", "effect": 2, "lvl mult": 1.5, "img_path": "res://assets/upgrades/attack_speed.png" },
+	{"name": "Speed up", "desc": "Increases speed by ", "effect": 2, "lvl mult": 2, "img_path": "res://assets/upgrades/speed.png" },
+	{"name": "Dodge time", "desc": "Increases Dodge Time by ", "effect": .2, "lvl mult": .1, "img_path": "res://assets/upgrades/dodge_time.png" },
+	{"name": "Fire Ball", "desc": "Adds an explosive Fire Balls to your cast ", "effect": 0, "lvl mult": .1, "img_path": "res://assets/upgrades/fire_ball.png" },
+	{"name": "Max Health Up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5, "img_path": "res://assets/upgrades/health.png" },
+	{"name": "Ice Ball", "desc": "Adds a ball of Ice to  your cast", "effect": 0, "lvl mult": .1, "img_path": "res://assets/upgrades/ice_ball.png" },
+	{"name": "Posion Ball", "desc": "Adds a Toxic glob to your cast ", "effect": 0, "lvl mult": .1, "img_path": "res://assets/upgrades/poison_ball.png" },
+	{"name": "Damage Dash", "desc": "Makes dash deal more damage ", "effect": 5, "lvl mult": 2, "img_path": "res://assets/upgrades/damage_dash.png" },
+	{"name": "Piercing Shot", "desc": "Makes your spells pierce enemies ", "effect": 1, "lvl mult": 1, "img_path": "res://assets/upgrades/piercing.png" },
+	{"name": "Bouncy Magic", "desc": "Makes your spells bouncy ", "effect": 1, "lvl mult": 1, "img_path": "res://assets/upgrades/rebound.png" }
 	]
 
 enum effects {
@@ -21,7 +21,8 @@ enum effects {
 	slow,
 }
 
-var loot_table = {"commun" : [0,1,5,8], "rare" : [3,4,7,9,10]}
+var loot_table = {"commun" : [0,1,5,8], "rare" : [3,4,6,7,9,10]}
+#var loot_table = {"commun" : [4,6,7], "rare" : [9, 10]}
 
 var loot_pool = []
 var enemy_table = [
@@ -54,13 +55,14 @@ func generate_wave(dif):
 	
 	for child in global.enemies_to_spawn:
 		await get_tree().process_frame
-		var enemy = load(global.enemies_to_spawn.pop_front()).instantiate()
+		var enemy = load("res://entities/spawner.tscn").instantiate()
 		get_tree().current_scene.add_child(enemy)
 		if enmies_to_change > 0:
 			enemy.level = wave + dif
 			enmies_to_change -= 1
+		enemy.enemy = global.enemies_to_spawn.pop_front()
 		var random_angle: float = randf_range(0.0, TAU)
-		enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 3500
+		enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 3000
 
 
 # Called when the node enters the scene tree for the first time.

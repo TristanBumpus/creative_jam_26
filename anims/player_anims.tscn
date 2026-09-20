@@ -2278,6 +2278,8 @@ libraries/ = SubResource("AnimationLibrary_ab3ds")
 autoplay = &"idle"
 
 [node name="dash" type="CPUParticles2D" parent="." unique_id=337027971]
+modulate = Color(1, 1, 1, 0.38039216)
+emitting = false
 amount = 32
 texture = ExtResource("47_gq60m")
 gravity = Vector2(0, 0)
@@ -2285,6 +2287,7 @@ scale_amount_curve = SubResource("Curve_gq60m")
 
 [node name="dash2" type="CPUParticles2D" parent="." unique_id=620988025]
 position = Vector2(-512, 0)
+emitting = false
 amount = 32
 texture = ExtResource("48_6t2r7")
 gravity = Vector2(0, 0)
@@ -2292,6 +2295,7 @@ scale_amount_curve = SubResource("Curve_gq60m")
 
 [node name="dash3" type="CPUParticles2D" parent="." unique_id=192802417]
 position = Vector2(-717, 509)
+emitting = false
 amount = 32
 texture = ExtResource("48_6t2r7")
 gravity = Vector2(0, 0)

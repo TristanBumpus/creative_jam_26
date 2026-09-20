@@ -19,12 +19,30 @@ var current_projectile = 0
 var dash_damage = 0
 var bullet_bounce = 0
 var bullet_pierce = 0
+var projectile_count_by_type: Dictionary[String, int] = {
+	"res://entities/projectiles/basic_projectile.tscn": 1
+}
+var can_move = true
+
+
+
+func change_scene():
+	global.generate_wave(0)
+	$cont/falling_character.visible = true
+	$cont/falling_character/AnimationPlayer.play("falling")
+	can_move = false
+	await $cont/falling_character/AnimationPlayer.animation_finished
+	can_move = true
+	$cont/falling_character.visible = false
+
+
 
 #Engine functions
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$attack_timer.start(attack_speed)
 	current_hp = max_hp
+	change_scene()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,6 +59,9 @@ func _process(_delta: float) -> void:
 		can_dodge = false
 		$Area2D.monitorable = true
 		$dodge_time.start(dodge_time)
+		$player_anims/dash.emitting = true
+		$player_anims/dash2.emitting = true
+		$player_anims/dash3.emitting = true
 	
 	#get input for movement
 	player_movement = Vector2(Input.get_action_raw_strength("d") - Input.get_action_raw_strength("a"),Input.get_action_raw_strength("s") - Input.get_action_raw_strength("w")).normalized()
@@ -68,12 +89,20 @@ func _process(_delta: float) -> void:
 	if velocity.x < 0:
 		$player_anims.scale.x = -1
 	
+	if current_hp > 0:
+		visible = can_move
+	
+	if !can_move:
+		velocity = Vector2.ZERO
 	move_and_slide()
 
 
 
 func _on_dodge_time_timeout() -> void:
 	speed_mod = 1
+	$player_anims/dash.emitting = false
+	$player_anims/dash2.emitting = false
+	$player_anims/dash3.emitting = false
 	$Area2D.monitorable = true
 	$dodge_cooldown.start()
 
@@ -84,19 +113,28 @@ func _on_dodge_cooldown_timeout() -> void:
 
 func _on_attack_timer_timeout() -> void:
 	#var p = load(projectile).instantiate()
-	var p = projectiles_acquired[current_projectile].instantiate()
-	
-	current_projectile += 1
-	
-	if current_projectile >= projectiles_acquired.size():
-		current_projectile = 0
-	
-	p.global_position = global_position
-	p.direction = (mouse_position - global_position).normalized()
-	p.damage = damage
-	p.bounce_limit = bullet_bounce
-	p.pierce_limit = bullet_pierce
-	get_tree().current_scene.add_child(p)
+	var shouting_projectile := projectiles_acquired[current_projectile]
+	#print(shouting_projectile.resource_path)
+	#print(projectile_count_by_type[shouting_projectile.resource_path])
+	var angle_distance: float = 360 / projectile_count_by_type[shouting_projectile.resource_path]
+	var cumulative_angles: float = 0
+	#print(angle_distance)
+	for i in range(projectile_count_by_type[shouting_projectile.resource_path]):
+		var p: projectile = shouting_projectile.instantiate()
+		
+		current_projectile += 1
+		
+		if current_projectile >= projectiles_acquired.size():
+			current_projectile = 0
+		
+		p.global_position = global_position
+		p.direction = (mouse_position - global_position).normalized()
+		p.direction = p.direction.rotated(deg_to_rad(cumulative_angles))
+		cumulative_angles += angle_distance
+		p.damage = damage
+		p.bounce_limit = bullet_bounce
+		p.pierce_limit = bullet_pierce
+		get_tree().current_scene.add_child(p)
 	
 	$attack_timer.start(attack_speed)
 

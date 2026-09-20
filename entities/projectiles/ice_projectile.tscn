@@ -8,6 +8,7 @@
 [node name="ice_projectile" unique_id=1302566286 instance=ExtResource("1_e2b4q")]
 speed = 2000
 damage = 2
+can_explode = false
 effects_collection = Array[int]([1])
 
 [node name="MeshInstance2D" parent="." index="0" unique_id=737897609]

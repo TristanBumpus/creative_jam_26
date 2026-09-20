@@ -17,6 +17,8 @@ var dash_damage = 0
 var bullet_bounce = 0
 var bullet_pierce = 0
 
+
+
 #Engine functions
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +33,7 @@ func _process(_delta: float) -> void:
 		current_hp = max_hp
 	
 	if current_hp <= 0:
-		get_tree().change_scene_to_file("res://ui/game_over.tscn")
+		queue_free()
 	
 	if global.player.can_dodge and speed_mod == 1 and can_dodge:
 		speed_mod = dodge_speed

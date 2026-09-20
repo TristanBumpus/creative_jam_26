@@ -12,7 +12,7 @@ var levels = ["res://levels/level_2.tscn","res://levels/level_3.tscn","res://lev
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	global.generate_wave(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -60,6 +60,7 @@ offset_right = 6672.0
 offset_bottom = 2260.5
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_vwur3")
 
 [node name="Label" type="Label" parent="upgrade/past" unique_id=988949663]
@@ -73,6 +74,21 @@ offset_bottom = 960.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 240
 text = "Wave"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="upgrade/past" unique_id=860528709]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6553.0
+offset_top = 325.0
+offset_right = 6553.0
+offset_bottom = 980.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 480
+text = "Rejuvenate"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -205,6 +221,7 @@ offset_top = -2260.5
 offset_right = -2151.0
 offset_bottom = 2260.5
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_vwur3")
 
 [node name="Label" type="Label" parent="upgrade/future" unique_id=1566430966]
@@ -217,6 +234,21 @@ offset_right = -360.0
 offset_bottom = 941.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 240
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="upgrade/future" unique_id=2111520965]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -6737.0
+offset_top = 306.0
+offset_right = -6737.0
+offset_bottom = 961.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 480
+text = "Hard Fall"
 horizontal_alignment = 1
 vertical_alignment = 1
 

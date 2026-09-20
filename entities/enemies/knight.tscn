@@ -38,7 +38,6 @@ max_hp = 10
 type = "charger"
 speed = 2000
 damage = 5
-attack_range = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305372309]
 position = Vector2(-5, 164)
@@ -70,3 +69,8 @@ one_shot = true
 
 [node name="cooldown" type="Timer" parent="." unique_id=793465926]
 one_shot = true
+
+[connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]
+[connection signal="timeout" from="charge" to="." method="_on_charge_timeout"]
+[connection signal="timeout" from="charger" to="." method="_on_charger_timeout"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

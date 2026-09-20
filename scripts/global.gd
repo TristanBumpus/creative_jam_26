@@ -49,7 +49,7 @@ func select_loot(level: int, index : int):
 
 func generate_wave(dif):
 	wave += 1
-	if wave != 13:
+	if wave != 2:
 		var num_enemies = (2*wave**2)/4 + 2
 		for i in num_enemies:
 			enemies_to_spawn += [enemy_table.pick_random()]

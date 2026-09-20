@@ -32,7 +32,8 @@ func _ready() -> void:
 	#print(effects_collection)
 	#print(damage)
 	#print(name)
-	$AudioListener2D/audio_projectile.play()
+	if has_node("AudioListener2D/audio_projectile"):
+		$AudioListener2D/audio_projectile.play()
 
 
 func _process(delta: float) -> void:

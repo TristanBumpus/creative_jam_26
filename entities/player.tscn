@@ -21,6 +21,7 @@ z_index = 10
 collision_layer = 6
 collision_mask = 6
 script = ExtResource("1_merdl")
+damage = 1000.0
 speed = 3000.0
 dodge_speed = 5
 

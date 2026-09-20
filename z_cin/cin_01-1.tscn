@@ -3,19 +3,22 @@
 [ext_resource type="Script" uid="uid://bb2dqv4qa1v2i" path="res://scripts/scene.gd" id="1_3vefh"]
 [ext_resource type="Texture2D" uid="uid://5463xgdxeo3g" path="res://assets/z_cin/retry_thingy.png" id="1_fiddj"]
 
-[node name="cin01" type="CanvasLayer" unique_id=1488288243]
-layer = 2
+[node name="cin01" type="Node2D" unique_id=1004980600]
 script = ExtResource("1_3vefh")
 
-[node name="RetryThingy" type="Sprite2D" parent="." unique_id=652823783]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=28763087]
+layer = 5
+
+[node name="RetryThingy" type="Sprite2D" parent="CanvasLayer" unique_id=652823783]
 scale = Vector2(1.5560505, 1.5560507)
 texture = ExtResource("1_fiddj")
 region_enabled = true
 region_rect = Rect2(259, 1913, 8115, 4264)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1220088132]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1220088132]
+root_node = NodePath("../..")
 
-[node name="end" type="Button" parent="." unique_id=892928042]
+[node name="end" type="Button" parent="CanvasLayer" unique_id=892928042]
 offset_left = 3270.0
 offset_top = 2269.0
 offset_right = 5283.0
@@ -23,7 +26,7 @@ offset_bottom = 2889.0
 theme_override_font_sizes/font_size = 480
 text = "End game"
 
-[node name="continue" type="Button" parent="." unique_id=52920927]
+[node name="continue" type="Button" parent="CanvasLayer" unique_id=52920927]
 offset_left = -5702.0
 offset_top = 2269.0
 offset_right = -3689.0
@@ -31,5 +34,5 @@ offset_bottom = 2889.0
 theme_override_font_sizes/font_size = 480
 text = "Continue"
 
-[connection signal="pressed" from="end" to="." method="_on_end_pressed"]
-[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/end" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="CanvasLayer/continue" to="." method="_on_continue_pressed"]

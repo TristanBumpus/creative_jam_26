@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ds364f2u5paaa"]
 
 [ext_resource type="Texture2D" uid="uid://5463xgdxeo3g" path="res://assets/z_cin/retry_thingy.png" id="1_auv7p"]
+[ext_resource type="Script" uid="uid://bb2dqv4qa1v2i" path="res://scripts/scene.gd" id="1_jl6io"]
 [ext_resource type="Texture2D" uid="uid://dvubxipb3dwlc" path="res://assets/z_cin/01.png" id="2_uqb87"]
 [ext_resource type="Texture2D" uid="uid://cvhydiu42erxx" path="res://assets/z_cin/02.png" id="3_562yy"]
 [ext_resource type="Texture2D" uid="uid://d3ei2nsntbdsk" path="res://assets/z_cin/03.png" id="4_p60pk"]
@@ -121,6 +122,7 @@ size = Vector2(9999, 9999)
 size = Vector2(9999, 500)
 
 [node name="cin01" type="Node2D" unique_id=393563547]
+script = ExtResource("1_jl6io")
 
 [node name="RetryThingy" type="Sprite2D" parent="." unique_id=652823783]
 visible = false
@@ -175,3 +177,5 @@ texture = ExtResource("3_562yy")
 [node name="03" type="Sprite2D" parent="." unique_id=749705074]
 position = Vector2(0, -24589)
 texture = ExtResource("4_p60pk")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

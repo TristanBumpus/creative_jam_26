@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://m4j7deauqwli"
+path="res://.godot/imported/Iceball.02 (zesty).mp3-69e14da639ff35b92dc3ba7d1efced27.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Iceball.02 (zesty).mp3"
+dest_files=["res://.godot/imported/Iceball.02 (zesty).mp3-69e14da639ff35b92dc3ba7d1efced27.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

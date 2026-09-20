@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fletr7md1o4l"
+path="res://.godot/imported/Poisonball.01 (zesty).mp3-04b5c462e2be4fe19de58ab355a58876.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Poisonball.01 (zesty).mp3"
+dest_files=["res://.godot/imported/Poisonball.01 (zesty).mp3-04b5c462e2be4fe19de58ab355a58876.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

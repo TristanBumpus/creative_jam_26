@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1lalj076s0c5"
+path="res://.godot/imported/Fireball.01 (zesty).mp3-8bfde833292b7156632aaa38cec6aaa5.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Fireball.01 (zesty).mp3"
+dest_files=["res://.godot/imported/Fireball.01 (zesty).mp3-8bfde833292b7156632aaa38cec6aaa5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

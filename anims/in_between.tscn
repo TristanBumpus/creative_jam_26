@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://tf38eupehr1n" path="res://assets/z_gui/progressbar_0002_Rectangle-5.png" id="3_6fu2k"]
 [ext_resource type="Texture2D" uid="uid://2p33lpyq2hus" path="res://assets/z_gui/progressbar_0004_Calque-3.png" id="4_vpmeq"]
 [ext_resource type="Texture2D" uid="uid://0exhpkudavew" path="res://assets/z_gui/progressbar_0000_Rectangle-6.png" id="5_kguid"]
+[ext_resource type="Texture2D" uid="uid://mbolcmg64j4n" path="res://assets/z_gui/progressbar_0003_Triangle-2.png" id="6_6fu2k"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_efokr"]
 
@@ -32,13 +33,22 @@ position = Vector2(4465, 3452)
 scale = Vector2(2, 2)
 texture = ExtResource("3_6fu2k")
 
-[node name="Progressbar0004Calque3" type="Sprite2D" parent="." unique_id=530961191]
+[node name="heures" type="Sprite2D" parent="." unique_id=530961191]
 z_index = 2
 position = Vector2(2946, 3049)
 scale = Vector2(2, 2)
 texture = ExtResource("4_vpmeq")
 
-[node name="Progressbar0000Rectangle6" type="Sprite2D" parent="." unique_id=1851735220]
+[node name="rectangle" type="Sprite2D" parent="." unique_id=1851735220]
 position = Vector2(5523, 3426)
 scale = Vector2(2, 2)
 texture = ExtResource("5_kguid")
+
+[node name="hand" type="Node2D" parent="." unique_id=638869231]
+position = Vector2(2946, 3059)
+
+[node name="hand" type="Sprite2D" parent="hand" unique_id=1999681174]
+z_index = 2
+position = Vector2(-1, -125)
+scale = Vector2(2, 2)
+texture = ExtResource("6_6fu2k")

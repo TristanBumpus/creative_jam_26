@@ -7,9 +7,10 @@
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=64985147]
+zoom = Vector2(0.99, 0.99)
 
 [node name="player" parent="." unique_id=523884040 instance=ExtResource("2_ve8qb")]
-position = Vector2(125, 1694)
+position = Vector2(0, 1000)
 
 [node name="level_manager" type="Node2D" parent="." unique_id=355476099]
 script = ExtResource("3_hwdco")

@@ -91,3 +91,4 @@ theme_override_font_sizes/font_size = 420
 text = "Tab"
 
 [node name="settings" parent="." unique_id=1236409158 instance=ExtResource("7_bo1jx")]
+mouse_filter = 1

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dr5b125mqfs7a"]
 
 [ext_resource type="Texture2D" uid="uid://dic7imuvbuf68" path="res://assets/choose_orbs/WizardPondering_0000s_0002s_0000s_0000_Hand-RIGHT.png" id="1_cbyug"]
+[ext_resource type="Texture2D" uid="uid://cigcj2auc05hj" path="res://assets/portal.png" id="2_oaoeb"]
 [ext_resource type="Texture2D" uid="uid://cgwa5cd56j5pw" path="res://assets/choose_orbs/WizardPondering_0000s_0001s_0000s_0000_Hand-left.png" id="2_vdjc1"]
 [ext_resource type="Texture2D" uid="uid://c5uel6gph56xq" path="res://assets/choose_orbs/WizardPondering_0000s_0001s_0001s_0000_Ellipse-1.png" id="3_ag30k"]
 [ext_resource type="Texture2D" uid="uid://e04nfafqvrhc" path="res://assets/choose_orbs/WizardPondering_0001s_0001s_0002_Face.png" id="4_ietge"]
@@ -666,11 +667,19 @@ z_index = -1
 position = Vector2(-223, -219)
 texture = ExtResource("3_ag30k")
 
+[node name="Portal" type="Sprite2D" parent="orb_l" unique_id=1939869132]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_oaoeb")
+
 [node name="orb_r" type="Sprite2D" parent="." unique_id=639877745]
 modulate = Color(1.8247963, 0.49019507, 0.49019507, 0.49803922)
 z_index = -1
 position = Vector2(230, -222)
 texture = ExtResource("3_ag30k")
+
+[node name="Portal" type="Sprite2D" parent="orb_r" unique_id=369087008]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_oaoeb")
 
 [node name="hand_l" type="Sprite2D" parent="." unique_id=335393434]
 position = Vector2(-140, -118)

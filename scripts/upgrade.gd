@@ -91,18 +91,31 @@ func _ready() -> void:
 		$upgrade/future/title.text = global.all_upgrades[f_items[1]]["name"]
 		$upgrade/future/desc.text = global.all_upgrades[f_items[1]]["desc"]
 	
+	$upgrade/past/TextureRect.texture = load(global.all_upgrades[p_items[1]]["img_path"])
+	$upgrade/future/TextureRect.texture = load(global.all_upgrades[f_items[1]]["img_path"])
+	
+	
 	#$upgrade/future/option_2.text = global.all_upgrades[f_items[2]]["name"] + "\n" + global.all_upgrades[f_items[2]]["desc"] + str(global.all_upgrades[f_items[2]]["effect"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $upgrade/past/option_1.is_hovered() and direction != 1:
+	if $upgrade/option_1.is_hovered() and direction != 1:
 		direction = 1
 		$choose_orbs_anim/interact_anim.play("left")
+		$upgrade/future.visible = false
+		$upgrade/past.visible = true
 	
-	if $upgrade/future/option_1.is_hovered() and direction != 2:
+	if $upgrade/option_2.is_hovered() and direction != 2:
 		direction = 2
 		$choose_orbs_anim/interact_anim.play("right")
+		$upgrade/future.visible = true
+		$upgrade/past.visible = false
+	
+	if direction == 1:
+		$choose_orbs_anim/orb_l/Portal.rotation_degrees += 1
+	if direction == 2:
+		$choose_orbs_anim/orb_r/Portal.rotation_degrees += 1
 
 
 func _on_p_option_1_pressed() -> void:

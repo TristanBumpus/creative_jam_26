@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b65th2lkol0j7"]
+
+[ext_resource type="Script" uid="uid://b516m5mbo1cwa" path="res://scripts/spawner.gd" id="1_uveur"]
+[ext_resource type="Texture2D" uid="uid://cigcj2auc05hj" path="res://assets/portal.png" id="2_51wax"]
+
+[sub_resource type="Animation" id="Animation_51wax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portal:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_abom3"]
+resource_name = "spawn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portal:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 12.566371]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_302k2"]
+_data = {
+&"RESET": SubResource("Animation_51wax"),
+&"spawn": SubResource("Animation_abom3")
+}
+
+[node name="Spawner" type="Node2D" unique_id=640200513 groups=["enemy"]]
+script = ExtResource("1_uveur")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1086156328]
+libraries/ = SubResource("AnimationLibrary_302k2")
+autoplay = &"spawn"
+
+[node name="Portal" type="Sprite2D" parent="." unique_id=1480374892]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_51wax")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

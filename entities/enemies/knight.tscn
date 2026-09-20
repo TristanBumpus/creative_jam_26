@@ -41,7 +41,6 @@ max_hp = 10
 type = "charger"
 speed = 2000
 damage = 5
-attack_range = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305372309]
 position = Vector2(-5, 164)
@@ -84,3 +83,7 @@ stream = ExtResource("5_8ceye")
 
 [node name="audio_hurt" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1954100067]
 stream = ExtResource("6_knkv2")
+[connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]
+[connection signal="timeout" from="charge" to="." method="_on_charge_timeout"]
+[connection signal="timeout" from="charger" to="." method="_on_charger_timeout"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

@@ -33,7 +33,7 @@ animations = [{
 
 [node name="enemy_charger" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
 script = ExtResource("1_i3l3x")
-max_hp = 15
+max_hp = 10
 type = "charger"
 speed = 1800
 damage = 3

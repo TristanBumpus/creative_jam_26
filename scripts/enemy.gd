@@ -9,7 +9,7 @@ var current_hp = 1
 @export var speed = 1
 @export var damage = 1
 @export var level = 0
-@export var attack_range = 258
+@export var attack_range = 2500
 @export var dash_speed = 8
 var speed_mod: float = 1
 var direction = Vector2.ZERO
@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	
 	if velocity.x > 0:
 		$sprite.scale.x = 1
-	else:
+	if velocity.x < 0:
 		$sprite.scale.x = -1
 	
 	movement()

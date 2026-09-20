@@ -343,7 +343,7 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id="Animation_vbcib"]
 resource_name = "hurt"
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2198,11 +2198,6 @@ position = Vector2(-163, 34)
 texture = SubResource("CanvasTexture_gtkdx")
 offset = Vector2(34.25, 0)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1200225158]
-position = Vector2(2, -206)
-enabled = false
-zoom = Vector2(0.2, 0.2)
-
 [node name="foot_l_off" type="Node2D" parent="." unique_id=140469761]
 position = Vector2(-98, 298)
 
@@ -2228,7 +2223,7 @@ texture = SubResource("CanvasTexture_ab3ds")
 
 [node name="foot_r_off" type="Node2D" parent="." unique_id=786205341]
 position = Vector2(144, 298)
-scale = Vector2(-1, 1)
+scale = Vector2(1, -1)
 
 [node name="foot_r" type="Sprite2D" parent="foot_r_off" unique_id=14189629]
 z_index = -8
@@ -2257,6 +2252,11 @@ position = Vector2(-261, -246)
 z_index = 10
 material = SubResource("CanvasItemMaterial_6t2r7")
 texture = SubResource("CanvasTexture_f5uc4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1200225158]
+position = Vector2(2, -206)
+enabled = false
+zoom = Vector2(0.2, 0.2)
 
 [node name="head_anim" type="AnimationPlayer" parent="." unique_id=1865713786]
 libraries/ = SubResource("AnimationLibrary_3kfuw")

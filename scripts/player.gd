@@ -24,10 +24,14 @@ var bullet_pierce = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$attack_timer.start(attack_speed)
+	current_hp = max_hp
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	if current_hp > max_hp:
+		current_hp = max_hp
 	
 	if current_hp <= 0:
 		get_tree().change_scene_to_file("res://ui/game_over.tscn")

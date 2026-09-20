@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dtsy7xbiwcw3f"]
+
+[ext_resource type="Script" uid="uid://ct04i1ub0r5b3" path="res://scripts/ui.gd" id="1_tf0e0"]
+[ext_resource type="Texture2D" uid="uid://lyvdpalwtkei" path="res://assets/hp_bar/hp_bar_back.png" id="1_vkava"]
+[ext_resource type="Texture2D" uid="uid://5qg0j7h5rdsp" path="res://assets/hp_bar/hp_bar_overlay.png" id="2_tf0e0"]
+[ext_resource type="Texture2D" uid="uid://1ymnapr1wbcr" path="res://assets/hp_bar/hp_bar_fill.png" id="3_obcwv"]
+[ext_resource type="Texture2D" uid="uid://bgw63eog82pvu" path="res://assets/hp_bar/hp_bar_needle.png" id="4_bo1jx"]
+
+[node name="cont" type="CanvasLayer" unique_id=52708394]
+layer = 0
+
+[node name="Control" type="Control" parent="." unique_id=1610557276]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tf0e0")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=730927884]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+rounded = true
+fill_mode = 5
+texture_under = ExtResource("1_vkava")
+texture_over = ExtResource("2_tf0e0")
+texture_progress = ExtResource("3_obcwv")
+
+[node name="TextureRect" type="TextureRect" parent="Control/TextureProgressBar" unique_id=614705118]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 1000.0
+pivot_offset = Vector2(500, 500)
+texture = ExtResource("4_bo1jx")

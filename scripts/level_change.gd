@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var width = 512
-@export var height = 352
+@export var width = 5760
+@export var height = 3200
 
 @export var door_top: StaticBody2D
 @export var door_bottom : StaticBody2D
@@ -25,22 +25,18 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		
 		get_tree().current_scene.add_child(level)
 		
-		print(global.player.global_position.y <= global_position.y - height/1.2)
 		
 		if global.player.global_position.y <= global_position.y - height/2.2:
-			print("Top")
 			level.door_bottom.locked = true
 			level.global_position = global_position + Vector2(0,-height*2)
 			global.player.global_position.y = level.global_position.y
 		
 		if global.player.global_position.y >= global_position.y + height/2.2:
-			print("Bottom")
 			level.door_top.locked = true
 			level.global_position = global_position + Vector2(0,height*2)
 			global.player.global_position = global_position + Vector2(0,height + 32)
 		
 		if global.player.global_position.x <= global_position.x - width/2:
-			print("Left")
 			level.door_right.locked = true
 			level.global_position = global_position + Vector2(width*2,0)
 			global.player.global_position = global_position + Vector2(width + 32,0)

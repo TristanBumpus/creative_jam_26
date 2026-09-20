@@ -12,6 +12,7 @@ func upgrade_do_shit(p_or_f : int):
 	var id
 	var scaling
 	if p_or_f == 1:
+		player.current_hp += player.max_hp/5
 		id = p_items[1]
 		scaling = p_items[0]
 	else:

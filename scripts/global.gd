@@ -8,10 +8,10 @@ var all_upgrades = [
 	{"name": "Speed up", "desc": "Increases speed by ", "effect": 2, "lvl mult": 2 },
 	{"name": "Dodge time", "desc": "Increases Dodge Time by ", "effect": .2, "lvl mult": .1 },
 	{"name": "Fire Ball", "desc": "Adds an explosive Fire Balls to your cast ", "effect": 0, "lvl mult": .1 },
-	{"name": "Max health up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5},
+	{"name": "Max Health Up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5},
 	{"name": "Ice Ball", "desc": "Adds a ball of Ice to  your cast", "effect": 0, "lvl mult": .1 },
 	{"name": "Posion Ball", "desc": "Adds a Toxic glob to your cast ", "effect": 0, "lvl mult": .1 },
-	{"name": "Toe stubber", "desc": "Makes dash deal more damage ", "effect": 2, "lvl mult": 2 },
+	{"name": "Tungsten toe", "desc": "Makes dash deal more damage ", "effect": 2, "lvl mult": 2 },
 	{"name": "Piercing Shot", "desc": "Makes your spells pierce enemies ", "effect": 1, "lvl mult": 1 },
 	{"name": "Bouncy Magic", "desc": "Makes your spells bouncy ", "effect": 1, "lvl mult": 1 }
 	]
@@ -41,12 +41,11 @@ func select_loot(level: int, index : int):
 func generate_wave(dif):
 	wave += 1
 	var num_enemies = (2*wave**2)/4 + 2
-	print(dif)
 	for i in num_enemies:
 		enemies_to_spawn += [enemy_table.pick_random()]
 	
 	var random = randf_range(2,10)
-	var enmies_to_change = int(num_enemies / random)
+	var enmies_to_change = int(num_enemies / random) + 1
 	
 	for child in global.enemies_to_spawn:
 		await get_tree().process_frame
@@ -78,7 +77,10 @@ func _ready() -> void:
 		
 		# [level (wave) equivalent, corresponding upgrade (item)]
 		loot_pool += [[i,  loot_table[rarity].pick_random()]]
-	print(loot_pool)
+
+func grab_player():
+	await get_tree().scene_changed
+	player = get_tree().get_first_node_in_group("player")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

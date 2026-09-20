@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://7cckmump88is"]
 
+[ext_resource type="Texture2D" uid="uid://45hq7v1n5ovt" path="res://assets/particules/Slash-Particule_Blood.png" id="1_mjf7f"]
+
 [sub_resource type="Curve" id="Curve_5urd5"]
 _limits = [0.0, 100.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
@@ -18,14 +20,15 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=111069926]
 emitting = false
 amount = 32
+texture = ExtResource("1_mjf7f")
 lifetime = 0.35000000000000003
 one_shot = true
 explosiveness = 0.5
 direction = Vector2(10, 0)
 spread = 75.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 20.0
+initial_velocity_min = 3000.0
+initial_velocity_max = 6000.0
 angular_velocity_min = -180.0
 angular_velocity_max = 180.0
 damping_max = 10.0

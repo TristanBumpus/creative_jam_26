@@ -41,7 +41,6 @@ func _process(delta: float) -> void:
 		position.x = 0
 	
 	if Input.is_action_just_pressed("esc"):
-		print("S")
 		get_tree().paused = !get_tree().paused
 
 
@@ -53,7 +52,7 @@ func _on_fullscreen_pressed() -> void:
 
 
 func _on_master_pressed() -> void:
-	
+	$master.text = "Master " + str(master)
 	master += 1
 	if master > 10:
 		master = 0
@@ -72,6 +71,8 @@ func _on_master_pressed() -> void:
 
 func _on_music_pressed() -> void:
 	
+	$music.text = "Music " + str(music)
+	
 	music += 1
 	if music > 10:
 		music = 0
@@ -89,6 +90,9 @@ func _on_music_pressed() -> void:
 
 
 func _on_sfx_pressed() -> void:
+	
+	$sfx.text = "SFX " + str()
+	
 	sfx += 1
 	if sfx > 10:
 		sfx = 0

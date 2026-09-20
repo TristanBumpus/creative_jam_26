@@ -41,6 +41,10 @@ bounce_area=""
 bounce_area_y=""
 bounce_area_x=""
 
+[gui]
+
+theme/custom="uid://6dhpqbaas84f"
+
 [input]
 
 a={

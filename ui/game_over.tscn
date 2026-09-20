@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://do3u05iaitfpf"]
 
 [ext_resource type="Script" uid="uid://cl3p2sbaw8b6e" path="res://scripts/main_menu.gd" id="1_oo8kp"]
+[ext_resource type="AudioStream" uid="uid://bn7u3if82jyoo" path="res://music/song1-ingame-180bpm.mp3" id="2_5eixk"]
 
 [node name="GameOver" type="Control" unique_id=1028351939]
 layout_mode = 3
@@ -37,5 +38,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 640
 text = "Restart"
+
+[node name="Song1Ingame180Bpm" type="AudioStreamPlayer" parent="." unique_id=755290388]
+stream = ExtResource("2_5eixk")
+autoplay = true
 
 [connection signal="pressed" from="reset" to="." method="_on_start_pressed"]

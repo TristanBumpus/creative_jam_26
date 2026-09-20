@@ -2,9 +2,73 @@
 
 [ext_resource type="Script" uid="uid://cmvda08nlfu8n" path="res://scripts/upgrade.gd" id="1_141gf"]
 [ext_resource type="PackedScene" uid="uid://dr5b125mqfs7a" path="res://ui/choose_orbs_anim.tscn" id="2_pgj5t"]
+[ext_resource type="Texture2D" uid="uid://d312p27kstnmp" path="res://assets/stuff/juicyplus.png" id="3_jd3lo"]
 [ext_resource type="Texture2D" uid="uid://byc8g5e3mq381" path="res://assets/upgrades/attack_speed.png" id="3_vwur3"]
+[ext_resource type="Texture2D" uid="uid://do2d3204p6q8x" path="res://assets/stuff/juicyskull1.png" id="5_v5nup"]
+[ext_resource type="Texture2D" uid="uid://c4gj4wjxat2pi" path="res://assets/stuff/juicyskull2.png" id="6_6x84l"]
 
 [sub_resource type="Theme" id="Theme_7u8ib"]
+
+[sub_resource type="Animation" id="Animation_jd3lo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("upgrade/future/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6672, 979.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("upgrade/past/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6672, 979.5)]
+}
+
+[sub_resource type="Animation" id="Animation_vwur3"]
+resource_name = "now"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("upgrade/future/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-6672, 979.5), Vector2(-6672, 1444)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("upgrade/past/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6672, 979.5), Vector2(6672, 1444)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jd3lo"]
+_data = {
+&"RESET": SubResource("Animation_jd3lo"),
+&"now": SubResource("Animation_vwur3")
+}
 
 [node name="upgrade" type="CanvasLayer" unique_id=1679262284]
 script = ExtResource("1_141gf")
@@ -14,7 +78,6 @@ position = Vector2(5582, 6469)
 scale = Vector2(8, 8)
 
 [node name="upgrade" type="Control" parent="." unique_id=2065623402]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +109,34 @@ offset_right = -6999.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Juicyplus" type="Sprite2D" parent="upgrade/past" unique_id=2063717725]
+position = Vector2(6642, 1026)
+texture = ExtResource("3_jd3lo")
+
+[node name="Juicyplus2" type="Sprite2D" parent="upgrade/past" unique_id=789213534]
+position = Vector2(10691, 5594)
+texture = ExtResource("3_jd3lo")
+
+[node name="Juicyplus3" type="Sprite2D" parent="upgrade/past" unique_id=2083939086]
+position = Vector2(6561, 3633)
+texture = ExtResource("3_jd3lo")
+
+[node name="Juicyplus4" type="Sprite2D" parent="upgrade/past" unique_id=404421204]
+position = Vector2(10841, 1418)
+texture = ExtResource("3_jd3lo")
+
+[node name="Juicyplus5" type="Sprite2D" parent="upgrade/past" unique_id=2104486166]
+position = Vector2(873, 5029)
+texture = ExtResource("3_jd3lo")
+
+[node name="Juicyplus6" type="Sprite2D" parent="upgrade/past" unique_id=1249126820]
+position = Vector2(400, 2041)
+texture = ExtResource("3_jd3lo")
+
+[node name="Juicyplus7" type="Sprite2D" parent="upgrade/past" unique_id=1376115724]
+position = Vector2(3896, 853)
+texture = ExtResource("3_jd3lo")
 
 [node name="TextureRect" type="TextureRect" parent="upgrade/past" unique_id=1817429362]
 layout_mode = 1
@@ -82,10 +173,10 @@ modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 6553.0
-offset_top = 325.0
-offset_right = 6553.0
-offset_bottom = 980.0
+offset_left = 415.0
+offset_top = 1640.0
+offset_right = 415.0
+offset_bottom = 2295.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 480
 text = "Rejuvenate"
@@ -109,12 +200,13 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 349.0
-offset_top = 1930.0
-offset_right = 349.0
-offset_bottom = 2803.0
+offset_left = 6510.0
+offset_top = 142.0
+offset_right = 6510.0
+offset_bottom = 1015.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 640
+text = "Healw"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -242,10 +334,10 @@ modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -6737.0
-offset_top = 306.0
-offset_right = -6737.0
-offset_bottom = 961.0
+offset_left = -392.0
+offset_top = 1633.0
+offset_right = -392.0
+offset_bottom = 2288.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 480
 text = "Hard Fall"
@@ -269,10 +361,10 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -349.0
-offset_top = 1930.0
-offset_right = -349.0
-offset_bottom = 2803.0
+offset_left = -6890.0
+offset_top = 176.0
+offset_right = -6890.0
+offset_bottom = 1049.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 640
 text = "Max Health"
@@ -347,10 +439,44 @@ grow_vertical = 0
 max_value = 5.0
 value = 3.0
 
+[node name="Juicyskull1" type="Sprite2D" parent="upgrade/future" unique_id=229970163]
+position = Vector2(-1919, 1222)
+texture = ExtResource("5_v5nup")
+
+[node name="Juicyskull2" type="Sprite2D" parent="upgrade/future" unique_id=1664989922]
+position = Vector2(-6718, 1799)
+texture = ExtResource("5_v5nup")
+flip_h = true
+
+[node name="Juicyskull3" type="Sprite2D" parent="upgrade/future" unique_id=1989323614]
+position = Vector2(-6476, 5744)
+texture = ExtResource("6_6x84l")
+
+[node name="Juicyskull4" type="Sprite2D" parent="upgrade/future" unique_id=29573016]
+position = Vector2(-1607, 6091)
+texture = ExtResource("6_6x84l")
+
+[node name="Juicyskull5" type="Sprite2D" parent="upgrade/future" unique_id=1461586210]
+position = Vector2(3780, 3149)
+texture = ExtResource("5_v5nup")
+
+[node name="Juicyskull6" type="Sprite2D" parent="upgrade/future" unique_id=473084778]
+position = Vector2(-27, 1118)
+texture = ExtResource("5_v5nup")
+flip_h = true
+
+[node name="Juicyskull7" type="Sprite2D" parent="upgrade/future" unique_id=457772966]
+position = Vector2(3653, 5941)
+texture = ExtResource("6_6x84l")
+
 [node name="Timer" type="Timer" parent="." unique_id=1525687553]
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2060601178]
+libraries/ = SubResource("AnimationLibrary_jd3lo")
+autoplay = &"now"
 
 [connection signal="pressed" from="upgrade/option_1" to="." method="_on_p_option_1_pressed"]
 [connection signal="pressed" from="upgrade/past/option_2" to="." method="_on_p_option_2_pressed"]

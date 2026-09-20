@@ -13,8 +13,12 @@ effects_collection = Array[int]([1])
 [node name="MeshInstance2D" parent="." index="0" unique_id=737897609]
 modulate = Color(0, 1, 1, 1)
 
-[node name="laser_impact" parent="." index="3" unique_id=2051596197 instance=ExtResource("2_63a3g")]
-
-[node name="PointLight2D" type="PointLight2D" parent="." index="4" unique_id=1391133153]
+[node name="PointLight2D" type="PointLight2D" parent="." index="3" unique_id=1391133153]
 texture = ExtResource("3_pf1k1")
 texture_scale = 5.0
+
+[node name="fire_impact" parent="." index="5" unique_id=1267353723]
+visible = false
+
+[node name="ice_impact" parent="." index="6" unique_id=786867677 instance=ExtResource("2_63a3g")]
+position = Vector2(0.49999988, 5.9604645e-08)

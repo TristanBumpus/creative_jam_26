@@ -12,3 +12,12 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Area2D" parent="." index="1" unique_id=448281020]
 scale = Vector2(0.75, 0.75)
+
+[node name="laser_impact" parent="." index="2" unique_id=2051596197]
+position = Vector2(-5.2999997, -7.0999994)
+
+[node name="poison_impact" parent="." index="3" unique_id=2103958233]
+visible = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

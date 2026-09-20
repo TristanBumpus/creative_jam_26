@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://cw7lhik6cmmvl"]
 
 [ext_resource type="Script" uid="uid://cskurvq7pdwfm" path="res://scripts/pedestal.gd" id="1_2adot"]
+[ext_resource type="Texture2D" uid="uid://c2d8wvlm7syt4" path="res://assets/pedestal.png" id="2_0gsp6"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7u8ib"]
 radius = 8.0
 height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7u8ib"]
-radius = 8.0
+radius = 174.39323
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2adot"]
-radius = 33.3006
+radius = 450.09
 
 [node name="pedestal" type="StaticBody2D" unique_id=1168299728]
-scale = Vector2(10, 10)
 script = ExtResource("1_2adot")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1624217872]
@@ -33,15 +33,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -18.5
-offset_top = -149.29999
-offset_right = 316.5
-offset_bottom = 668.7
+offset_left = -35.0
+offset_top = -624.0
+offset_right = 635.0
+offset_bottom = 1011.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.1, 0.1)
-theme_override_font_sizes/font_size = 600
+theme_override_font_sizes/font_size = 1200
 text = "E"
+
+[node name="Pedestal" type="Sprite2D" parent="." unique_id=1522356083]
+position = Vector2(-1.6999999, 4.9999995)
+texture = ExtResource("2_0gsp6")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

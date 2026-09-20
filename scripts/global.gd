@@ -55,13 +55,14 @@ func generate_wave(dif):
 	
 	for child in global.enemies_to_spawn:
 		await get_tree().process_frame
-		var enemy = load(global.enemies_to_spawn.pop_front()).instantiate()
+		var enemy = load("res://entities/spawner.tscn").instantiate()
 		get_tree().current_scene.add_child(enemy)
 		if enmies_to_change > 0:
 			enemy.level = wave + dif
 			enmies_to_change -= 1
+		enemy.enemy = global.enemies_to_spawn.pop_front()
 		var random_angle: float = randf_range(0.0, TAU)
-		enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 3500
+		enemy.global_position = player.global_position + Vector2.from_angle(random_angle) * 3000
 
 
 # Called when the node enters the scene tree for the first time.

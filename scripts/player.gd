@@ -22,12 +22,17 @@ var bullet_pierce = 0
 var projectile_count_by_type: Dictionary[String, int] = {
 	"res://entities/projectiles/basic_projectile.tscn": 1
 }
+var can_move = true
+
 
 
 func change_scene():
+	global.generate_wave(0)
 	$cont/falling_character.visible = true
 	$cont/falling_character/AnimationPlayer.play("falling")
+	can_move = false
 	await $cont/falling_character/AnimationPlayer.animation_finished
+	can_move = true
 	$cont/falling_character.visible = false
 
 
@@ -84,6 +89,11 @@ func _process(_delta: float) -> void:
 	if velocity.x < 0:
 		$player_anims.scale.x = -1
 	
+	if current_hp > 0:
+		visible = can_move
+	
+	if !can_move:
+		velocity = Vector2.ZERO
 	move_and_slide()
 
 

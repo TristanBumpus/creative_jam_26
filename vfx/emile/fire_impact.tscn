@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bayx1fsjfhgrc"]
 
+[ext_resource type="Texture2D" uid="uid://dducqa2g2rqck" path="res://vfx/actual_text/fire.png" id="1_44bxh"]
+
 [sub_resource type="Curve" id="Curve_ykyeq"]
 _limits = [-10.0, 10.0, 0.0, 1.0]
 _data = [Vector2(0, 10), 0.0, -31.862745, 0, 0, Vector2(1, -10), -4.485861, 0.0, 0, 0]
@@ -17,7 +19,7 @@ colors = PackedColorArray(0.25490198, 0.1254902, 0.12156863, 0.44705883, 0.26666
 offsets = PackedFloat32Array(0, 0.33333334, 0.75308645, 0.9866221)
 colors = PackedColorArray(1, 0.5529412, 0.12156863, 1, 1, 0.3137255, 0.19215687, 1, 0.69411767, 0.1764706, 0.16862746, 0.7294118, 0, 0, 0, 0)
 
-[node name="laser_impact" type="Node2D" unique_id=2051596197]
+[node name="fire_impact" type="Node2D" unique_id=2051596197]
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1638150015]
 z_index = -1
@@ -41,6 +43,7 @@ color_ramp = SubResource("Gradient_4tayj")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=653860427]
 rotation = 0.00086429
 amount = 32
+texture = ExtResource("1_44bxh")
 lifetime = 0.6
 emission_shape = 1
 emission_sphere_radius = 10.0

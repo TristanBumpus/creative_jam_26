@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ds364f2u5paaa"]
+
+[ext_resource type="Texture2D" uid="uid://5463xgdxeo3g" path="res://assets/z_cin/retry_thingy.png" id="1_auv7p"]
+
+[node name="cin01" type="Node2D" unique_id=393563547]
+
+[node name="RetryThingy" type="Sprite2D" parent="." unique_id=652823783]
+visible = false
+position = Vector2(69, 35)
+texture = ExtResource("1_auv7p")
+region_enabled = true
+region_rect = Rect2(259, 1913, 8115, 4264)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1220088132]

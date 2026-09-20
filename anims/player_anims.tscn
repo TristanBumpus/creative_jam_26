@@ -1,51 +1,91 @@
 [gd_scene format=3 uid="uid://r26ghmmhy1tk"]
 
-[ext_resource type="Texture2D" uid="uid://djgdkiwbirhms" path="res://assets/player_color/WizKidColored_0000s_0003s_0000s_0000_Top-Hat.png" id="2_bvy7u"]
-[ext_resource type="Texture2D" uid="uid://de4ylfaxrdw5i" path="res://assets/player/WizKid_0000s_0005s_0000_underhat.png" id="2_ui36t"]
-[ext_resource type="Texture2D" uid="uid://cncdduamg0lj7" path="res://assets/player_n/WizKidColored_0000s_0003s_0000s_0000_Top-Hat_n.png" id="3_ganix"]
-[ext_resource type="Texture2D" uid="uid://cedy22lp7kubx" path="res://assets/player_color/WizKidColored_0000s_0003s_0001s_0000_Mid-Hat.png" id="4_45an1"]
-[ext_resource type="Texture2D" uid="uid://btgy4rac6q4rx" path="res://assets/player_n/WizKidColored_0000s_0003s_0001s_0000_Mid-Hat_n.png" id="5_b702p"]
-[ext_resource type="Texture2D" uid="uid://bnsustijf6yh3" path="res://assets/player/WizKid_0000s_0004s_0001_Head.png" id="5_nsd8u"]
-[ext_resource type="Texture2D" uid="uid://berfejydqjvdn" path="res://assets/player_color/WizKidColored_0000s_0003s_0002s_0000_Lower-Hat.png" id="6_2t7ps"]
-[ext_resource type="Texture2D" uid="uid://y4nmj8ymw6d7" path="res://assets/player/WizKid_0000s_0004s_0000s_0000_Mustach-2.png" id="6_jdw76"]
-[ext_resource type="Texture2D" uid="uid://lpw4flwhh2m8" path="res://assets/player/WizKid_0000s_0004s_0002s_0000_Beard.png" id="6_k5ldn"]
-[ext_resource type="Texture2D" uid="uid://cge1b6fm8yphp" path="res://assets/player_n/WizKidColored_0000s_0003s_0002s_0000_Lower-Hat_n.png" id="7_0gpva"]
-[ext_resource type="Texture2D" uid="uid://dptqgb38tkm34" path="res://assets/player/WizKid_0000s_0004s_0001s_0000_Mustash-1.png" id="7_jdw76"]
-[ext_resource type="Texture2D" uid="uid://dwosad61gpycb" path="res://assets/player/WizKid_0000s_0004s_0000_nose.png" id="7_k5ldn"]
-[ext_resource type="Texture2D" uid="uid://bejbmhjebvf40" path="res://assets/player/WizKid_0000s_0006s_0000_Coat.png" id="10_4nmbd"]
+[ext_resource type="Texture2D" uid="uid://ok0j2jg3xbdt" path="res://assets/bandaid/player_color/WizKidColored_0000s_0005s_0000_UnderHat.png" id="1_ganix"]
+[ext_resource type="Texture2D" uid="uid://bv6xittd0kv44" path="res://assets/bandaid/player_n/WizKidColored_0000s_0005s_0000_UnderHat_n.png" id="2_45an1"]
+[ext_resource type="Texture2D" uid="uid://dnvcgdungyjrs" path="res://assets/bandaid/player_color/WizKidColored_0000s_0003s_0000s_0000_TopHat.png" id="3_b702p"]
+[ext_resource type="Texture2D" uid="uid://cq3jrj1sv6yub" path="res://assets/bandaid/player_n/WizKidColored_0000s_0003s_0000s_0000_TopHat_n.png" id="4_2t7ps"]
+[ext_resource type="Texture2D" uid="uid://de3yy61uirq2a" path="res://assets/bandaid/player_color/WizKidColored_0000s_0003s_0001s_0000_MidHat.png" id="5_0gpva"]
+[ext_resource type="Texture2D" uid="uid://ctfsv1s36saf3" path="res://assets/bandaid/player_n/WizKidColored_0000s_0003s_0001s_0000_MidHat_n.png" id="6_s2cdm"]
+[ext_resource type="Texture2D" uid="uid://dystnxeygxi1r" path="res://assets/bandaid/player_color/WizKidColored_0000s_0003s_0002s_0000_LowerHat.png" id="7_ouxom"]
+[ext_resource type="Texture2D" uid="uid://bomh7qlc8tqxr" path="res://assets/bandaid/player_n/WizKidColored_0000s_0003s_0002s_0000_LowerHat_n.png" id="8_lnoqg"]
+[ext_resource type="Texture2D" uid="uid://b5miwytisqgly" path="res://assets/bandaid/player_color/WizKidColored_0000s_0004s_0001_Head (1) (1).png" id="9_45an1"]
+[ext_resource type="Texture2D" uid="uid://blbu51fetrjog" path="res://assets/bandaid/player_n/WizKidColored_0000s_0004s_0001_Head_n.png" id="10_b702p"]
+[ext_resource type="Texture2D" uid="uid://dd6f3iw18itj0" path="res://assets/bandaid/player_color/WizKidColored_0000s_0004s_0002s_0000_Beard.png" id="11_ouxom"]
+[ext_resource type="Texture2D" uid="uid://dmwrienrbbq7g" path="res://assets/bandaid/player_color/WizKidColored_0000s_0004s_0000s_0000_Mustache-2.png" id="12_0gpva"]
+[ext_resource type="Texture2D" uid="uid://bqjexcj32sj8f" path="res://assets/bandaid/player_n/WizKidColored_0000s_0004s_0002s_0000_Beard_n.png" id="12_lnoqg"]
 [ext_resource type="Texture2D" uid="uid://c2bsl3oj53gfk" path="res://assets/player_color/WizKidColored_0000s_0002s_0000s_0000_Left-Hand.png" id="13_ab3ds"]
-[ext_resource type="Texture2D" uid="uid://dq8bfhl4ngkjl" path="res://assets/player/WizKid_0000s_0007s_0000_Right-Sleeve.png" id="14_0hkfj"]
+[ext_resource type="Texture2D" uid="uid://wh7r6fu8pfq3" path="res://assets/bandaid/player_n/WizKidColored_0000s_0004s_0000s_0000_Mustache-2_n.png" id="13_s2cdm"]
 [ext_resource type="Texture2D" uid="uid://c532f16sqkmw8" path="res://assets/player_n/WizKidColored_0000s_0002s_0000s_0000_Left-Hand_n.png" id="14_f5uc4"]
+[ext_resource type="Texture2D" uid="uid://dewfmec2hoc7u" path="res://assets/bandaid/player_color/WizKidColored_0000s_0004s_0001s_0000_Mustache-1.png" id="14_ouxom"]
 [ext_resource type="Texture2D" uid="uid://bilgrw5arpcl" path="res://assets/player_color/WizKidColored_0000s_0002s_0000_Left-Sleeve.png" id="14_s2cdm"]
-[ext_resource type="Texture2D" uid="uid://i7x5dxf5kxsx" path="res://assets/player/WizKid_0000s_0008s_0000s_0000_Wand.png" id="15_hl35y"]
+[ext_resource type="Texture2D" uid="uid://wmuhx8r06xv6" path="res://assets/bandaid/player_n/WizKidColored_0000s_0004s_0001s_0000_Mustache-1_n.png" id="15_lnoqg"]
 [ext_resource type="Texture2D" uid="uid://dk0bk16r8fg3l" path="res://assets/player_n/WizKidColored_0000s_0002s_0000_Left-Sleeve_n.png" id="15_ouxom"]
 [ext_resource type="Texture2D" uid="uid://6m8gdugcfs4m" path="res://assets/player_color/WizKidColored_0000s_0002s_0001_undersleeveLeft.png" id="16_lnoqg"]
-[ext_resource type="Texture2D" uid="uid://bucd10623a6sb" path="res://assets/player/WizKid_0000s_0008s_0000_Right-Hand.png" id="16_objs6"]
-[ext_resource type="Texture2D" uid="uid://d0ka3iy668gfd" path="res://assets/player/WizKid_0000s_0010s_0000_Tail-1.png" id="17_objs6"]
+[ext_resource type="Texture2D" uid="uid://bqbnrc4qj7bkb" path="res://assets/bandaid/player_color/WizKidColored_0000s_0004s_0000_nose.png" id="16_qqoy0"]
+[ext_resource type="Texture2D" uid="uid://uifj6xcydc7w" path="res://assets/bandaid/player_n/WizKidColored_0000s_0004s_0000_nose_n.png" id="17_no132"]
 [ext_resource type="Texture2D" uid="uid://d1r0xtc6xvlr4" path="res://assets/player_n/WizKidColored_0000s_0002s_0001_undersleeveLeft_n.png" id="17_qqoy0"]
-[ext_resource type="Texture2D" uid="uid://dnvotjw1vd3jh" path="res://assets/player/WizKid_0000s_0009s_0000_Tail-2.png" id="17_yvk6i"]
-[ext_resource type="Texture2D" uid="uid://wavsj5m8b6c4" path="res://assets/player_color/WizKidColored_0000s_0000s_0003s_0000_Foot.png" id="19_3kfuw"]
-[ext_resource type="Texture2D" uid="uid://ch3s51iqxvo3y" path="res://assets/player_n/WizKidColored_0000s_0000s_0003s_0000_Foot_n.png" id="20_erbgn"]
+[ext_resource type="Texture2D" uid="uid://cu755jvcf7rpq" path="res://assets/bandaid/player_color/WizKidColored_0000s_0006s_0000_Coat.png" id="19_no132"]
+[ext_resource type="Texture2D" uid="uid://c6upm10gp37tc" path="res://assets/bandaid/player_n/WizKidColored_0000s_0006s_0000_Coat_n.png" id="20_cng8i"]
 [ext_resource type="Texture2D" uid="uid://birrowilf82f1" path="res://assets/player_color/WizKidColored_0000s_0000s_0000s_0000_Big-Toe.png" id="21_qvinm"]
 [ext_resource type="Texture2D" uid="uid://jcv7en5iurac" path="res://assets/player_n/WizKidColored_0000s_0000s_0000s_0000_Big-Toe_n.png" id="22_yq8yf"]
 [ext_resource type="Texture2D" uid="uid://ck67t3v6144cs" path="res://assets/player_color/WizKidColored_0000s_0000s_0001s_0000_Mid-toe.png" id="23_ow40w"]
 [ext_resource type="Texture2D" uid="uid://dsisandlma2tt" path="res://assets/player_n/WizKidColored_0000s_0000s_0001s_0000_Mid-toe_n.png" id="24_bvy7u"]
+[ext_resource type="Texture2D" uid="uid://bryfamyklhowb" path="res://assets/bandaid/player_color/WizKidColored_0000s_0000s_0003s_0000_Foot.png" id="25_45an1"]
 [ext_resource type="Texture2D" uid="uid://etk3hn044dw4" path="res://assets/player_color/WizKidColored_0000s_0000s_0002s_0000_Smol-toe.png" id="25_ganix"]
 [ext_resource type="Texture2D" uid="uid://bcm4kel6mxwm8" path="res://assets/player_n/WizKidColored_0000s_0000s_0002s_0000_Smol-toe_n.png" id="26_45an1"]
+[ext_resource type="Texture2D" uid="uid://bnv7tew6y8yiu" path="res://assets/bandaid/player_n/WizKidColored_0000s_0000s_0003s_0000_Foot_n.png" id="26_bvy7u"]
 [ext_resource type="Texture2D" uid="uid://ce1dqpfvr3kkb" path="res://assets/player_color/WizKidColored_0000s_0000_Orb.png" id="27_7cklx"]
+[ext_resource type="Texture2D" uid="uid://cxrycl6o41w2k" path="res://assets/bandaid/player_color/WizKidColored_0000s_0007s_0000_RightSleeve.png" id="27_vbcib"]
 [ext_resource type="Texture2D" uid="uid://c8j4jhnhuhfcm" path="res://assets/player_n/WizKidColored_0000s_0000_Orb_n.png" id="28_80y3p"]
+[ext_resource type="Texture2D" uid="uid://ckdcs1pd4kqn5" path="res://assets/bandaid/player_n/WizKidColored_0000s_0007s_0000_RightSleeve_n.png" id="28_gq60m"]
+[ext_resource type="Texture2D" uid="uid://cffbhbepe0i6o" path="res://assets/bandaid/player_color/WizKidColored_0000s_0008s_0000s_0000_Wand.png" id="29_6t2r7"]
+[ext_resource type="Texture2D" uid="uid://b2gqe7ww33b3q" path="res://assets/bandaid/player_n/WizKidColored_0000s_0008s_0000s_0000_Wand_n.png" id="30_k6ci8"]
+[ext_resource type="Texture2D" uid="uid://bf1t0wg8miyle" path="res://assets/bandaid/player_color/WizKidColored_0000s_0008s_0000_RightHand.png" id="31_rre72"]
+[ext_resource type="Texture2D" uid="uid://m0i2aegjqxh" path="res://assets/bandaid/player_n/WizKidColored_0000s_0008s_0000_RightHand_n.png" id="32_ddogv"]
+[ext_resource type="Texture2D" uid="uid://8fnv6r3h0muf" path="res://assets/bandaid/player_color/WizKidColored_0000s_0009s_0000_Tail2.png" id="33_vbcib"]
+[ext_resource type="Texture2D" uid="uid://b2ljhwu50q660" path="res://assets/bandaid/player_n/WizKidColored_0000s_0009s_0000_Tail2_n.png" id="34_gq60m"]
+[ext_resource type="Texture2D" uid="uid://05crfm00ej2e" path="res://assets/bandaid/player_color/WizKidColored_0000s_0010s_0000_Tail1.png" id="34_no132"]
+[ext_resource type="Texture2D" uid="uid://doiitoa7s7m2m" path="res://assets/bandaid/player_n/WizKidColored_0000s_0010s_0000_Tail1_n.png" id="36_6t2r7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ouxom"]
+diffuse_texture = ExtResource("1_ganix")
+normal_texture = ExtResource("2_45an1")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_2t7ps"]
-diffuse_texture = ExtResource("2_bvy7u")
-normal_texture = ExtResource("3_ganix")
+diffuse_texture = ExtResource("3_b702p")
+normal_texture = ExtResource("4_2t7ps")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0gpva"]
-diffuse_texture = ExtResource("4_45an1")
-normal_texture = ExtResource("5_b702p")
+diffuse_texture = ExtResource("5_0gpva")
+normal_texture = ExtResource("6_s2cdm")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_s2cdm"]
-diffuse_texture = ExtResource("6_2t7ps")
-normal_texture = ExtResource("7_0gpva")
+diffuse_texture = ExtResource("7_ouxom")
+normal_texture = ExtResource("8_lnoqg")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_no132"]
+diffuse_texture = ExtResource("9_45an1")
+normal_texture = ExtResource("10_b702p")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gq60m"]
+diffuse_texture = ExtResource("11_ouxom")
+normal_texture = ExtResource("12_lnoqg")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lnoqg"]
+diffuse_texture = ExtResource("12_0gpva")
+normal_texture = ExtResource("13_s2cdm")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cng8i"]
+diffuse_texture = ExtResource("14_ouxom")
+normal_texture = ExtResource("15_lnoqg")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vbcib"]
+diffuse_texture = ExtResource("16_qqoy0")
+normal_texture = ExtResource("17_no132")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6t2r7"]
+diffuse_texture = ExtResource("19_no132")
+normal_texture = ExtResource("20_cng8i")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_45an1"]
 diffuse_texture = ExtResource("14_s2cdm")
@@ -59,9 +99,29 @@ normal_texture = ExtResource("17_qqoy0")
 diffuse_texture = ExtResource("13_ab3ds")
 normal_texture = ExtResource("14_f5uc4")
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_k6ci8"]
+diffuse_texture = ExtResource("27_vbcib")
+normal_texture = ExtResource("28_gq60m")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ddogv"]
+diffuse_texture = ExtResource("29_6t2r7")
+normal_texture = ExtResource("30_k6ci8")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rre72"]
+diffuse_texture = ExtResource("31_rre72")
+normal_texture = ExtResource("32_ddogv")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f5gk3"]
+diffuse_texture = ExtResource("33_vbcib")
+normal_texture = ExtResource("34_gq60m")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gtkdx"]
+diffuse_texture = ExtResource("34_no132")
+normal_texture = ExtResource("36_6t2r7")
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_ml41y"]
-diffuse_texture = ExtResource("19_3kfuw")
-normal_texture = ExtResource("20_erbgn")
+diffuse_texture = ExtResource("25_45an1")
+normal_texture = ExtResource("26_bvy7u")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7cklx"]
 diffuse_texture = ExtResource("21_qvinm")
@@ -76,8 +136,8 @@ diffuse_texture = ExtResource("25_ganix")
 normal_texture = ExtResource("26_45an1")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qvinm"]
-diffuse_texture = ExtResource("19_3kfuw")
-normal_texture = ExtResource("20_erbgn")
+diffuse_texture = ExtResource("25_45an1")
+normal_texture = ExtResource("26_bvy7u")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yq8yf"]
 diffuse_texture = ExtResource("21_qvinm")
@@ -90,6 +150,9 @@ normal_texture = ExtResource("24_bvy7u")
 [sub_resource type="CanvasTexture" id="CanvasTexture_bvy7u"]
 diffuse_texture = ExtResource("25_ganix")
 normal_texture = ExtResource("26_45an1")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6t2r7"]
+blend_mode = 1
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f5uc4"]
 diffuse_texture = ExtResource("27_7cklx")
@@ -1811,7 +1874,7 @@ position = Vector2(2, -206)
 [node name="place2" type="Sprite2D" parent="hat_off" unique_id=2130911435]
 z_index = -1
 position = Vector2(232, 34)
-texture = ExtResource("2_ui36t")
+texture = SubResource("CanvasTexture_ouxom")
 
 [node name="hat_mid_off" type="Node2D" parent="hat_off" unique_id=952526250]
 position = Vector2(-4, -145)
@@ -1839,7 +1902,7 @@ position = Vector2(-14, -15)
 [node name="head" type="Sprite2D" parent="head_off" unique_id=2110349722]
 z_index = -1
 position = Vector2(47, -112.5)
-texture = ExtResource("5_nsd8u")
+texture = SubResource("CanvasTexture_no132")
 
 [node name="nose_off" type="Node2D" parent="head_off" unique_id=1978650398]
 position = Vector2(65, -125.5)
@@ -1849,32 +1912,32 @@ position = Vector2(10, 83)
 
 [node name="place2" type="Sprite2D" parent="head_off/nose_off/beard_off" unique_id=321270873]
 position = Vector2(-13, 82)
-texture = ExtResource("6_k5ldn")
+texture = SubResource("CanvasTexture_gq60m")
 
 [node name="mustach_r_off" type="Node2D" parent="head_off/nose_off" unique_id=619058376]
 position = Vector2(8, 72)
 
 [node name="place2" type="Sprite2D" parent="head_off/nose_off/mustach_r_off" unique_id=1994800173]
 position = Vector2(31, -2)
-texture = ExtResource("6_jdw76")
+texture = SubResource("CanvasTexture_lnoqg")
 
 [node name="mustach_l_off" type="Node2D" parent="head_off/nose_off" unique_id=764096704]
 position = Vector2(8, 65)
 
 [node name="place2" type="Sprite2D" parent="head_off/nose_off/mustach_l_off" unique_id=363511017]
 position = Vector2(-33, 5)
-texture = ExtResource("7_jdw76")
+texture = SubResource("CanvasTexture_cng8i")
 
 [node name="nose" type="Sprite2D" parent="head_off/nose_off" unique_id=853609615]
 position = Vector2(1, 23)
-texture = ExtResource("7_k5ldn")
+texture = SubResource("CanvasTexture_vbcib")
 
 [node name="body_off" type="Node2D" parent="." unique_id=1464969494]
 
 [node name="body" type="Sprite2D" parent="body_off" unique_id=2138024729]
 z_index = -4
 position = Vector2(0, 146)
-texture = ExtResource("10_4nmbd")
+texture = SubResource("CanvasTexture_6t2r7")
 
 [node name="arm_l_off" type="Node2D" parent="." unique_id=1624473611]
 position = Vector2(-60, -55)
@@ -1902,7 +1965,7 @@ position = Vector2(11, -25)
 [node name="arm_r" type="Sprite2D" parent="arm_r_off" unique_id=87964939]
 z_index = -6
 position = Vector2(93, 57)
-texture = ExtResource("14_0hkfj")
+texture = SubResource("CanvasTexture_k6ci8")
 
 [node name="hand_r_off" type="Node2D" parent="arm_r_off" unique_id=1744431287]
 position = Vector2(139, 65)
@@ -1913,12 +1976,12 @@ position = Vector2(161, -42)
 [node name="wand" type="Sprite2D" parent="arm_r_off/hand_r_off/wand_off" unique_id=249747346]
 z_index = -8
 position = Vector2(19, -71)
-texture = ExtResource("15_hl35y")
+texture = SubResource("CanvasTexture_ddogv")
 
 [node name="hand_r" type="Sprite2D" parent="arm_r_off/hand_r_off" unique_id=448262441]
 z_index = -7
 position = Vector2(102, 34)
-texture = ExtResource("16_objs6")
+texture = SubResource("CanvasTexture_rre72")
 
 [node name="tail_1_off" type="Node2D" parent="." unique_id=640476672]
 position = Vector2(-70, 224)
@@ -1929,12 +1992,13 @@ position = Vector2(-246, 95)
 [node name="tail_2" type="Sprite2D" parent="tail_1_off/tail_2_off" unique_id=84534967]
 z_index = -8
 position = Vector2(-66, 4)
-texture = ExtResource("17_yvk6i")
+texture = SubResource("CanvasTexture_f5gk3")
 
 [node name="tail_1" type="Sprite2D" parent="tail_1_off" unique_id=852629614]
 z_index = -9
 position = Vector2(-163, 34)
-texture = ExtResource("17_objs6")
+texture = SubResource("CanvasTexture_gtkdx")
+offset = Vector2(34.25, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1200225158]
 position = Vector2(2, -206)
@@ -1993,6 +2057,7 @@ position = Vector2(-261, -246)
 
 [node name="place" type="Sprite2D" parent="orb_off" unique_id=1118972809]
 z_index = 10
+material = SubResource("CanvasItemMaterial_6t2r7")
 texture = SubResource("CanvasTexture_f5uc4")
 
 [node name="head_anim" type="AnimationPlayer" parent="." unique_id=1865713786]

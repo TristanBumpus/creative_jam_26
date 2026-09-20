@@ -7,6 +7,7 @@
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=64985147]
+zoom = Vector2(1.5, 1.5)
 
 [node name="player" parent="." unique_id=523884040 instance=ExtResource("2_ve8qb")]
 position = Vector2(38, 31)

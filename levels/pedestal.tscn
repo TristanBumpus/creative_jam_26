@@ -10,7 +10,7 @@ height = 16.0
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2adot"]
-radius = 24.0
+radius = 33.3006
 
 [node name="pedestal" type="StaticBody2D" unique_id=1168299728]
 scale = Vector2(10, 10)
@@ -26,6 +26,22 @@ shape = SubResource("CircleShape2D_7u8ib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=522416282]
 shape = SubResource("CircleShape2D_2adot")
+
+[node name="Label" type="Label" parent="." unique_id=1894087061]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_top = -149.29999
+offset_right = 316.5
+offset_bottom = 668.7
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 600
+text = "E"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

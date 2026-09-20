@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://brtbhxkth7ytb"]
 
 [ext_resource type="Script" uid="uid://cmvda08nlfu8n" path="res://scripts/upgrade.gd" id="1_141gf"]
+[ext_resource type="PackedScene" uid="uid://dr5b125mqfs7a" path="res://ui/choose_orbs_anim.tscn" id="2_pgj5t"]
 
 [sub_resource type="Theme" id="Theme_7u8ib"]
 
 [node name="upgrade" type="CanvasLayer" unique_id=1679262284]
 script = ExtResource("1_141gf")
 
+[node name="choose_orbs_anim" parent="." unique_id=604326248 instance=ExtResource("2_pgj5t")]
+position = Vector2(5582, 6469)
+scale = Vector2(8, 8)
+
 [node name="upgrade" type="Control" parent="." unique_id=2065623402]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,6 +75,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 640
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="option_2" type="Button" parent="upgrade/past" unique_id=330759540]
 visible = false
@@ -103,9 +110,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -2250.0
-offset_top = -2739.0
+offset_top = -4574.0
 offset_right = 2250.0
-offset_bottom = -539.0
+offset_bottom = -2374.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 320
@@ -116,6 +123,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="g_desc" type="Label" parent="upgrade/past" unique_id=69659525]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -190,6 +198,7 @@ theme_override_font_sizes/font_size = 640
 text = "Max Health"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="option_2" type="Button" parent="upgrade/future" unique_id=1983761563]
 visible = false
@@ -213,9 +222,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -2250.0
-offset_top = -2739.0
+offset_top = -4574.0
 offset_right = 2250.0
-offset_bottom = -539.0
+offset_bottom = -2374.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 320
@@ -224,6 +233,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="g_desc" type="Label" parent="upgrade/future" unique_id=1445076182]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -257,7 +267,13 @@ grow_vertical = 0
 max_value = 5.0
 value = 3.0
 
+[node name="Timer" type="Timer" parent="." unique_id=1525687553]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="upgrade/past/option_1" to="." method="_on_p_option_1_pressed"]
 [connection signal="pressed" from="upgrade/past/option_2" to="." method="_on_p_option_2_pressed"]
 [connection signal="pressed" from="upgrade/future/option_1" to="." method="_on_f_option_1_pressed"]
 [connection signal="pressed" from="upgrade/future/option_2" to="." method="_on_f_option_2_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

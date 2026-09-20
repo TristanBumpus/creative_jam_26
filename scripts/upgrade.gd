@@ -5,17 +5,19 @@ var futur_by = 1
 var f_items
 var p_items
 @onready var player := get_tree().get_first_node_in_group("player")
-
+var direction = -1
 
 
 func upgrade_do_shit(p_or_f : int):
 	var id
 	var scaling
 	if p_or_f == 1:
-		player.current_hp += player.max_hp/5
+		player.max_hp += 10
+		player.current_hp += 10
 		id = p_items[1]
 		scaling = p_items[0]
 	else:
+		player.max_hp -= 10
 		id = f_items[1]
 		scaling = f_items[0]
 	
@@ -80,7 +82,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if $upgrade/past/option_1.is_hovered() and direction != 1:
+		direction = 1
+		$choose_orbs_anim/interact_anim.play("left")
+	
+	if $upgrade/future/option_1.is_hovered() and direction != 2:
+		direction = 2
+		$choose_orbs_anim/interact_anim.play("right")
 
 
 func _on_p_option_1_pressed() -> void:
@@ -103,3 +111,7 @@ func _on_f_option_1_pressed() -> void:
 func _on_f_option_2_pressed() -> void:
 	queue_free()
 	global.generate_wave(futur_by)
+
+
+func _on_timer_timeout() -> void:
+	$upgrade.visible = true

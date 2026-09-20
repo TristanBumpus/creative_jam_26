@@ -19,6 +19,7 @@ var direction = Vector2.ZERO
 
 
 func movement():
+	#test
 	if speed_mod <= 1:
 		direction = (player.global_position - global_position).normalized()
 	
@@ -35,9 +36,9 @@ func _ready() -> void:
 	
 	if level == 0:
 		level = global.wave
-	max_hp = randi_range(1 * level, max_hp * level)
-	damage = randi_range(1 * level, damage * level)
-	speed = randi_range(5 * level, speed * level) + 1500
+	max_hp = randi_range(1 * level, max_hp * level) + 15
+	damage = randi_range(1 * level, damage * level) + 3
+	#speed = randi_range(5 * level, speed * level) + 1500
 	
 	current_hp = max_hp
 
@@ -56,9 +57,9 @@ func _process(delta: float) -> void:
 		scale = Vector2(1,1)
 	
 	if velocity.x > 0:
-		$sprite.scale.x = -1
-	else:
 		$sprite.scale.x = 1
+	else:
+		$sprite.scale.x = -1
 	
 	movement()
 	

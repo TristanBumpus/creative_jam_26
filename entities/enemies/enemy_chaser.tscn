@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_i3l3x"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="2_wwwug"]
 [ext_resource type="Texture2D" uid="uid://ugphnrugpnxy" path="res://assets/slime/slimeSheet.png" id="3_lfvcb"]
+[ext_resource type="AudioStream" uid="uid://ckmeqwc2e83ql" path="res://assets/audio/sfx/SlimeHurt.mp3" id="4_6jaxi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f0tem"]
 radius = 175.01143
@@ -58,6 +59,11 @@ one_shot = true
 sprite_frames = SubResource("SpriteFrames_7u8ib")
 autoplay = "default"
 frame_progress = 0.7710814
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=689795227]
+
+[node name="audio_hurt" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1593670871]
+stream = ExtResource("4_6jaxi")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]

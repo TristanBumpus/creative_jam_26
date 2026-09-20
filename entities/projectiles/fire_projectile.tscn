@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhr066rjldtad" path="res://entities/projectiles/basic_projectile.tscn" id="1_n3v4m"]
 [ext_resource type="PackedScene" uid="uid://bayx1fsjfhgrc" path="res://vfx/emile/fire_impact.tscn" id="2_05e4f"]
+[ext_resource type="AudioStream" uid="uid://07k1bt04f3eb" path="res://assets/audio/sfx/sFire.01.mp3" id="3_ctcir"]
 
 [node name="fire_projectile" unique_id=1302566286 instance=ExtResource("1_n3v4m")]
 speed = 1500
@@ -20,5 +21,8 @@ visible = false
 
 [node name="fire_impact" parent="." index="4" unique_id=1267353723 instance=ExtResource("2_05e4f")]
 position = Vector2(-0.100000024, 0.19999957)
+
+[node name="audio_projectile" parent="AudioListener2D" parent_id_path=PackedInt32Array(199487171) index="0" unique_id=1438076940]
+stream = ExtResource("3_ctcir")
 
 [connection signal="timeout" from="aoe_duration" to="." method="_on_aoe_duration_timeout"]

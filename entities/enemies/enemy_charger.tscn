@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="2_fbs5l"]
 [ext_resource type="Texture2D" uid="uid://chxheithwj85q" path="res://assets/dog/dog_c/Dog2.png" id="3_6ukx5"]
 [ext_resource type="Texture2D" uid="uid://tq8m88trsrdm" path="res://assets/dog/dog_c/Dog.png" id="4_d48sp"]
+[ext_resource type="AudioStream" uid="uid://booxh66hstx86" path="res://assets/audio/sfx/DogChase.01.mp3" id="5_fuoek"]
+[ext_resource type="AudioStream" uid="uid://c1mmf2viaj1uq" path="res://assets/audio/sfx/DogRun.01.mp3" id="6_l0pe6"]
+[ext_resource type="AudioStream" uid="uid://b16ykjirb3kg2" path="res://assets/audio/sfx/DogRun.02.mp3" id="7_hqsra"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
 size = Vector2(32, 32)
@@ -68,6 +71,17 @@ sprite_frames = SubResource("SpriteFrames_6ukx5")
 autoplay = "default"
 frame_progress = 0.3638179
 flip_h = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1192986188]
+
+[node name="audio_chase" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=554617255]
+stream = ExtResource("5_fuoek")
+
+[node name="audio_run" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1030112483]
+stream = ExtResource("6_l0pe6")
+
+[node name="audio_run2" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1830364313]
+stream = ExtResource("7_hqsra")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]

@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dy1jkcurky0wp" path="res://entities/boss.tscn" id="4_6traj"]
 [ext_resource type="PackedScene" uid="uid://1xe88khkry3g" path="res://levels/level_1.tscn" id="5_n5hkc"]
 
+[sub_resource type="Environment" id="Environment_8wq4x"]
+glow_enabled = true
+
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=64985147]
@@ -18,3 +21,6 @@ script = ExtResource("3_hwdco")
 [node name="level_1" parent="." unique_id=1279288876 instance=ExtResource("5_n5hkc")]
 
 [node name="boss" parent="." unique_id=2133907600 instance=ExtResource("4_6traj")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=577526370]
+environment = SubResource("Environment_8wq4x")

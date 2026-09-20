@@ -66,4 +66,6 @@ flip_h = true
 
 [node name="audio_hurt" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=989564501]
 stream = ExtResource("4_7hcpa")
+bus = &"sfx"
+
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]

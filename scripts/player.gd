@@ -16,6 +16,9 @@ var can_dodge = true
 var projectile = "res://entities/projectils/basic_projectile.tscn"
 @export var projectiles_acquired: Array[Resource] = [preload("res://entities/projectiles/basic_projectile.tscn")]
 var current_projectile = 0
+var dash_damage = 0
+var bullet_bounce = 0
+var bullet_pierce = 0
 
 #Engine functions
 # Called when the node enters the scene tree for the first time.
@@ -32,7 +35,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("shift") and speed_mod == 1 and can_dodge:
 		speed_mod = dodge_speed
 		can_dodge = false
-		$Area2D/CollisionShape2D.disabled = true
+		$Area2D.monitorable = true
 		$dodge_time.start(dodge_time)
 	
 	#get input for movement
@@ -55,7 +58,7 @@ func _process(_delta: float) -> void:
 
 func _on_dodge_time_timeout() -> void:
 	speed_mod = 1
-	$Area2D/CollisionShape2D.disabled = false
+	$Area2D.monitorable = true
 	$dodge_cooldown.start()
 
 
@@ -76,5 +79,13 @@ func _on_attack_timer_timeout() -> void:
 	p.global_position = global_position
 	p.direction = (mouse_position - global_position).normalized()
 	p.damage = damage
+	p.bounce_limit = bullet_bounce
+	p.pierce_limit = bullet_pierce
 	
 	$attack_timer.start(attack_speed)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if !$dodge_time.is_stopped() and area.get_parent().is_in_group("enemy"):
+		if dash_damage > 0:
+			area.get_parent().current_hp -= dash_damage

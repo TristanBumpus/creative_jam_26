@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ngpdr4e8ydfc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d46qr"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_t1kpk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ykyeq"]
+offsets = PackedFloat32Array(0, 0.3271605, 1)
+colors = PackedColorArray(0.46425682, 0.5078232, 0.76196045, 1, 0.6784314, 0.36078432, 0.94509804, 0.654902, 0.5764706, 0.36078432, 0.7411765, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wohr7"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_o52dq"]
+colors = PackedColorArray(0.8600654, 2.0402048, 2.268914, 1, 1, 1, 1, 0)
+
+[node name="Node2D" type="Node2D" unique_id=1507923360]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=662867772]
+z_index = -5
+material = SubResource("CanvasItemMaterial_d46qr")
+amount = 219
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_t1kpk")
+color_ramp = SubResource("Gradient_ykyeq")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1576187814]
+material = SubResource("CanvasItemMaterial_wohr7")
+amount = 47
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_t1kpk")
+color_ramp = SubResource("Gradient_o52dq")

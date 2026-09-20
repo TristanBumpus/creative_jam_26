@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhr066rjldtad"]
 
 [ext_resource type="Script" uid="uid://cfihsp1m6c05s" path="res://entities/projectiles/projectile.gd" id="1_ydmud"]
+[ext_resource type="PackedScene" uid="uid://bloqfwwmpiwlp" path="res://vfx/emile/dash_attack.tscn" id="2_0exwr"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tnd2v"]
 radius = 8.0
@@ -23,6 +24,9 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1387678390]
 shape = SubResource("CircleShape2D_uqfgt")
+
+[node name="laser_impact" parent="." unique_id=2051596197 instance=ExtResource("2_0exwr")]
+position = Vector2(-5.2999997, -7.0999994)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

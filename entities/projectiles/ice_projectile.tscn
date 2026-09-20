@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bk35ocxg7064c"]
 
 [ext_resource type="PackedScene" uid="uid://dfwpt74phbj88" path="res://entities/projectiles/fire_projectile.tscn" id="1_e2b4q"]
+[ext_resource type="PackedScene" uid="uid://dhpsgs8t4nb6g" path="res://vfx/emile/ice_impact.tscn" id="2_63a3g"]
+[ext_resource type="Texture2D" uid="uid://c55q564hc4s00" path="res://assets/player/WizKid_0000s_0000_Orb.png" id="3_pf1k1"]
 
 [node name="ice_projectile" unique_id=1302566286 instance=ExtResource("1_e2b4q")]
 speed = 2000
@@ -9,3 +11,9 @@ effects_collection = Array[int]([1])
 
 [node name="MeshInstance2D" parent="." index="0" unique_id=737897609]
 modulate = Color(0, 1, 1, 1)
+
+[node name="laser_impact" parent="." index="3" unique_id=2051596197 instance=ExtResource("2_63a3g")]
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="4" unique_id=1391133153]
+texture = ExtResource("3_pf1k1")
+texture_scale = 5.0

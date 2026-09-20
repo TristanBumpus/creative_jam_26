@@ -517,3 +517,5 @@ texture = SubResource("CanvasTexture_h671f")
 z_index = -3
 position = Vector2(-162, 43.5)
 texture = SubResource("CanvasTexture_adbbs")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=823679937]

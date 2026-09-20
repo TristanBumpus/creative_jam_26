@@ -9,7 +9,8 @@ _data = [Vector2(0, 10), 0.0, -31.862745, 0, 0, Vector2(1, -10), -4.485861, 0.0,
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_o52dq"]
-_data = [Vector2(0.012307696, 0.9841269), 0.0, 1.8807873, 0, 0, Vector2(0.47692308, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.6190475), 0.0, 0.0, 0, 0]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0.021538466, 4.2460318), 0.0, 1.8807873, 0, 0, Vector2(0.45846155, 5), 0.0, 0.0, 0, 0, Vector2(1, 0.6190475), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_d46qr"]
@@ -21,10 +22,8 @@ colors = PackedColorArray(0.6509804, 0.9098039, 1, 1, 0.48177126, 0.86936253, 1.
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=2034236012]
 material = SubResource("CanvasItemMaterial_eipg6")
 rotation = 0.00086429
-emitting = false
 amount = 10
 lifetime = 0.4
-one_shot = true
 emission_shape = 3
 emission_rect_extents = Vector2(1, 10)
 direction = Vector2(0, 0)

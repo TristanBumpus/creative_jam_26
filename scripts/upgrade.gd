@@ -6,6 +6,7 @@ var f_items
 var p_items
 @onready var player := get_tree().get_first_node_in_group("player")
 var direction = -1
+var levels = ["res://levels/level_2.tscn","res://levels/level_3.tscn","res://levels/level_4.tscn"]
 
 
 func upgrade_do_shit(p_or_f : int):
@@ -43,6 +44,17 @@ func upgrade_do_shit(p_or_f : int):
 		player.bullet_pierce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
 	if id == 10:
 		player.bullet_bounce += global.all_upgrades[id]["effect"] + global.all_upgrades[id]["lvl mult"] * scaling
+
+func change_level():
+	var level = load(levels.pick_random()).instantiate()
+	
+	
+	get_tree().current_scene.add_child(level)
+	
+	level.global_position = global.player.global_position + Vector2(-50000*2,0)
+	global.player.global_position = level.global_position
+	
+	$"../Camera2D".global_position = level.global_position
 
 
 
@@ -93,24 +105,22 @@ func _process(delta: float) -> void:
 
 func _on_p_option_1_pressed() -> void:
 	upgrade_do_shit(1)
+	change_level()
 	queue_free()
-	global.generate_wave(-past_by)
 
 
 func _on_p_option_2_pressed() -> void:
 	queue_free()
-	global.generate_wave(-past_by)
 
 
 func _on_f_option_1_pressed() -> void:
 	upgrade_do_shit(2)
+	change_level()
 	queue_free()
-	global.generate_wave(futur_by)
 
 
 func _on_f_option_2_pressed() -> void:
 	queue_free()
-	global.generate_wave(futur_by)
 
 
 func _on_timer_timeout() -> void:

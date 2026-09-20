@@ -9,8 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Label.visible = player_in
-	if Input.is_action_just_pressed("e") and player_in:
+	if get_tree().get_node_count_in_group("enemy") == 0:
+		$Label.visible = player_in
+	if Input.is_action_just_pressed("e") and player_in and get_tree().get_node_count_in_group("enemy") == 0:
 		var level_up = load("res://ui/upgrade.tscn").instantiate()
 		get_tree().current_scene.add_child(level_up)
 		queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caelpjuemy3c"
-path="res://.godot/imported/WizKidColored_0000s_0004s_0001_Head.png-b7b7a43be9f893742ed9e00cec24a3be.ctex"
+uid="uid://b807kbfl6fw5v"
+path="res://.godot/imported/WizardPondering_0001s_0001s_0003_Eye.png-8a2120f47c11056e62c74b21a979c92c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bandaid/player_color/WizKidColored_0000s_0004s_0001_Head.png"
-dest_files=["res://.godot/imported/WizKidColored_0000s_0004s_0001_Head.png-b7b7a43be9f893742ed9e00cec24a3be.ctex"]
+source_file="res://assets/choose_orbs/WizardPondering_0001s_0001s_0003_Eye.png"
+dest_files=["res://.godot/imported/WizardPondering_0001s_0001s_0003_Eye.png-8a2120f47c11056e62c74b21a979c92c.ctex"]
 
 [params]
 

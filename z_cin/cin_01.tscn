@@ -1,6 +1,124 @@
 [gd_scene format=3 uid="uid://ds364f2u5paaa"]
 
 [ext_resource type="Texture2D" uid="uid://5463xgdxeo3g" path="res://assets/z_cin/retry_thingy.png" id="1_auv7p"]
+[ext_resource type="Texture2D" uid="uid://dvubxipb3dwlc" path="res://assets/z_cin/01.png" id="2_uqb87"]
+[ext_resource type="Texture2D" uid="uid://cvhydiu42erxx" path="res://assets/z_cin/02.png" id="3_562yy"]
+[ext_resource type="Texture2D" uid="uid://d3ei2nsntbdsk" path="res://assets/z_cin/03.png" id="4_p60pk"]
+
+[sub_resource type="Animation" id="Animation_uqb87"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/MeshInstance2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/MeshInstance2D4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(683.00024, 3011)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/MeshInstance2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(683.00024, -2966)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9677, -249)]
+}
+
+[sub_resource type="Animation" id="Animation_562yy"]
+resource_name = "cin"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/MeshInstance2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9133333, 4.5, 4.8, 5.1000004, 9, 9.3, 9.6, 11.7, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/MeshInstance2D4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5, 4.766667, 7, 9.3, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(683.00024, 3011), Vector2(683, 2511), Vector2(683, 2511), Vector2(683.00024, 3011), Vector2(683.00024, 3011), Vector2(683, 2511)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/MeshInstance2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.5, 4.766667, 7, 9.3, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(683.00024, -2966), Vector2(683, -2466), Vector2(683, -2466), Vector2(683.00024, -2966), Vector2(683.00024, -2966), Vector2(683, -2466)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 2.5, 3.1666667, 4.766667, 4.8, 7, 9, 9.3, 9.333334, 9.6, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(9677, -100), Vector2(4057, -100), Vector2(-1227.166, -100), Vector2(-2284, -100), Vector2(0, -5129), Vector2(0, -7845), Vector2(0, -14616), Vector2(0, -14616), Vector2(0, -21723), Vector2(0, -21723), Vector2(0, -27232)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p60pk"]
+_data = {
+&"RESET": SubResource("Animation_uqb87"),
+&"cin": SubResource("Animation_562yy")
+}
+
+[sub_resource type="QuadMesh" id="QuadMesh_8wq4x"]
+size = Vector2(9999, 9999)
+
+[sub_resource type="QuadMesh" id="QuadMesh_jl6io"]
+size = Vector2(9999, 500)
 
 [node name="cin01" type="Node2D" unique_id=393563547]
 
@@ -12,3 +130,48 @@ region_enabled = true
 region_rect = Rect2(259, 1913, 8115, 4264)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1220088132]
+libraries/ = SubResource("AnimationLibrary_p60pk")
+autoplay = &"cin"
+
+[node name="01" type="Sprite2D" parent="." unique_id=1932666387]
+texture = ExtResource("2_uqb87")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=323273038]
+position = Vector2(9677, -249)
+zoom = Vector2(1.295, 1.295)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Camera2D" unique_id=2010974115]
+modulate = Color(0, 0, 0, 1)
+z_index = 4096
+position = Vector2(-2490.9995, -1085)
+scale = Vector2(2.445, 1)
+mesh = SubResource("QuadMesh_8wq4x")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Camera2D" unique_id=1903475164]
+modulate = Color(0, 0, 0, 1)
+z_index = 4096
+position = Vector2(683.00024, -2966)
+scale = Vector2(2.445, 1)
+mesh = SubResource("QuadMesh_jl6io")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Camera2D" unique_id=2126055710]
+modulate = Color(0, 0, 0, 1)
+z_index = 4096
+position = Vector2(683.00024, 3011)
+scale = Vector2(2.445, 1)
+mesh = SubResource("QuadMesh_jl6io")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1775676640]
+modulate = Color(0.7529412, 0.50980395, 0.14901961, 1)
+z_index = -1
+position = Vector2(5452.0005, -13492.248)
+scale = Vector2(2.445, 3.3654866)
+mesh = SubResource("QuadMesh_8wq4x")
+
+[node name="02" type="Sprite2D" parent="." unique_id=2043542871]
+position = Vector2(188, -11741)
+texture = ExtResource("3_562yy")
+
+[node name="03" type="Sprite2D" parent="." unique_id=749705074]
+position = Vector2(0, -24589)
+texture = ExtResource("4_p60pk")

@@ -8,6 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	#$TextureProgressBar.value = global.player.current_hp
 	#$TextureProgressBar/TextureRect.rotation_degrees = -(global.player.current_hp / global.player.max_hp) * 100 * 3.6
 	var t = create_tween()

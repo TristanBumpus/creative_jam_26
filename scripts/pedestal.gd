@@ -10,7 +10,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Label.visible = player_in
-	print(player_in)
 	if Input.is_action_just_pressed("e") and player_in:
 		var level_up = load("res://ui/upgrade.tscn").instantiate()
 		get_tree().current_scene.add_child(level_up)

@@ -44,7 +44,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			global.player.global_position = global_position + Vector2(width + 32,0)
 		
 		if global.player.global_position.x >= global_position.x + width/2:
-			print("Right")
 			level.door_left.locked = true
 			level.global_position = global_position + Vector2(-width*2,0)
 			global.player.global_position = global_position + Vector2(-width - 32,0)

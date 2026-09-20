@@ -96,6 +96,7 @@ func _on_charger_timeout() -> void:
 func _on_charge_timeout() -> void:
 	$charger.start()
 	speed_mod = dash_speed
+	$AudioListener2D/audio_charge.play()
 
 
 func _on_cooldown_timeout() -> void:

@@ -77,12 +77,16 @@ one_shot = true
 
 [node name="audio_charge" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=874643688]
 stream = ExtResource("4_2bsw6")
+bus = &"sfx"
 
 [node name="audio_run" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=674225390]
 stream = ExtResource("5_8ceye")
+bus = &"sfx"
 
 [node name="audio_hurt" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1954100067]
 stream = ExtResource("6_knkv2")
+bus = &"sfx"
+
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]
 [connection signal="timeout" from="charge" to="." method="_on_charge_timeout"]
 [connection signal="timeout" from="charger" to="." method="_on_charger_timeout"]

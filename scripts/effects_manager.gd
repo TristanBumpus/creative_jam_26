@@ -65,5 +65,5 @@ func _on_poison_duration_timeout() -> void:
 func _on_slow_duration_timeout() -> void:
 	remove_effect(global.effects.slow)
 	target.remove_from_group("is_slowed")
-	target.speed_mod *= 2
+	target.speed_mod *= 4
 	pass # Replace with function body.

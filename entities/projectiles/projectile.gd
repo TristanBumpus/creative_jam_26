@@ -57,6 +57,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if can_explode:
 			explode_projectile()
 		elif pierce_count < pierce_limit:
+			$AudioListener2D/audio_pierce.play()
 			pierce_count += 1
 		else:
 			queue_free()
@@ -81,6 +82,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if can_explode:
 			explode_projectile()
 		elif bounce_count < bounce_limit:
+			$AudioListener2D/audio_bounce.play()
 			#print(bounce_area)
 			direction.x *= bounce_area.x
 			direction.y *= bounce_area.y

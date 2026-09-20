@@ -55,6 +55,7 @@ func _process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://ui/game_over.tscn")
 	
 	if Input.is_action_just_pressed("shift") and speed_mod == 1 and can_dodge:
+		$AudioListener2D/audio_dash.play()
 		speed_mod = dodge_speed
 		can_dodge = false
 		$Area2D.monitorable = true

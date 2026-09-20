@@ -11,7 +11,7 @@ var all_upgrades = [
 	{"name": "Max Health Up", "desc": "Increases Maximum health by ", "effect": 5, "lvl mult": .5},
 	{"name": "Ice Ball", "desc": "Adds a ball of Ice to  your cast", "effect": 0, "lvl mult": .1 },
 	{"name": "Posion Ball", "desc": "Adds a Toxic glob to your cast ", "effect": 0, "lvl mult": .1 },
-	{"name": "Tungsten toe", "desc": "Makes dash deal more damage ", "effect": 2, "lvl mult": 2 },
+	{"name": "Tungsten toe", "desc": "Makes dash deal more damage ", "effect": 5, "lvl mult": 2 },
 	{"name": "Piercing Shot", "desc": "Makes your spells pierce enemies ", "effect": 1, "lvl mult": 1 },
 	{"name": "Bouncy Magic", "desc": "Makes your spells bouncy ", "effect": 1, "lvl mult": 1 }
 	]
@@ -21,7 +21,8 @@ enum effects {
 	slow,
 }
 
-var loot_table = {"commun" : [0,1,5,8], "rare" : [3,4,7,9,10]}
+var loot_table = {"commun" : [0,1,5,8], "rare" : [3,4,6,7,9,10]}
+#var loot_table = {"commun" : [4,6,7], "rare" : [9, 10]}
 
 var loot_pool = []
 var enemy_table = [

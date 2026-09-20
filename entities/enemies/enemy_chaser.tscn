@@ -2,32 +2,50 @@
 
 [ext_resource type="Script" uid="uid://b7tw2pv5u77il" path="res://scripts/enemy.gd" id="1_i3l3x"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="2_wwwug"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_7u8ib"]
-size = Vector2(32, 32)
+[ext_resource type="Texture2D" uid="uid://ugphnrugpnxy" path="res://assets/slime/slimeSheet.png" id="3_lfvcb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f0tem"]
-radius = 7.5026655
+radius = 175.01143
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn83b"]
-size = Vector2(32, 32)
+size = Vector2(600, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jaxi"]
+atlas = ExtResource("3_lfvcb")
+region = Rect2(0, 0, 1001, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygky8"]
+atlas = ExtResource("3_lfvcb")
+region = Rect2(1001, 0, 1001, 1002)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7u8ib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jaxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygky8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="enemy_chaser" type="CharacterBody2D" unique_id=1506096292 groups=["enemy"]]
-scale = Vector2(10, 10)
 script = ExtResource("1_i3l3x")
 max_hp = 30
 speed = 500
 damage = 6
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1343537944]
-mesh = SubResource("QuadMesh_7u8ib")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139975863]
+position = Vector2(17, 209)
 shape = SubResource("CircleShape2D_f0tem")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=232678710]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=171021175]
+position = Vector2(51, 154)
 shape = SubResource("RectangleShape2D_vn83b")
 
 [node name="knock_back" type="Timer" parent="." unique_id=1130283404]
@@ -35,6 +53,11 @@ wait_time = 0.2
 one_shot = true
 
 [node name="effects_manager" parent="." unique_id=879400051 instance=ExtResource("2_wwwug")]
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1920739747]
+sprite_frames = SubResource("SpriteFrames_7u8ib")
+autoplay = "default"
+frame_progress = 0.7710814
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="knock_back" to="." method="_on_knock_back_timeout"]

@@ -2,12 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dvaa3bwldc8sl" path="res://scripts/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://cs7nwficx37d5" path="res://icon.svg" id="2_b0kkn"]
-[ext_resource type="PackedScene" uid="uid://dhr066rjldtad" path="res://entities/projectiles/basic_projectile.tscn" id="2_qly61"]
 [ext_resource type="PackedScene" uid="uid://r26ghmmhy1tk" path="res://anims/player_anims.tscn" id="3_e4p34"]
-[ext_resource type="PackedScene" uid="uid://dfwpt74phbj88" path="res://entities/projectiles/fire_projectile.tscn" id="3_qsoyl"]
-[ext_resource type="PackedScene" uid="uid://bk35ocxg7064c" path="res://entities/projectiles/ice_projectile.tscn" id="4_i623q"]
 [ext_resource type="PackedScene" uid="uid://xxrmm5avvavu" path="res://entities/effects_manager.tscn" id="4_rfe5m"]
-[ext_resource type="PackedScene" uid="uid://civbq2d2av2og" path="res://entities/projectiles/toxic_projectile.tscn" id="5_ef06p"]
+[ext_resource type="PackedScene" uid="uid://dtsy7xbiwcw3f" path="res://ui/ui.tscn" id="5_qly61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
 size = Vector2(515, 600)
@@ -19,8 +16,9 @@ size = Vector2(515, 600)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_merdl")
-speed = 1000.0
-projectiles_acquired = Array[Resource]([ExtResource("2_qly61"), ExtResource("3_qsoyl"), ExtResource("4_i623q"), ExtResource("5_ef06p")])
+speed = 3000.0
+dodge_speed = 5
+projectiles_acquired = Array[Resource]([ExtResource("7_tjdhl")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=6536281]
 scale = Vector2(0.25, 0.25)
@@ -50,6 +48,9 @@ one_shot = true
 
 [node name="effects_manager" parent="." unique_id=879400051 instance=ExtResource("4_rfe5m")]
 
+[node name="cont" parent="." unique_id=52708394 instance=ExtResource("5_qly61")]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="dodge_time" to="." method="_on_dodge_time_timeout"]
 [connection signal="timeout" from="dodge_cooldown" to="." method="_on_dodge_cooldown_timeout"]
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

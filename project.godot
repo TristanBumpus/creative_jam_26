@@ -26,6 +26,7 @@ global="*uid://buygushwr0b0w"
 
 window/size/viewport_width=11520
 window/size/viewport_height=6480
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [global_group]
@@ -35,6 +36,10 @@ enemy=""
 is_burned=""
 is_frozen=""
 is_slowed=""
+is_poisoned=""
+bounce_area=""
+bounce_area_y=""
+bounce_area_x=""
 
 [input]
 

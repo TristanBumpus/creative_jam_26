@@ -44,6 +44,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if current_hp <= 0:
+		var t = load("res://entities/enemies/death.tscn").instantiate()
+		get_tree().current_scene.add_child(t)
+		t.global_position = global_position
 		queue_free()
 	if type == "charger":
 		

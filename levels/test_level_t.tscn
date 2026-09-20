@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dlkoexsjo7ysv" path="res://entities/player.tscn" id="2_ve8qb"]
 [ext_resource type="Script" uid="uid://dn88syjqcbyq" path="res://scripts/level_manager.gd" id="3_hwdco"]
+[ext_resource type="AudioStream" uid="uid://bn7u3if82jyoo" path="res://music/song1-ingame-180bpm.mp3" id="4_6traj"]
 [ext_resource type="PackedScene" uid="uid://1xe88khkry3g" path="res://levels/level_1.tscn" id="5_n5hkc"]
 
 [node name="test_level_T" type="Node2D" unique_id=1954392786]
@@ -15,3 +16,8 @@ zoom = Vector2(0.99, 0.99)
 script = ExtResource("3_hwdco")
 
 [node name="level_1" parent="." unique_id=1279288876 instance=ExtResource("5_n5hkc")]
+
+[node name="Song1Ingame180Bpm" type="AudioStreamPlayer" parent="." unique_id=162664272]
+stream = ExtResource("4_6traj")
+autoplay = true
+bus = &"music"

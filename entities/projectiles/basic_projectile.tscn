@@ -31,19 +31,19 @@ shape = SubResource("CircleShape2D_uqfgt")
 [node name="laser_impact" parent="." unique_id=2051596197 instance=ExtResource("2_0exwr")]
 position = Vector2(-8.700001, 0.4000001)
 
-[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=199487171]
+[node name="AudioListener2D" type="Node2D" parent="." unique_id=1548435665]
 
-[node name="audio_projectile" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1438076940]
-scale = Vector2(0.99999994, 0.99999994)
+[node name="audio_projectile" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=983793816]
 stream = ExtResource("3_7584f")
+bus = &"sfx"
 
-[node name="audio_pierce" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=610004701]
-scale = Vector2(0.99999994, 0.99999994)
+[node name="audio_pierce" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=1864742966]
 stream = ExtResource("4_roc4m")
+bus = &"sfx"
 
-[node name="audio_bounce" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1054708946]
-scale = Vector2(0.99999994, 0.99999994)
+[node name="audio_bounce" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=1002576991]
 stream = ExtResource("5_moefk")
+bus = &"sfx"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -32,7 +32,7 @@ func _ready() -> void:
 	#print(effects_collection)
 	#print(damage)
 	#print(name)
-	pass
+	$AudioListener2D/audio_projectile.play()
 
 
 func _process(delta: float) -> void:

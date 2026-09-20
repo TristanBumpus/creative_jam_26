@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cjkbhtbm1qdn5"]
 
 [ext_resource type="Script" uid="uid://bp0kevpxo5f6d" path="res://scripts/settings.gd" id="1_7kwmf"]
+[ext_resource type="Theme" uid="uid://6dhpqbaas84f" path="res://theme.tres" id="2_pcnwc"]
 
 [node name="settings" type="Control" unique_id=1236409158]
 process_mode = 3
@@ -30,7 +31,7 @@ offset_right = 2803.0
 offset_bottom = -4704.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 640
-text = "Master"
+text = "Master 5"
 
 [node name="music" type="Button" parent="." unique_id=674371230]
 layout_mode = 1
@@ -43,7 +44,7 @@ offset_right = 2802.0
 offset_bottom = -3632.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 640
-text = "Music"
+text = "Music 5"
 
 [node name="sfx" type="Button" parent="." unique_id=1808290100]
 layout_mode = 1
@@ -51,12 +52,12 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 319.0
-offset_top = -3209.0
+offset_top = -3533.0
 offset_right = 2802.0
-offset_bottom = -2328.0
+offset_bottom = -2520.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 640
-text = "SFX"
+text = "SFX 5"
 
 [node name="fullscreen" type="Button" parent="." unique_id=1151692742]
 layout_mode = 1
@@ -65,7 +66,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 319.0
 offset_top = -2137.0
-offset_right = 2802.0
+offset_right = 3860.0
 offset_bottom = -1256.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 640
@@ -78,9 +79,10 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 320.0
 offset_top = -1053.0
-offset_right = 2803.0
+offset_right = 3158.0
 offset_bottom = -172.0
 grow_vertical = 0
+theme = ExtResource("2_pcnwc")
 theme_override_font_sizes/font_size = 640
 text = "Resume"
 

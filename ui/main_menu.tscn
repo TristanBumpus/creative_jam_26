@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://hnomtehhctat"]
 
 [ext_resource type="Script" uid="uid://cl3p2sbaw8b6e" path="res://scripts/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="AudioStream" uid="uid://csb6n0g6sc75u" path="res://music/song3-mainmenu.mp3" id="2_0dkrt"]
+[ext_resource type="Texture2D" uid="uid://8k64uxio36sa" path="res://assets/stuff/logo1.png" id="3_rmr83"]
+[ext_resource type="Texture2D" uid="uid://dxtflfe8oy4wd" path="res://assets/stuff/logo2.png" id="4_8uxxo"]
 
 [node name="MainMenu" type="Control" unique_id=279280552]
 layout_mode = 3
@@ -12,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_t7e0r")
 
 [node name="Label" type="Label" parent="." unique_id=1225029860]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -34,12 +38,27 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -1407.0
-offset_top = -2148.0
+offset_top = -1760.0
 offset_right = 1408.0
-offset_bottom = -765.5
+offset_bottom = -377.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 640
 text = "Start"
+
+[node name="Song3Mainmenu" type="AudioStreamPlayer" parent="." unique_id=766707333]
+stream = ExtResource("2_0dkrt")
+autoplay = true
+bus = &"music"
+
+[node name="Logo1" type="Sprite2D" parent="." unique_id=1970583640]
+position = Vector2(5178, 1465)
+scale = Vector2(6.029175, 6.0291753)
+texture = ExtResource("3_rmr83")
+
+[node name="Logo2" type="Sprite2D" parent="." unique_id=923572193]
+position = Vector2(6327, 3459.0002)
+scale = Vector2(4.461249, 4.4612494)
+texture = ExtResource("4_8uxxo")
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]

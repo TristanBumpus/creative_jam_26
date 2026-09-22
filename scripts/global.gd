@@ -98,8 +98,10 @@ func _ready() -> void:
 		loot_pool += [[i,  loot_table[rarity].pick_random()]]
 
 func grab_player():
+	wave = 1
 	await get_tree().scene_changed
 	player = get_tree().get_first_node_in_group("player")
+	wave = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

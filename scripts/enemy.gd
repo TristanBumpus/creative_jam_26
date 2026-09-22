@@ -10,7 +10,7 @@ var current_hp = 1
 @export var damage = 1
 @export var level = 0
 @export var attack_range = 2500
-@export var dash_speed = 8
+@export var dash_speed = 6
 var speed_mod: float = 1
 var direction = Vector2.ZERO
 

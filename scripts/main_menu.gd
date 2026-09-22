@@ -16,6 +16,7 @@ func cut_scene():
 	get_tree().change_scene_to_file("res://z_cin/cin_01.tscn")
 
 func _on_start_pressed() -> void:
+	global.wave = 1
 	get_tree().change_scene_to_file("res://levels/test_level_t.tscn")
 	global.grab_player()
-	global.wave = 1
+	

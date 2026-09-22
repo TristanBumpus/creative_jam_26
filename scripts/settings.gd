@@ -1,8 +1,8 @@
 extends Control
 
-var master = 5
-var music = 5
-var sfx = 5
+var master = 7
+var music = 7
+var sfx = 7
 
 
 

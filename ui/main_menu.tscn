@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://hl5umct4igl5" path="res://assets/stuff/titlescreen.png" id="2_8uxxo"]
 [ext_resource type="Texture2D" uid="uid://8k64uxio36sa" path="res://assets/stuff/logo1.png" id="3_rmr83"]
 [ext_resource type="Texture2D" uid="uid://dxtflfe8oy4wd" path="res://assets/stuff/logo2.png" id="4_8uxxo"]
+[ext_resource type="PackedScene" uid="uid://cjkbhtbm1qdn5" path="res://ui/settings.tscn" id="6_ei257"]
 
 [node name="MainMenu" type="Control" unique_id=279280552]
 layout_mode = 3
@@ -66,5 +67,8 @@ texture = ExtResource("3_rmr83")
 position = Vector2(2644, 4236)
 scale = Vector2(4.189553, 4.123124)
 texture = ExtResource("4_8uxxo")
+
+[node name="settings" parent="." unique_id=1236409158 instance=ExtResource("6_ei257")]
+layout_mode = 1
 
 [connection signal="pressed" from="start" to="." method="cut_scene"]

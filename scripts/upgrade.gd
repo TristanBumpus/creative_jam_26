@@ -72,6 +72,8 @@ func change_level():
 
 
 func _ready() -> void:
+	p_items = global.grab_loot(global.wave - past_by)
+	f_items = global.grab_loot(futur_by + global.wave)
 	if global.wave != 1:
 		while true:
 			past_by = randi_range(1, global.wave - 1)
@@ -80,7 +82,6 @@ func _ready() -> void:
 			f_items = global.grab_loot(futur_by + global.wave)
 			if f_items[1] != p_items[1]:
 				break
-	
 	
 	
 	$upgrade/past/Label.text = "Wave " + str(global.wave - past_by)

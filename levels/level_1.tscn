@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1xe88khkry3g"]
 
 [ext_resource type="Texture2D" uid="uid://nnfb1qs76im" path="res://assets/tilemap/tile_sheet_base.png" id="2_kx6l7"]
+[ext_resource type="Texture2D" uid="uid://crdlulnjiqfd2" path="res://assets/stuff/tutorial.png" id="3_bt44k"]
 [ext_resource type="PackedScene" uid="uid://cw7lhik6cmmvl" path="res://levels/pedestal.tscn" id="4_kx6l7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n46q3"]
@@ -178,6 +179,9 @@ size = Vector2(250, 6000)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwceb"]
 size = Vector2(250, 6000)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kx6l7"]
+blend_mode = 1
+
 [node name="level_1" type="Node2D" unique_id=1279288876]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=575878780]
@@ -239,6 +243,13 @@ shape = SubResource("RectangleShape2D_btoec")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounce_area_left" unique_id=485057904]
 position = Vector2(-5555, 0)
 shape = SubResource("RectangleShape2D_gwceb")
+
+[node name="Tutorial" type="Sprite2D" parent="." unique_id=1957220881]
+modulate = Color(1, 1, 1, 0.43137255)
+material = SubResource("CanvasItemMaterial_kx6l7")
+position = Vector2(-116.000244, -2067)
+scale = Vector2(2.2259257, 2.2259257)
+texture = ExtResource("3_bt44k")
 
 [connection signal="area_entered" from="up" to="." method="_on_up_area_entered"]
 [connection signal="area_entered" from="down" to="." method="_on_down_area_entered"]

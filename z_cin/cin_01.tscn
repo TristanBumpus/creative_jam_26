@@ -165,8 +165,7 @@ position = Vector2(683.00024, 3011)
 scale = Vector2(2.445, 1)
 mesh = SubResource("QuadMesh_jl6io")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D" unique_id=2140169271]
-position = Vector2(-4255, 3413)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Camera2D" unique_id=2097257161]
 stream = ExtResource("3_jl6io")
 autoplay = true
 
